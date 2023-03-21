@@ -69,7 +69,6 @@ export default component$(() => {
                 // and turn package.json > build.types tsc script back on
                 return (
                   <a href={`/store${p.url}`} id={p.PRODUCT_ID}>
-                    <div>{p.DISPLAY_NAME}</div>
                     <img
                       alt={p.DISPLAY_NAME}
                       class="contain absolute fill prodCardImg noLoader"
@@ -88,6 +87,7 @@ export default component$(() => {
                       `}
                       width="119"
                     />
+                    <div>{p.DISPLAY_NAME}</div>
                   </a>
                 );
               })}
