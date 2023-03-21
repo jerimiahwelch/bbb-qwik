@@ -4,6 +4,7 @@ import {
   useResource$,
   useSignal,
 } from "@builder.io/qwik";
+import { decode } from "html-entities";
 // import { useLocation } from "@builder.io/qwik-city";
 
 export default component$(() => {
@@ -56,6 +57,12 @@ export default component$(() => {
                 Toggle Results
               </button>
               {list.response.docs.map((p: any) => {
+                // Decode HTML encoded properties
+                // TODO - Is there a native Qwik or JSX way to do this?
+                ["DISPLAY_NAME"].forEach(
+                  (prop) => (p[prop] = decode(p[prop], { level: "html5" }))
+                );
+
                 // p is a product object
                 return (
                   <a href={`/store${p.url}`} id={p.PRODUCT_ID}>
