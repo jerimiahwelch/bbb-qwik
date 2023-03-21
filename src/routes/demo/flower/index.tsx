@@ -1,4 +1,4 @@
-import { component$, useVisibleTask$, useStore, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useVisibleTask$, useStore, useStylesScoped$, $ } from '@builder.io/qwik';
 import { type DocumentHead, useLocation } from '@builder.io/qwik-city';
 import styles from './flower.css?inline';
 
@@ -19,6 +19,10 @@ export default component$(() => {
     cleanup(() => clearInterval(internal));
   });
 
+  const stateNumUpdate$ = $((ev: Event) => {
+    state.number = (ev.target as HTMLInputElement).valueAsNumber;
+  })  
+
   return (
     <div class="section">
       <div class="container center">
@@ -26,9 +30,7 @@ export default component$(() => {
           type="range"
           value={state.number}
           max={50}
-          onInput$={(ev) => {
-            state.number = (ev.target as HTMLInputElement).valueAsNumber;
-          }}
+          onInput$={stateNumUpdate$}
         />
         <div
           style={{

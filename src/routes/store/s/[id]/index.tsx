@@ -1,13 +1,12 @@
-import { component$, useResource$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 
 export default component$(() => {
-  const location = useLocation();
-  debugger;
-  console.log(location.params.id);
+  const loc = useLocation();
   return (
     <>
-      <div id="searchPage">Search Page is awesome</div>
+      <div id="searchPage">Search Page is awesome </div>
+      <pre>{JSON.stringify(loc, null, 2)}</pre>
       <Clock />
     </>
   );
