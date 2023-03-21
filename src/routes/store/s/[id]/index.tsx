@@ -4,13 +4,16 @@ import {
   useResource$,
   useSignal,
 } from "@builder.io/qwik";
-import { useLocation } from "@builder.io/qwik-city";
+// import { useLocation } from "@builder.io/qwik-city";
 
 export default component$(() => {
+  // const loc = useLocation();
+
   const apiProdListHrefRacoons =
     "https://www.bedbathandbeyond.com/apis/services/composite/product-listing/v1.0/all?web3feo=1&site=BedBathUS&currencyCode=USD&country=US&rT=xtCompat&tz=420&displayAdsAt=6&web3feo=abc&q=racoons&wt=json&badge_ids=7464&url=%2Fstore%2Fs&noFacet=false&facets=%7B%7D&start=0&perPage=48&sws=&storeOnlyProducts=false&customPriceRange=false&__amp_source_origin=https%3A%2F%2Fwww.bedbathandbeyond.com";
   const apiProdListHrefKittens =
     "https://www.bedbathandbeyond.com/apis/services/composite/product-listing/v1.0/all?web3feo=1&site=BedBathUS&currencyCode=USD&country=US&rT=xtCompat&tz=420&displayAdsAt=6&web3feo=abc&q=kittens&wt=json&badge_ids=7464&url=%2Fstore%2Fs&noFacet=false&facets=%7B%7D&start=0&perPage=48&sws=&storeOnlyProducts=false&customPriceRange=false&__amp_source_origin=https%3A%2F%2Fwww.bedbathandbeyond.com";
+
   const apiProdListTrigger = useSignal(apiProdListHrefRacoons);
 
   const apiProdListResource = useResource$(async (ctx) => {
@@ -32,7 +35,6 @@ export default component$(() => {
     return prodListApi;
   });
 
-  const loc = useLocation();
   return (
     <>
       <Resource
@@ -53,7 +55,7 @@ export default component$(() => {
               >
                 Toggle Results
               </button>
-              {list.response.docs.map((p: any, i: number) => {
+              {list.response.docs.map((p: any) => {
                 // p is a product object
                 return (
                   <a href={`/store${p.url}`} id={p.PRODUCT_ID}>
