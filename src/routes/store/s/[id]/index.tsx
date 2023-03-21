@@ -3,12 +3,24 @@ import {
   Resource,
   useResource$,
   useSignal,
+  useStyles$,
 } from "@builder.io/qwik";
 import { decode } from "html-entities";
 // import { useLocation } from "@builder.io/qwik-city";
 
+export const tempCSS = /* css */ `
+.block {
+  display: block;
+}
+.v05 {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+`;
+
 export default component$(() => {
   // const loc = useLocation();
+  useStyles$(tempCSS);
 
   const apiProdListHrefRacoons =
     "https://www.bedbathandbeyond.com/apis/services/composite/product-listing/v1.0/all?web3feo=1&site=BedBathUS&currencyCode=USD&country=US&rT=xtCompat&tz=420&displayAdsAt=6&q=racoons&wt=json&badge_ids=7464&url=%2Fstore%2Fs&noFacet=false&facets=%7B%7D&start=0&perPage=48&sws=&storeOnlyProducts=false&customPriceRange=false&__amp_source_origin=https%3A%2F%2Fwww.bedbathandbeyond.com";
@@ -68,7 +80,11 @@ export default component$(() => {
                 // TODO: figure out how to add fetchpriority property to an HTMLImageElment type
                 // and turn package.json > build.types tsc script back on
                 return (
-                  <a href={`/store${p.url}`} id={p.PRODUCT_ID}>
+                  <a
+                    class="v05 block"
+                    href={`/store${p.url}`}
+                    id={p.PRODUCT_ID}
+                  >
                     <img
                       alt={p.DISPLAY_NAME}
                       class="contain absolute fill prodCardImg noLoader"
@@ -77,7 +93,7 @@ export default component$(() => {
                       data-layout="responsive"
                       data-prod-id={p.PRODUCT_ID}
                       fetchpriority={i == 0 ? "high" : "low"}
-                      height="119"
+                      height="236"
                       loading={i == 0 ? "eager" : "lazy"}
                       src={`https://b3h2.scene7.com/is/image/BedBathandBeyond/${p.scene7imageID}?$imagePLP$&amp;wid=177&amp;hei=177`}
                       srcSet={`
@@ -85,7 +101,7 @@ export default component$(() => {
 												https://b3h2.scene7.com/is/image/BedBathandBeyond/${p.scene7imageID}?$imagePLP$&amp;wid=236&amp;hei=236 236w,
 												https://b3h2.scene7.com/is/image/BedBathandBeyond/${p.scene7imageID}?$imagePLP$&amp;wid=363&amp;hei=363 363w
                       `}
-                      width="119"
+                      width="236"
                     />
                     <div>{p.DISPLAY_NAME}</div>
                   </a>
