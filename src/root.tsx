@@ -21,6 +21,8 @@ export default component$(() => {
       <head>
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="preconnect" href="https://b3h2.scene7.com" />
+        <link rel="dns-prefetch" href="https://b3h2.scene7.com" />
         <RouterHead />
       </head>
       <body lang="en">

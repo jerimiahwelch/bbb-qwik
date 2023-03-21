@@ -65,6 +65,8 @@ export default component$(() => {
                   (prop) => (p[prop] = decode(p[prop], { level: "html5" }))
                 );
                 // p is a product object
+                // TODO: figure out how to add fetchpriority property to an HTMLImageElment type
+                // and turn package.json > build.types tsc script back on
                 return (
                   <a href={`/store${p.url}`} id={p.PRODUCT_ID}>
                     <div>{p.DISPLAY_NAME}</div>
