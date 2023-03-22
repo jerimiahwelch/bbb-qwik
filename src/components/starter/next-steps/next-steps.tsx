@@ -1,12 +1,14 @@
-import { component$, $, useOnWindow, useSignal } from '@builder.io/qwik';
-import styles from './next-steps.module.css';
+import { component$, $, useOnWindow, useSignal } from '@builder.io/qwik'
+import styles from './next-steps.module.css'
 
 export const GETTING_STARTED_STEPS = [
   {
-    message: '<b>Ready</b> to make some changes?<br />Press and hold the <b>ALT</b> key',
+    message:
+      '<b>Ready</b> to make some changes?<br />Press and hold the <b>ALT</b> key',
   },
   {
-    message: 'Select the title of this page while keeping the <b>ALT</b> key pressed',
+    message:
+      'Select the title of this page while keeping the <b>ALT</b> key pressed',
     hint: 'Edit the title and save the changes. If your editor does not open, have a look at <a href="https://github.com/yyx990803/launch-editor#supported-editors" target="_blank">this page</a> to set the correct <code>LAUNCH_EDITOR</code> value.',
   },
   {
@@ -26,38 +28,48 @@ export const GETTING_STARTED_STEPS = [
     message: '<b>Congratulations!</b> You are now familiar with the basics! 🎉',
     hint: "If you need further info on how to use qwik, have a look at <a href='https://qwik.builder.io' target='_blank'>qwik.builder.io</a> or join the <a href='https://qwik.builder.io/chat' target='_blank'>Discord channel</a>.",
   },
-];
+]
 
 export default component$(() => {
-  const gettingStartedStep = useSignal(0);
+  const gettingStartedStep = useSignal(0)
 
   useOnWindow(
     'keydown',
-    $((e) => {
+    $(e => {
       if ((e as KeyboardEvent).key === 'Alt') {
-        gettingStartedStep.value = 1;
+        gettingStartedStep.value = 1
       }
-    })
-  );
+    }),
+  )
 
   return (
     <>
       <div class={styles.gettingstarted}>
-        <div dangerouslySetInnerHTML={GETTING_STARTED_STEPS[gettingStartedStep.value].message} />
+        <div
+          dangerouslySetInnerHTML={
+            GETTING_STARTED_STEPS[gettingStartedStep.value].message
+          }
+        />
         <span
           class={styles.hint}
-          dangerouslySetInnerHTML={GETTING_STARTED_STEPS[gettingStartedStep.value].hint}
+          dangerouslySetInnerHTML={
+            GETTING_STARTED_STEPS[gettingStartedStep.value].hint
+          }
         />
       </div>
       {gettingStartedStep.value + 1 < GETTING_STARTED_STEPS.length ? (
-        <button class="gray small" onClick$={() => gettingStartedStep.value++}>
-          Continue with Step {gettingStartedStep.value + 2} of {GETTING_STARTED_STEPS.length}
+        <button class='gray small' onClick$={() => gettingStartedStep.value++}>
+          Continue with Step {gettingStartedStep.value + 2} of{' '}
+          {GETTING_STARTED_STEPS.length}
         </button>
       ) : (
-        <button class="gray small" onClick$={() => (gettingStartedStep.value = 0)}>
+        <button
+          class='gray small'
+          onClick$={() => (gettingStartedStep.value = 0)}
+        >
           Re-Start
         </button>
       )}
     </>
-  );
-});
+  )
+})

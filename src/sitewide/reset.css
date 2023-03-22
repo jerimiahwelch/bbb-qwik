@@ -101,18 +101,18 @@ select:focus,
   outline: none;
   border-color: var(--btnLinkColor);
 }
-input[type="submit"],
+input[type='submit'],
 button {
   background: var(--btnPri);
   color: var();
 }
 .input,
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="url"],
-input[type="number"],
-input[type="submit"],
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='url'],
+input[type='number'],
+input[type='submit'],
 button,
 textarea,
 select {
@@ -135,19 +135,19 @@ input.input {
 input.input.noLabel {
   padding: calc(1rem - 2px) 0 calc(1rem - 2px) 1rem;
 }
-input[type="checkbox"] {
+input[type='checkbox'] {
   width: 20px;
   height: 20px;
   vertical-align: middle;
 }
-input[type="radio"] {
+input[type='radio'] {
   appearance: none;
   border: 2px solid #d6d6d6;
   min-width: 24px;
   height: 24px;
   vertical-align: middle;
 }
-input[type="radio"]:checked {
+input[type='radio']:checked {
   background: radial-gradient(
     var(--btnPri) 0,
     var(--btnPri) 45%,
@@ -155,8 +155,8 @@ input[type="radio"]:checked {
     #fff
   );
 }
-input[type="radio"]::after,
-input[type="radio"]:checked::after {
+input[type='radio']::after,
+input[type='radio']:checked::after {
   content: unset;
 }
 .invalid.invalid {
@@ -165,4 +165,3 @@ input[type="radio"]:checked::after {
 option {
   font-size: 16px;
 }
-

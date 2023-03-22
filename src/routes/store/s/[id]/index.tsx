@@ -55,7 +55,6 @@ export default component$(() => {
     <>
       <Resource
         value={apiProdListResource}
-        // onPending={() => <div>Loading...</div>}
         onRejected={() => <div>Failed to load Prod List API</div>}
         onResolved={(list: any) => {
           return (
@@ -75,7 +74,8 @@ export default component$(() => {
               {list.response.docs.map((p: any, i: number) => {
                 // Decode HTML encoded properties
                 // TODO - Is there a native Qwik or JSX way to do this?
-                ;['DISPLAY_NAME'].forEach(
+                const propsToDecode = ['DISPLAY_NAME']
+                propsToDecode.forEach(
                   prop => (p[prop] = decode(p[prop], { level: 'html5' })),
                 )
                 // p is a product object

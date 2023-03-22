@@ -1,24 +1,24 @@
-import { component$ } from '@builder.io/qwik';
-import type { DocumentHead } from '@builder.io/qwik-city';
+import { component$ } from '@builder.io/qwik'
+import type { DocumentHead } from '@builder.io/qwik-city'
 
-import Counter from '~/components/starter/counter/counter';
-import Hero from '~/components/starter/hero/hero';
-import Infobox from '~/components/starter/infobox/infobox';
-import Starter from '~/components/starter/next-steps/next-steps';
+import Counter from '~/components/starter/counter/counter'
+import Hero from '~/components/starter/hero/hero'
+import Infobox from '~/components/starter/infobox/infobox'
+import Starter from '~/components/starter/next-steps/next-steps'
 
 export default component$(() => {
   return (
     <>
       <Hero />
 
-      <div class="section bright">
-        <div class="container center">
+      <div class='section bright'>
+        <div class='container center'>
           <Starter />
         </div>
       </div>
 
-      <div class="section">
-        <div class="container center">
+      <div class='section'>
+        <div class='container center'>
           <h3>
             You can <b>count</b> on me
           </h3>
@@ -26,10 +26,10 @@ export default component$(() => {
         </div>
       </div>
 
-      <div class="section">
-        <div class="container topics">
+      <div class='section'>
+        <div class='container topics'>
           <Infobox>
-            <div q:slot="title" class="icon icon-cli">
+            <div q:slot='title' class='icon icon-cli'>
               CLI Commands
             </div>
             <>
@@ -58,42 +58,42 @@ export default component$(() => {
 
           <div>
             <Infobox>
-              <div q:slot="title" class="icon icon-apps">
+              <div q:slot='title' class='icon icon-apps'>
                 Example Apps
               </div>
               <p>
-                Have a look at the <a href="/demo/flower">Flower App</a> or the{' '}
-                <a href="/demo/todolist">Todo App</a>.
+                Have a look at the <a href='/demo/flower'>Flower App</a> or the{' '}
+                <a href='/demo/todolist'>Todo App</a>.
               </p>
             </Infobox>
 
             <Infobox>
-              <div q:slot="title" class="icon icon-community">
+              <div q:slot='title' class='icon icon-community'>
                 Community
               </div>
               <ul>
                 <li>
                   <span>Questions or just want to say hi? </span>
-                  <a href="https://qwik.builder.io/chat" target="_blank">
+                  <a href='https://qwik.builder.io/chat' target='_blank'>
                     Chat on discord!
                   </a>
                 </li>
                 <li>
                   <span>Follow </span>
-                  <a href="https://twitter.com/QwikDev" target="_blank">
+                  <a href='https://twitter.com/QwikDev' target='_blank'>
                     @QwikDev
                   </a>
                   <span> on Twitter</span>
                 </li>
                 <li>
                   <span>Open issues and contribute on </span>
-                  <a href="https://github.com/BuilderIO/qwik" target="_blank">
+                  <a href='https://github.com/BuilderIO/qwik' target='_blank'>
                     GitHub
                   </a>
                 </li>
                 <li>
                   <span>Watch </span>
-                  <a href="https://qwik.builder.io/media/" target="_blank">
+                  <a href='https://qwik.builder.io/media/' target='_blank'>
                     Presentations, Podcasts, Videos, etc.
                   </a>
                 </li>
@@ -103,8 +103,8 @@ export default component$(() => {
         </div>
       </div>
     </>
-  );
-});
+  )
+})
 
 export const head: DocumentHead = {
   title: 'Welcome to Qwik',
@@ -114,4 +114,4 @@ export const head: DocumentHead = {
       content: 'Qwik site description',
     },
   ],
-};
+}

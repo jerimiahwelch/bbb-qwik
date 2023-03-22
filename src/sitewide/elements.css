@@ -242,7 +242,7 @@ button,
 }
 .borderCtr:before,
 .borderCtr:after {
-  content: "";
+  content: '';
   border-bottom: 1px solid #d6d6d6;
   flex-grow: 1;
 }
@@ -255,8 +255,8 @@ button,
 
 /* form styling */
 .formControl,
-.formControl[type="text"],
-.formControl[type="email"] {
+.formControl[type='text'],
+.formControl[type='email'] {
   width: 100%;
   height: 3.125rem;
   border-radius: 4px;
@@ -339,4 +339,3 @@ button,
 .vAlignMiddle {
   vertical-align: middle;
 }
-

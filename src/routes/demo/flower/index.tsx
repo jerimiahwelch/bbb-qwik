@@ -1,33 +1,39 @@
-import { component$, useVisibleTask$, useStore, useStylesScoped$, $ } from '@builder.io/qwik';
-import { type DocumentHead, useLocation } from '@builder.io/qwik-city';
-import styles from './flower.css?inline';
+import {
+  component$,
+  useVisibleTask$,
+  useStore,
+  useStylesScoped$,
+  $,
+} from '@builder.io/qwik'
+import { type DocumentHead, useLocation } from '@builder.io/qwik-city'
+import styles from './flower.css?inline'
 
 export default component$(() => {
-  useStylesScoped$(styles);
-  const loc = useLocation();
+  useStylesScoped$(styles)
+  const loc = useLocation()
 
   const state = useStore({
     count: 0,
     number: 20,
-  });
+  })
 
   useVisibleTask$(({ cleanup }) => {
-    const timeout = setTimeout(() => (state.count = 1), 500);
-    cleanup(() => clearTimeout(timeout));
+    const timeout = setTimeout(() => (state.count = 1), 500)
+    cleanup(() => clearTimeout(timeout))
 
-    const internal = setInterval(() => state.count++, 7000);
-    cleanup(() => clearInterval(internal));
-  });
+    const internal = setInterval(() => state.count++, 7000)
+    cleanup(() => clearInterval(internal))
+  })
 
   const stateNumUpdate$ = $((ev: Event) => {
-    state.number = (ev.target as HTMLInputElement).valueAsNumber;
-  })  
+    state.number = (ev.target as HTMLInputElement).valueAsNumber
+  })
 
   return (
-    <div class="section">
-      <div class="container center">
+    <div class='section'>
+      <div class='container center'>
         <input
-          type="range"
+          type='range'
           value={state.number}
           max={50}
           onInput$={stateNumUpdate$}
@@ -54,9 +60,9 @@ export default component$(() => {
         </div>
       </div>
     </div>
-  );
-});
+  )
+})
 
 export const head: DocumentHead = {
   title: 'Qwik Flower',
-};
+}

@@ -1,12 +1,12 @@
-import { component$ } from "@builder.io/qwik";
+import { component$ } from '@builder.io/qwik'
 import {
   QwikCityProvider,
   RouterOutlet,
   ServiceWorkerRegister,
-} from "@builder.io/qwik-city";
-import { RouterHead } from "./components/router-head/router-head";
+} from '@builder.io/qwik-city'
+import { RouterHead } from './components/router-head/router-head'
 
-import "./global-bbb.css";
+import './global-bbb.css'
 
 export default component$(() => {
   /**
@@ -19,17 +19,16 @@ export default component$(() => {
   return (
     <QwikCityProvider>
       <head>
-        <meta charSet="utf-8" />
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="preconnect" href="https://b3h2.scene7.com" />
-        <link rel="dns-prefetch" href="https://b3h2.scene7.com" />
+        <meta charSet='utf-8' />
+        <link rel='manifest' href='/manifest.json' />
+        <link rel='preconnect' href='https://b3h2.scene7.com' />
+        <link rel='dns-prefetch' href='https://b3h2.scene7.com' />
         <RouterHead />
       </head>
-      <body lang="en">
+      <body lang='en'>
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>
     </QwikCityProvider>
-  );
-});
-
+  )
+})
