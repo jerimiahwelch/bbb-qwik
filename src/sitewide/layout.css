@@ -1,3 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+#wm_content {
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
+  padding-top: var(--headHeight);
+}
+
 /* hide on amp, display on pwamp */
 .pwaOnly.pwaOnly,
 .PWAMP .ampOnly.ampOnly {

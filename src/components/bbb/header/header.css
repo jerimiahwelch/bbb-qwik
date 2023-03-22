@@ -1,0 +1,127 @@
+/* cssHeaderVariables moved to global_css */
+header {
+  position: relative;
+  z-index: 100;
+  background: var(--hBackPri);
+  border-bottom: none;
+}
+#header {
+  color: var(--headerClr);
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+#headerWrap.catNav .headerRow1 {
+  z-index: 200;
+}
+.header a {
+  color: inherit;
+}
+.logo {
+  height: 48px;
+  width: var(--logoWidth);
+}
+.logo svg {
+  height: 100%;
+  width: 100%;
+  fill: currentColor;
+}
+
+.headerBtn {
+  color: inherit;
+  min-height: 48px;
+  min-width: 48px;
+}
+.headerBtn,
+.headerBtn:focus {
+  border: none;
+  box-shadow: none;
+}
+.crossButton {
+  border: none;
+  left: 320px;
+  padding: 0px 10px;
+  top: 4px;
+}
+.catNav .crossButton {
+  display: none;
+}
+.wiMenu {
+  font-size: 21px;
+}
+.wiCart {
+  font-size: 24px;
+  /* width: 1.192em; */ /* This was not being applied i.e on Cart icon, is square, testing removal */
+}
+/* also used in site_searchGroupByPt */
+.searchInput {
+  border-radius: 18px;
+  border: solid 2px #d6d6d6;
+  height: 36px;
+  padding: 0 2rem;
+}
+label.searchInput {
+  padding: 0;
+  text-align: center;
+}
+.cartCountList {
+  top: 4px;
+  right: 4px;
+}
+.cartCount {
+  background: var(--cartCountBg);
+  color: var(--cartCountNum);
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  font: var(--cartCountFont);
+}
+
+/*search container styles*/
+#searchcontainer {
+  position: absolute;
+  z-index: 9999;
+  left: 0;
+  top: -200vh;
+  width: 100vw;
+  background: #fff;
+  color: #444;
+  height: 100vh;
+  overflow: auto;
+  padding-bottom: 50px;
+  -webkit-overflow-scrolling: touch;
+}
+#searchcontainer.active {
+  top: 0;
+  position: fixed;
+  visibility: visible;
+}
+.hidePencil #searchcontainer.active {
+  top: var(--pencilBannerHeight);
+}
+
+.mixedBanner,
+.headerRow3 {
+  transition: max-height 700ms ease-in-out;
+  max-height: 25vh;
+  will-change: max-height;
+}
+
+.miniHeader .mixedBanner,
+.miniHeader .headerRow3 {
+  max-height: 0;
+  overflow: hidden;
+}
+
+/* JW todo - make fixed so that google search results overlay
+honors height or match othewr top modals.
+To do so, #searchcontainer needs to be position: fixed */
+#headerWrap[style='top: calc(32px);'] #searchcontainer.active {
+  top: 32px;
+}
+
+/** childReplacement babyHeader **/
+.header .logo {
+  color: #1a4e8a;
+}
+/** end childReplacement babyHeader **/

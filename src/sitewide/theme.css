@@ -33,6 +33,7 @@ body {
   /* NOTE: Many of these variables are used in many places - be careful changing them */
   --priClr: #1377c9; /* from css_bbb */
   --ttClr: #6ab8ff; /* tooltip color */
+  --headerClr: #1a4eac; /* header color */
 
   --btnLinkColor: var(--priClr);
   --linkColor: var(--priClr);

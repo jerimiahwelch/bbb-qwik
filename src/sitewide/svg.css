@@ -1,0 +1,49 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~
+ SVG styling
+~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#svgdefs {
+  display: none;
+}
+
+.wi175em {
+  width: 1.75em;
+  height: 1.75em;
+  fill: currentColor;
+  vertical-align: middle;
+  max-width: 100%;
+  max-height: 100%;
+  pointer-events: none;
+}
+
+/*opacity for portions of svgs*/
+.fa-secondary {
+  opacity: 0.3;
+}
+
+/* General icon classes. */
+.wi {
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  stroke: none;
+  width: 1em;
+}
+
+/* Please rotate icons instead of adding a second one */
+.deg90 {
+  transform: rotate(90deg);
+}
+.deg180 {
+  transform: rotate(180deg);
+}
+.deg270 {
+  transform: rotate(270deg);
+}
+
+/* Specific icons */
+.wiCaret {
+  height: 0.75em;
+}
+.wiCheck {
+  color: #539610;
+}
