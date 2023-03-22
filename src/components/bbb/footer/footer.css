@@ -1,0 +1,187 @@
+#wm_footer:not(#SignUpEmailFooterWrapper) {
+  contain-intrinsic-size: auto 1100px;
+
+  background: var(--ftrBack);
+  color: var(--ftrClr);
+  font-family: var(--fontMain);
+}
+
+.couponEnrollment .couponEle {
+  min-height: 49px;
+}
+
+.emailInputWrap label {
+  transition: 0.2s;
+}
+
+.emailInputWrap input:focus + label,
+.emailInputWrap input:not(:placeholder-shown) + label {
+  padding-top: 0.25rem;
+  font-size: 8px;
+  align-items: flex-start;
+  font-weight: normal;
+}
+
+.emailAcquisitionForm input::placeholder {
+  color: transparent;
+}
+
+.head {
+  font: var(--theme-h4-sans-font);
+}
+
+.footerCouponText {
+  font-family: var(--fontDisplay);
+}
+
+.existingUser,
+.mobileOfferWelcome {
+  font-size: 18px;
+  /* color: #000; check this. on bbb */
+}
+
+.mainText {
+  font-size: 16px;
+}
+
+.errorMsg,
+.successText {
+  font: 300 16px var(--fontMain);
+}
+
+.disclaimerText,
+.contentSubText {
+  font: 300 14px var(--fontMain);
+  color: #6a6a6a;
+}
+
+#successEmail_footer svg,
+#textSignUp_footer svg {
+  color: var(--primary-color);
+}
+
+.selectWrapper svg {
+  top: 1.25rem;
+  right: 1rem;
+}
+
+.shopperOptions,
+.shopperOptions option {
+  font-weight: 300;
+}
+
+#disclaimerCA_footer {
+  font-size: 14px;
+}
+
+.contentText {
+  font-weight: bold;
+}
+#emailOffersFormFooter input {
+  font-size: 14px;
+}
+@media (min-width: 1024px) {
+  .disclaimerText,
+  .contentSubText {
+    font-size: 12px;
+  }
+
+  .contentSubText div {
+    font-size: 14px;
+  }
+
+  .existingUser {
+    font-family: var(--primary-font);
+    font-size: 16px;
+  }
+  #successEmail_footer #successMsg_footer {
+    font-weight: bold;
+  }
+  .successMsgMobileOffer {
+    font-size: 18px;
+  }
+}
+.footerAcc {
+  list-style: none;
+  margin-bottom: 30px;
+}
+.social {
+  justify-content: space-between;
+  margin-right: 2rem;
+}
+#wm_footer h3 {
+  justify-content: space-between;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: var(--txtSm);
+}
+.accExpanded .wiChev {
+  transform: rotate(180deg);
+}
+#wm_footer h3.sisterBrands {
+  justify-content: center;
+  text-transform: capitalize;
+}
+/* current footer styling causing me to up specificity */
+#wm_footer .footerLogo {
+  margin: 20px;
+}
+/* Sign up for offers styling */
+.offers {
+  background-color: #f7f7f7;
+}
+.emailInput::placeholder {
+  color: #000;
+}
+.user-invalid.user-invalid:not(:focus):not(form)::placeholder {
+  color: #e00000;
+}
+.emailInput:focus {
+  padding-bottom: 2px;
+}
+.emailInput:focus::placeholder {
+  color: transparent;
+}
+.offersBtn {
+  height: 50px;
+}
+.emailInput.user-valid:not(:focus) ~ .smLabel {
+  display: none;
+}
+/* As You Go */
+.typeMismatchMsg,
+.valueMissingMsg {
+  display: none;
+}
+.user-invalid .focus100 ~ .valueMissingMsg,
+.typeMismatch ~ .typeMismatchMsg,
+.valueMissing ~ .valueMissingMsg {
+  display: block;
+}
+.user-invalid.focus1 ~ .alert {
+  display: none;
+}
+.user-invalid ~ .offersLabel {
+  opacity: 0;
+}
+
+.accWrap:last-child {
+  border-bottom: none;
+}
+
+.footerBtn {
+  min-height: 16px;
+}
+
+.footerCol {
+  border-bottom: 2px solid #e7e7ea;
+}
+
+#wm_footer.hasRegistryFooter {
+  margin-bottom: 80px;
+}
+/** childReplacement couponEnrollmentFooter **/
+#wm_footer #SignUpEmailFooterWrapper {
+  color: #000;
+}
+/** end childReplacement couponEnrollmentFooter **/

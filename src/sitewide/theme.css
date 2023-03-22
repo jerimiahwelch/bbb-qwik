@@ -107,4 +107,8 @@ body {
   font: 16px/1.5 var(--fontMain);
   overflow-x: hidden;
   --cat-nav-heading-color: #595959;
+
+  /* Footer Variables */
+  --ftrClr: #222;
+  --ftrBack: #f7f7f7;
 }
