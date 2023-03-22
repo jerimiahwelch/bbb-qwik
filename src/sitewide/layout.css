@@ -1,0 +1,563 @@
+/* hide on amp, display on pwamp */
+.pwaOnly.pwaOnly,
+.PWAMP .ampOnly.ampOnly {
+  display: none;
+}
+.PWAMP .pwaOnly.pwaOnly {
+  display: revert;
+}
+
+/* Moved to PWAMP ampBeforeRenderCss */
+/* .PWAMP .pwaOnly.flex {
+  display: flex;
+} */
+
+/* Flex shortcuts */
+.flex,
+.midCtr,
+.midJust,
+.borderCtr {
+  display: flex;
+}
+.inlineFlex {
+  display: inline-flex;
+}
+.mid,
+.midCtr,
+.midJust,
+.borderCtr {
+  align-items: center;
+}
+.ctr,
+.midCtr {
+  justify-content: center;
+}
+.just,
+.midJust {
+  justify-content: space-between;
+}
+.btm {
+  align-items: flex-end;
+}
+.strt,
+.top {
+  align-items: flex-start;
+}
+.col {
+  flex-direction: column;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.grow1 {
+  flex-grow: 1;
+}
+.stretch {
+  align-items: stretch;
+}
+.baseline {
+  align-items: baseline;
+}
+.end {
+  justify-content: flex-end;
+}
+
+/* Grid shortcuts */
+/* .grid {
+  display: grid;
+} */
+.gridCol3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.colGap05 {
+  column-gap: 0.55rem;
+  row-gap: 0.55rem;
+}
+
+/* Page Container */
+.container {
+  margin: 0 auto;
+  padding-left: 4%;
+  padding-right: 4%;
+  width: 100%;
+}
+/* On mobile, make child section flush to .container */
+.flush {
+  margin-left: -4%;
+  margin-right: -4%;
+}
+.flush075 {
+  margin-left: -0.75rem;
+}
+@media (min-width: 768px) {
+  .flush {
+    margin-left: -2%;
+    margin-right: -2%;
+  }
+}
+/* Columns */
+.s1 {
+  width: 8.33333%;
+}
+.s2 {
+  width: 16.66%;
+}
+.s3 {
+  width: 25%;
+}
+.s4 {
+  width: 33.3334%;
+}
+.s5 {
+  width: 41.6667%;
+}
+.s6 {
+  width: 50%;
+}
+.s7 {
+  width: 58.33333%;
+}
+.s8 {
+  width: 66.6667%;
+}
+.s9 {
+  width: 75%;
+}
+.s10 {
+  width: 83.333%;
+}
+.s11 {
+  width: 91.66667%;
+}
+.s12 {
+  width: 100%;
+}
+
+/* Margin vertical + gutter */
+.m0 {
+  margin: 0;
+}
+
+/* Vertical */
+.v0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.v025 {
+  margin-bottom: 0.25rem;
+  margin-top: 0.25rem;
+}
+.vb0 {
+  margin-bottom: 0;
+}
+.v05 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.v1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.v125 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.v15 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.v2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.v4 {
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+}
+.vt0 {
+  margin-top: 0;
+}
+.vt025 {
+  margin-top: 0.25rem;
+}
+.vt05 {
+  margin-top: 0.5rem;
+}
+.vt075 {
+  margin-top: 0.75rem;
+}
+.vt1 {
+  margin-top: 1rem;
+}
+.vt125 {
+  margin-top: 1.25rem;
+}
+.vt15 {
+  margin-top: 1.5rem;
+}
+.vt2 {
+  margin-top: 2rem;
+}
+.vt3 {
+  margin-top: 3rem;
+}
+.vtp375 {
+  padding-top: 3.75rem;
+}
+.vb025 {
+  margin-bottom: 0.25rem;
+}
+.vb05 {
+  margin-bottom: 0.5rem;
+}
+.vb075 {
+  margin-bottom: 0.75rem;
+}
+.vb1 {
+  margin-bottom: 1rem;
+}
+.vb15 {
+  margin-bottom: 1.5rem;
+}
+.vb2 {
+  margin-bottom: 2rem;
+}
+.vb25 {
+  margin-bottom: 2.5rem;
+}
+.vb4 {
+  margin-bottom: 4rem;
+}
+.vp0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.vp025 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.vp05 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.vp075 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.vp1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.vp125 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+.vp15 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.vp2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.vp3 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.vpt05 {
+  padding-top: 0.5rem;
+}
+.vpt1 {
+  padding-top: 1rem;
+}
+.vpt15 {
+  padding-top: 1.5rem;
+}
+.vpb05 {
+  padding-bottom: 0.5rem;
+}
+.vpb1 {
+  padding-bottom: 1rem;
+}
+.vpb15 {
+  padding-bottom: 1.5rem;
+}
+.vpt2 {
+  padding-top: 2rem;
+}
+.vpt25 {
+  padding-top: 2.5rem;
+}
+.vpt3 {
+  padding-top: 3rem;
+}
+.vpb2 {
+  padding-bottom: 2rem;
+}
+.vpb50 {
+  padding-bottom: 50%;
+}
+
+/* Gutter */
+.pr3 {
+  padding-right: 3rem;
+}
+
+/* Gutters */
+/* 4px gutters */
+.g0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+.f025 {
+  margin: 0 -0.25rem;
+}
+.g025 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+.gl025 {
+  margin-left: 0.25rem;
+}
+.gr025 {
+  margin-right: 0.25rem;
+}
+.g05 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.gr05 {
+  margin-right: 0.5rem;
+}
+.gr075 {
+  margin-right: 0.75rem;
+}
+.gl05 {
+  margin-left: 0.5rem;
+}
+.gl1 {
+  margin-left: 1rem;
+}
+.gr1 {
+  margin-right: 1rem;
+}
+.g1 {
+  margin-right: 1em;
+  margin-left: 1em;
+}
+.gp0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+.gp0375 {
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
+}
+.gp05 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.gp075 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.gp1 {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.gp15 {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+.gpr0375 {
+  padding-right: 0.375rem;
+}
+.gpr1 {
+  padding-right: 1em;
+}
+.gpr2 {
+  padding-right: 2em;
+}
+.glp1 {
+  padding-left: 1rem;
+}
+.glp0375 {
+  padding-left: 0.375rem;
+}
+.glp075 {
+  padding-left: 0.75rem;
+}
+.glp05 {
+  padding-left: 0.5rem;
+}
+.gp2 {
+  padding-right: 2em;
+  padding-left: 2em;
+}
+.gpr05 {
+  padding-right: 0.5rem;
+}
+.gpl2125 {
+  padding-left: 2.125rem;
+}
+/*  moved to css_desktop
+@media screen and (min-width: 80rem) {
+  .dwGp0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+} */
+
+/* Gutter offset */
+.f05 {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+/* responsive hiding classes */
+@media (max-width: 767px) {
+  .sHide {
+    display: none;
+  }
+}
+/* needed here to hide things on tablet */
+@media (min-width: 768px) and (max-width: 63.99rem) {
+  .tHide.tHide {
+    display: none;
+  }
+}
+/* JW 5.14 moved to css_desktop */
+/*
+@media (min-width: 1024px) {
+  .dHide.dHide {
+    display: none;
+  }
+}
+*/
+@media (max-width: 79.99rem) {
+  .dskWideShow.dskWideShow {
+    display: none;
+  }
+}
+
+/* Layout Util */
+.relative,
+.parent {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+.block {
+  display: block;
+}
+.inlineBlock {
+  display: inline-block;
+}
+.vAlignTxtBottom {
+  vertical-align: text-bottom;
+}
+.vAlignTxtTop {
+  vertical-align: top;
+}
+.fill {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.cbh,
+.offscreen {
+  left: -200vw;
+}
+.h100 {
+  height: 100%;
+}
+/* no .w100 beacuse there's .s12, etc. */
+
+.bottom.bottom {
+  top: initial;
+  bottom: 0;
+}
+/* Scroll a section to just below the header */
+.scrollTarget {
+  position: absolute;
+  top: calc(-1 * var(--headHeight));
+}
+/* Bump analytics iframes and data divs out of layout flow */
+.pixel {
+  height: 1px;
+  width: 1px;
+  z-index: 10;
+}
+
+/* Interaction Util */
+.noTap {
+  pointer-events: none;
+}
+
+/* Hiding things */
+.hide,
+.wHide1.wHide1,
+/* prodpickitmodal2 uses this */
+.show0.show0,
+/* BBB uses santize.js, which sets .hide to position: absolute; 
+This can ruin all kinds of things, so let's transition to namespaced .wHide (wompHide) */
+.wHide,
+.cbh,
+.noPrevNextBtns .amp-carousel-button {
+  display: none; /* Postiioned here to overwrite .flex */
+}
+/* Hide sku and time-specific elements in amp-list placeholders */
+[placeholder] .skuRollup {
+  visibility: hidden;
+}
+/* JW TODO - monitor for impact. Didn't see any in code review */
+.show,
+.show1.show1,
+.show20.show20,
+.show30.show30.show30 {
+  display: block;
+}
+.show.flex {
+  display: flex;
+}
+
+/* amp-carousel[type="carousel"] - 
+deal with display: inline-block!important ruining fixed-height layout */
+.amp-scrollable-carousel-slide {
+  height: 100%;
+  vertical-align: top;
+  white-space: normal;
+}
+
+/* Amp-ads - every page */
+.ampAd {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Only on CLP & PLP. Used to be on PDP */
+.threePackWrap {
+  justify-content: space-evenly;
+}
+
+.transAll {
+  transition: all 100ms ease-in-out;
+}
+.vw100 {
+  width: 100vw;
+}
+/* 4 16px text lines */
+.minHt3 {
+  min-height: calc(3 * 1.1875rem);
+}
+
+/* content visibility class - used to improve crux data since it uses chrome browser */
+.contVis {
+  content-visibility: auto;
+}
+

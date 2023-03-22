@@ -1,0 +1,25 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2. Fonts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@font-face {
+  font-display: auto;
+  font-family: "Effra";
+  font-weight: 300;
+  src: url("https://www.bedbathandbeyond.com/amp/7865/EffraW01-Light.woff2")
+    format("woff2");
+}
+@font-face {
+  font-display: auto;
+  font-family: "Effra";
+  font-weight: 600;
+  src: url("https://www.bedbathandbeyond.com/amp/7865/EffraW01-Bold.woff2")
+    format("woff2");
+}
+@font-face {
+  font-display: auto;
+  font-family: "Termina Headline";
+  src: url("https://www.bedbathandbeyond.com/amp/7865/TerminaW00-Bold.woff2")
+    format("woff2");
+}
+

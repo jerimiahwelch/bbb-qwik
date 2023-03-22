@@ -1,0 +1,172 @@
+/* Typography */
+/* Headers - TODO - check global title classes */
+/* Repeated in css_typography? */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+h3,
+h4,
+h5,
+h6 {
+  color: #000;
+  margin: 0;
+}
+h2,
+h3,
+h4 {
+  word-wrap: break-word;
+}
+h3 {
+  font-size: 21px;
+}
+h6 {
+  font-size: 16px;
+}
+
+/* Text Utility */
+.bold {
+  font-weight: bold;
+}
+.normal {
+  font-weight: normal;
+}
+.alert {
+  color: #e00000;
+}
+.primeLabel,
+.success,
+.cartMsgWrap time {
+  color: #088000;
+  font-weight: bold;
+}
+/* This is now orange on baby UX-3689 */
+.txtGreen,
+.offer {
+  color: var(--accent);
+}
+.cartPanelShip .cartMsgWrap time {
+  color: var(--accent);
+  font-weight: bold;
+}
+.link {
+  border: none;
+  color: inherit;
+  display: inline;
+  padding: 0;
+  text-decoration: underline;
+}
+.txtUnder {
+  text-decoration: underline;
+}
+.link:focus {
+  box-shadow: none;
+}
+.link:hover {
+  text-decoration: underline;
+}
+.linkBlk {
+  color: #000;
+  text-decoration: none;
+}
+.txtRight {
+  text-align: right;
+}
+.txtLeft {
+  text-align: left;
+}
+.txtCtr {
+  text-align: center;
+}
+.txtBlk {
+  color: #000;
+}
+.txtSm.txtSm {
+  font-size: var(--txtSm);
+}
+.txtMed.txtMed {
+  font-size: var(--txtMed);
+}
+.txtLrg.txtLrg {
+  font-size: var(--txtLrg);
+  line-height: 1.875rem;
+}
+.txtXLrg.txtXLrg {
+  font-size: var(--txtXLrg);
+}
+.lineH12 {
+  line-height: 1.2;
+}
+.lineH13 {
+  line-height: 1.3;
+}
+.lineH14 {
+  line-height: 1.4;
+}
+.lineBreaks {
+  white-space: pre-line;
+}
+.overflowHidden {
+  overflow: hidden;
+}
+.noWrap {
+  white-space: nowrap;
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*.cartMsgWrap time,*/
+.highlight,
+.labelPrimary {
+  color: var(--accent);
+  font-weight: bold;
+}
+/* Make links and svgs match parent div */
+.currColor {
+  color: inherit;
+  fill: currentColor;
+}
+/* txt dot used to separate text (ie: reviews and Q&A) */
+.txtDot {
+  margin: 0 4px;
+  display: inline-block;
+}
+
+/* used by css_siteSlider on Home, CLP, PDP */
+.lineClamp1 {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  line-height: 1.2em;
+  max-height: 1.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lineClamp2 {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  line-height: 1.2em;
+  max-height: 2.8em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lineClamp4 {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  display: -webkit-box;
+  line-height: 1.25em;
+  max-height: 5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* pdp_reviewsPt  has .lineClamp6 */
+

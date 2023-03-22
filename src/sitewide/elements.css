@@ -1,0 +1,342 @@
+/* 2. Images */
+.cover img {
+  object-fit: cover;
+}
+
+img.contain,
+.contain img {
+  object-fit: scale-down;
+}
+
+/* match amp-img[layout="responsive"] behavior */
+.respImg {
+  height: auto;
+  width: 100%;
+}
+
+/* Button Classes */
+button,
+.btn {
+  font-size: inherit;
+}
+
+/** childReplacement btn **/
+.btn {
+  align-items: center;
+  border-radius: var(--btnBorderRad);
+  border: 2px solid var(--btnPri);
+  color: var(--btnPri);
+  cursor: pointer;
+  display: flex;
+  font: 600 14px/1.2 var(--fontMain);
+  justify-content: center;
+  min-height: 40px;
+  min-width: 40px;
+  padding: 0 12px;
+  text-align: center;
+  text-decoration: none;
+  /*display: inline-block; JW - several places in site depend on display: flex definition above */
+}
+/** end childReplacement btn **/
+
+/* override for buttons that need to be square on buybuybaby */
+.btnSq {
+  border-radius: 4px;
+}
+/* TODO - check global btn focus class */
+.btn:focus {
+  box-shadow: none;
+  outline: 1px dashed #757575;
+  outline-offset: 3px;
+}
+.btnBlock {
+  width: 100%;
+  display: block;
+}
+.bTopRad05 {
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+.bTopRad08 {
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+  overflow: hidden;
+}
+.bBottomRad08 {
+  border-bottom-left-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+  overflow: hidden;
+}
+.bRad08 {
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+.bRad025 {
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+.bRad50 {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Site btn themes */
+/** childReplacement btnPrimary **/
+.btnPrimary {
+  background: var(--btnPri);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  min-height: 40px;
+  transition: background-color 0.5s;
+}
+.btnPrimary:hover {
+  background-color: #1a4e8a;
+  text-decoration: none;
+}
+/** end childReplacement btnPrimary **/
+.btnRounded {
+  border-radius: var(--btnBorderRad);
+}
+.btnLrg {
+  padding: 0.85rem 1.5rem;
+  line-height: 1.2;
+  min-height: 51px;
+}
+.btnSecondary {
+  background: #0270a2;
+  color: #fff;
+}
+/** childReplacement btnoutline **/
+.btnOutlinePrimary {
+  padding: 0.85rem 1.5rem;
+  border: 2px solidvar(--btnPri);
+  background-color: #fff;
+  color: var(--btnPri);
+  text-decoration: none;
+  font-family: var(--fontMain);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  border-radius: 4px;
+  white-space: nowrap;
+  max-width: 100%;
+  transition: all 0.5s ease-in;
+}
+.btnOutlinePrimary:hover,
+.btnOutlinePrimary:active {
+  background-color: #1a4e8a;
+  border-color: #1a4e8a;
+  color: #fff;
+  text-decoration: none;
+}
+/** end childReplacement btnoutline **/
+
+/** childReplacement btncolor **/
+.btnOutlineGrey {
+  background: #fff;
+  border-color: #d6d6d6;
+  color: #1a4e8a;
+}
+/** end childReplacement btncolor **/
+.btnOutlineGreyDark {
+  background: #fff;
+  border-color: var(--btnGreyDarkBorder);
+  color: var(--btnGreyDarkColor);
+}
+
+.btnSm {
+  padding: 0.5rem 1rem;
+  color: var(--btnPri);
+}
+.btn:active,
+.clickAnim:active {
+  animation: onPressed 0.5s ease 1;
+}
+@keyframes onPressed {
+  0% {
+    transform: scale(0.95);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+/* buttons that are styled to look like a link */
+/** childReplacement btnlink **/
+.btnLink {
+  border: none;
+  background: transparent;
+  -webkit-button-appearence: none;
+  font-weight: 600;
+  /*font-size: 14px;*/
+  color: var(--btnPri);
+  cursor: pointer;
+  padding: 0;
+}
+.btnLink.lrg {
+  font-size: var(--txtP);
+}
+/** childReplacement btnlink **/
+
+/* Colors */
+.black {
+  color: #000;
+}
+.gray59.gray59,
+.muted {
+  color: #595959;
+}
+.white {
+  color: #fff;
+}
+.txtGrey {
+  color: #888988;
+}
+.txtPrimary {
+  color: var(--btnLinkColor);
+}
+.whiteBg {
+  background-color: #fff;
+}
+.lightGreyBg {
+  background-color: #f7f7f8;
+}
+.lightGreyBg2 {
+  background-color: #e2e2e2;
+}
+.greyBcg {
+  background-color: #e4e4e4;
+}
+.transparentBg {
+  background: transparent;
+}
+.lightGreyBg1 {
+  background-color: #f2f2f2;
+}
+.bBlue {
+  color: #003fff;
+}
+.darkBlue {
+  color: #002855;
+}
+/* opacity */
+.op25 {
+  opacity: 0.25;
+}
+.blur2 {
+  filter: blur(4px);
+}
+
+/* horizontal dividers */
+.hDivider {
+  border: 1px solid #d6d6d6;
+}
+.borderBtm {
+  border-bottom: 1px solid #d6d6d6;
+}
+.borderTop {
+  border-top: 1px solid #d6d6d6;
+}
+.borderCtr:before,
+.borderCtr:after {
+  content: "";
+  border-bottom: 1px solid #d6d6d6;
+  flex-grow: 1;
+}
+.borderCtr:before {
+  margin-right: 0.5rem;
+}
+.borderCtr:after {
+  margin-left: 0.5rem;
+}
+
+/* form styling */
+.formControl,
+.formControl[type="text"],
+.formControl[type="email"] {
+  width: 100%;
+  height: 3.125rem;
+  border-radius: 4px;
+  border: 2px solid #8c8c8c;
+  background: #fff;
+  padding: 16px 0 16px 16px;
+  color: #000;
+  font: 600 var(--txtP) / 1.2 var(--fontMain);
+  /* padding: 16px 0 16px 16px; */
+}
+/* Same as .parent - replaced sitewide */
+/* .formCont {
+  position: relative;
+} */
+.label,
+.smLabel {
+  position: absolute;
+  top: 0;
+  color: #000;
+  font: 300 11px var(--fontMain);
+}
+.label {
+  left: 0;
+  padding: 7px 18px 0;
+  pointer-events: none;
+}
+.smLabel {
+  /* font: 300 11px var(--fontMain);
+  color: #000; */
+  padding: 5px 18px 0;
+  display: inline-flex;
+  /* position: absolute;
+  top: 0; */
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.formControl:focus ~ .smLabel,
+.valid ~ .smLabel,
+.user-invalid ~ .smLabel {
+  opacity: 1;
+}
+.invalidMsg {
+  font: 300 14px/1.63 var(--fontMain);
+  margin-top: 5px;
+  color: #e00000;
+}
+/** childReplacement userinvalidborder **/
+.user-invalid .focus100.focus100,
+.user-invalid.user-invalid:not(:focus):not(form),
+.invalidMatch:not(:focus) {
+  border-color: #e00000;
+  color: #e00000;
+}
+/** end childReplacement userinvalidborder **/
+.formControl:focus ~ .invalidMsg {
+  display: none;
+}
+
+/** childReplacement address **/
+.csModal address {
+  font-style: normal;
+}
+.specialMsg {
+  font-size: 20px;
+  line-height: 1.5;
+}
+/** end childReplacement address **/
+
+/** general class for hiding elements that have string boolean
+    example: show{{stringBoolean}}
+    Used on coupon eligibility
+**/
+.showfalse.showfalse {
+  display: none;
+}
+/* .fbtHead {
+  font: var(--fbtHeadFont);
+} */
+.vAlignMiddle {
+  vertical-align: middle;
+}
+

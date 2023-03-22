@@ -3,20 +3,9 @@ import {
   Resource,
   useResource$,
   useSignal,
-  useStyles$,
 } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 import { decode } from "html-entities";
-
-export const tempCSS = /* css */ `
-.block {
-  display: block;
-}
-.v05 {
-  margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
-}
-`;
 
 export const skuByColorSize = (
   pdpData: any,
@@ -37,7 +26,6 @@ export const skuByColorSize = (
 
 export default component$(() => {
   const loc = useLocation();
-  useStyles$(tempCSS);
 
   const apiPdpHrefBase =
     "https://www.bedbathandbeyond.com/apis/services/composite/v1.0/pdp-details/";
@@ -98,26 +86,29 @@ export default component$(() => {
               <div>
                 API fetch time - {prodListApiFetchTime.value / 1000} seconds
               </div>
-              {pdpDet.facets.sizes.map((facet: any) => {
-                return (
-                  <button
-                    onClick$={() => {
-                      const facetSku = skuByColorSize(
-                        pdp.data,
-                        facet.color,
-                        facet.size
-                      );
-                      const skuId = facetSku.SKU_ID;
-                      const skuUrl = new URL(location.href);
-                      skuUrl.searchParams.set("skuId", skuId);
-                      history.pushState(null, "", skuUrl.href);
-                      apiPdpTrigger.value = `${apiPdpHrefBase}${loc.params.prodId}?web3feo=1&siteId=BedBathUS&allSkus=true&ssr=true&skuId=${skuId}`;
-                    }}
-                  >
-                    {facet.size}
-                  </button>
-                );
-              })}
+              <div class="flex mid">
+                {pdpDet.facets.sizes.map((facet: any) => {
+                  return (
+                    <button
+                      class="gr05 btn btnPrimary"
+                      onClick$={() => {
+                        const facetSku = skuByColorSize(
+                          pdp.data,
+                          facet.color,
+                          facet.size
+                        );
+                        const skuId = facetSku.SKU_ID;
+                        const skuUrl = new URL(location.href);
+                        skuUrl.searchParams.set("skuId", skuId);
+                        history.pushState(null, "", skuUrl.href);
+                        apiPdpTrigger.value = `${apiPdpHrefBase}${loc.params.prodId}?web3feo=1&siteId=BedBathUS&allSkus=true&ssr=true&skuId=${skuId}`;
+                      }}
+                    >
+                      {facet.size}
+                    </button>
+                  );
+                })}
+              </div>
               {activeSku.PRODUCT_IMG_ARRAY.slice(0, 1).map(
                 (imgData: any, i: number) => {
                   // p is a product object

@@ -1,0 +1,168 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Resets
+~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+html,
+body,
+iframe,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/*resets reduced by MCM 11/5/20*/
+/*caption,menu, nav, output, ruby, section, summary, time, video {
+ margin: 0;
+ padding: 0;
+ border: 0;
+}*/
+
+/*html::-webkit-scrollbar { width: 0 } */
+
+html {
+  -webkit-text-size-adjust: none; /* Prevent font scaling in landscape while allowing user zoom */
+  -webkit-tap-highlight-color: transparent; /* get rid of full screen flash of blue on link tap */
+}
+
+/* Customize user-agent focus state */
+:focus,
+#headerWrap .nav :focus,
+#headerWrap .searchList :focus,
+#headerWrap .navItem:focus,
+#headerWrap .navPill:focus,
+.input.qtySelectBtn:focus {
+  outline: 1px dashed #757575;
+  outline-offset: 0;
+}
+#headerWrap :focus {
+  outline: 1px dashed #fff;
+}
+#mainSearch input:focus {
+  outline: none;
+}
+
+/* Overwrite yellow chrome autofill color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~
+5. Form Basics
+~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.input,
+input,
+textarea,
+select,
+button {
+  font-size: 16px;
+  font-family: inherit;
+  color: inherit;
+}
+.input:focus,
+input:focus,
+textarea:focus,
+select:focus,
+.btn:focus {
+  outline: none;
+  border-color: var(--btnLinkColor);
+}
+input[type="submit"],
+button {
+  background: var(--btnPri);
+  color: var();
+}
+.input,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+input[type="submit"],
+button,
+textarea,
+select {
+  -webkit-appearance: none;
+  border: 1px solid #ddd;
+  background: none;
+  border-radius: 3px;
+  min-height: 35px;
+  padding: 5px;
+}
+
+.input,
+input.input {
+  border: 2px solid #8c8c8c;
+  min-height: 50px;
+  padding: 16px 0 6px 1em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+input.input.noLabel {
+  padding: calc(1rem - 2px) 0 calc(1rem - 2px) 1rem;
+}
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+input[type="radio"] {
+  appearance: none;
+  border: 2px solid #d6d6d6;
+  min-width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+input[type="radio"]:checked {
+  background: radial-gradient(
+    var(--btnPri) 0,
+    var(--btnPri) 45%,
+    transparent 50%,
+    #fff
+  );
+}
+input[type="radio"]::after,
+input[type="radio"]:checked::after {
+  content: unset;
+}
+.invalid.invalid {
+  border-color: var(--salePriceColor);
+}
+option {
+  font-size: 16px;
+}
+
