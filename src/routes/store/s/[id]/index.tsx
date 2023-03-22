@@ -19,6 +19,8 @@ export const tempCSS = /* css */ `
 `;
 
 export default component$(() => {
+  // TODO - Helper booleans for isClient, isServer
+  // console.log(isClient, isServer)
   // const loc = useLocation();
   useStyles$(tempCSS);
 
