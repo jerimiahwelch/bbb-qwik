@@ -25,35 +25,33 @@ export default component$(() => {
   const apiPdpHrefBase =
     'https://www.bedbathandbeyond.com/apis/services/composite/v1.0/pdp-details/'
 
-  const apiPdpTrigger = useSignal(
+  const pdpDetTrigger = useSignal(
     `${apiPdpHrefBase}${loc.params.prodId}?web3feo=1&siteId=BedBathUS&allSkus=true&ssr=true&skuId=${loc.params.skuId}`,
   )
-  const pdpDetFetchTime = useSignal(1)
 
-  const apiProdResource = useResource$(async ctx => {
+  const pdpDetResource = useResource$(async ctx => {
     // the resource will rerun when bar.value changes.
-    ctx.track(() => apiPdpTrigger.value)
+    ctx.track(() => pdpDetTrigger.value)
     ctx.cleanup(() => {
       // In case the resource need to be cleaned up, this function will be called.
       // Allowing to clean resources like timers, subscriptions, fetch requests, etc.
     })
     const start = Date.now()
-    const prodApiRes = await fetch(apiPdpTrigger.value, {
+    const apiProdRes = await fetch(pdpDetTrigger.value, {
       headers: {
         'user-agent':
           'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Womp_AMP_Generator',
       },
     })
-    const prodListApi = await prodApiRes.json()
-    pdpDetFetchTime.value = Date.now() - start
-    console.log(pdpDetFetchTime.value)
-    return prodListApi
+    const pdpDet = await apiProdRes.json()
+    pdpDet.data.PRODUCT_DETAILS.fetchTime = Date.now() - start
+    return pdpDet
   })
 
   return (
     <>
       <Resource
-        value={apiProdResource}
+        value={pdpDetResource}
         onRejected={() => <div>Failed to load Prod List API</div>}
         onResolved={(pdp: any) => {
           const pdpDet = pdp.data.PRODUCT_DETAILS
@@ -78,6 +76,7 @@ export default component$(() => {
           return (
             <>
               <h2>{pdpDet.DISPLAY_NAME}</h2>
+              <div>API fetch time - {pdpDet.fetchTime / 1000} seconds</div>
               {activeSku.PRODUCT_IMG_ARRAY &&
                 activeSku.PRODUCT_IMG_ARRAY.slice(0, 1).map(
                   (imgData: any, i: number) => {
@@ -119,7 +118,7 @@ export default component$(() => {
                           const skuUrl = new URL(location.href)
                           skuUrl.searchParams.set('skuId', skuId)
                           history.replaceState(null, '', skuUrl.href)
-                          apiPdpTrigger.value = `${apiPdpHrefBase}${loc.params.prodId}?web3feo=1&siteId=BedBathUS&allSkus=true&ssr=true&skuId=${skuId}`
+                          pdpDetTrigger.value = `${apiPdpHrefBase}${loc.params.prodId}?web3feo=1&siteId=BedBathUS&allSkus=true&ssr=true&skuId=${skuId}`
                         }}
                       >
                         {facet.size}
@@ -145,7 +144,7 @@ export default component$(() => {
                             const skuUrl = new URL(location.href)
                             skuUrl.searchParams.set('skuId', skuId)
                             history.pushState(null, '', skuUrl.href)
-                            apiPdpTrigger.value = `${apiPdpHrefBase}${loc.params.prodId}?web3feo=1&siteId=BedBathUS&allSkus=true&ssr=true&skuId=${skuId}`
+                            pdpDetTrigger.value = `${apiPdpHrefBase}${loc.params.prodId}?web3feo=1&siteId=BedBathUS&allSkus=true&ssr=true&skuId=${skuId}`
                           }}
                         >
                           {facet.color}
