@@ -89,6 +89,7 @@ export default component$(() => {
                         class='midCtr contain'
                         fetchpriority={i == 0 ? 'high' : 'low'}
                         height='380'
+                        key={imgData.imageId}
                         loading={i == 0 ? 'eager' : 'lazy'}
                         noloading
                         src={`https://b3h2.scene7.com/is/image/BedBathandBeyond/${imgData.imageId}?$380$&wid=380&hei=380`}
@@ -105,9 +106,10 @@ export default component$(() => {
                 {(() => {
                   const sizes = pdpDet.facets.sizes
                   if (sizes && sizes.length > 1)
-                    return sizes.map((facet: any) => (
+                    return sizes.map((facet: any, i: number) => (
                       <button
                         class='gr05 btn btnPrimary'
+                        key={i}
                         onClick$={() => {
                           const facetSku = skuByColorSize(
                             pdp.data,
@@ -130,10 +132,11 @@ export default component$(() => {
                 {(() => {
                   const colors = pdpDet.facets.colors
                   if (colors && colors.length > 1)
-                    return colors.map((facet: any) => {
+                    return colors.map((facet: any, i: number) => {
                       return (
                         <button
                           class='gr05 btn btnPrimary'
+                          key={i}
                           onClick$={() => {
                             const facetSku = skuByColorSize(
                               pdp.data,

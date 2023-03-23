@@ -77,7 +77,9 @@ export const FooterColumns = component$(({ columns }) => {
  * Footer Acccordion Rows
  */
 export const FooterColumnRows = component$(({ rows }) => {
-  return rows.map((section: any) => <FooterAccordion section={section} />)
+  return rows.map((section: any, i: number) => (
+    <FooterAccordion section={section} key={i} />
+  ))
 })
 
 /**
@@ -118,8 +120,8 @@ export const FooterAccordion = component$(({ section }) => {
         }
         `}
       >
-        {section.footer_column_link.map((link: any) => {
-          return <FooterLinkSort link={link} />
+        {section.footer_column_link.map((link: any, i: number) => {
+          return <FooterLinkSort link={link} key={i} />
         })}
       </ul>
     </div>
@@ -162,14 +164,14 @@ export const FooterLinkSocial = component$(({ link }) => {
 /**
  * Footer email capture form
  */
-export const FooterLinkEmail = component$(({ link }) => {
+export const FooterLinkEmail = component$(() => {
   return <div>Bottom Dock Email</div>
 })
 
 /**
  * Footer app downloads
  */
-export const FooterLinkDownload = component$(({ link }) => {
+export const FooterLinkDownload = component$(() => {
   return <div>Download Icon</div>
 })
 

@@ -82,6 +82,7 @@ export default component$(() => {
                     class='v05 block'
                     href={`/store${p.url}`}
                     id={p.PRODUCT_ID}
+                    key={p.PRODUCT_ID}
                   >
                     <img
                       alt={p.DISPLAY_NAME}
