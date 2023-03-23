@@ -9,6 +9,18 @@ import Starter from '~/components/starter/next-steps/next-steps'
 export default component$(() => {
   return (
     <>
+      <a class='block' href='/components/header-footer/'>
+        /components/header-footer/
+      </a>
+      <a class='block' href='/store/s/kitchenaid-mixer'>
+        /store/s/kitchenaid-mixer
+      </a>
+      <a
+        class='block'
+        href='/store/product/kitchenaid-artisan-series-5-qt-tilt-head-stand-mixer/102986/'
+      >
+        /store/product/kitchenaid-artisan-series-5-qt-tilt-head-stand-mixer/102986/
+      </a>
       <Hero />
 
       <div class='section bright'>

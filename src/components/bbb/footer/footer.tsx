@@ -1,18 +1,21 @@
-import {
-  component$,
-  Resource,
-  useSignal,
-  useResource$,
-  useStore,
-} from '@builder.io/qwik'
+import { component$, Resource, useSignal, useResource$ } from '@builder.io/qwik'
+import { isServer } from '@builder.io/qwik/build'
 
 import './footer.css'
 
+/**
+ * Render footer
+ */
 export default component$(() => {
-  const openFooterAccordions: any = useStore({})
+  console.log('Rendering <Footer />')
 
+  /**
+   * Fetch Contentstack footer data
+   * TODO - Error handling
+   */
   const footerResource = useResource$(async () => {
-    console.log('Rendering <Footer />')
+    // Code treeshaking - Don't send this contentStack code to browser
+    if (!isServer) return
     const start = Date.now()
     const footerApiRes = await fetch(
       'https://cdn.contentstack.io/v3/content_types/footer/entries?&environment=production',
@@ -31,118 +34,158 @@ export default component$(() => {
   })
 
   return (
-    <>
-      <Resource
-        value={footerResource}
-        onRejected={() => <div>Failed to load Prod List API</div>}
-        onResolved={(footer: any) => {
-          return (
-            <>
-              <div>
-                Footer API fetch time - {footer.fetchTime / 1000} seconds
-              </div>
-              <div id='wm_footer' class='contVis'>
-                <footer data-locator='footer' id='footer'>
-                  <div class='container flex wrap'>
-                    {footer.footer_columns.map((column1: any, i: number) => (
-                      <div class='s12 d3 gpr3' key={i}>
-                        {column1.columns.map((column2: any, j: number) => {
-                          const alwaysExpanded =
-                            column2.footer_column_link[0].type &&
-                            column2.footer_column_link[0].type[0]
-                          const columnId = column2.footer_clolumn_name.replace(
-                            / /g,
-                            '_',
-                          )
-                          return (
-                            <div
-                              class={`s12 accWrap ${
-                                openFooterAccordions[columnId]
-                                  ? 'accExpanded'
-                                  : ''
-                              }`}
-                              onClick$={() => {
-                                openFooterAccordions[columnId] =
-                                  !openFooterAccordions[columnId]
-                              }}
-                              key={columnId}
-                            >
-                              {alwaysExpanded ? (
-                                <h3 class='vp125 flex ctr uppercase'>
-                                  {column2.footer_clolumn_name}
-                                </h3>
-                              ) : (
-                                <h3
-                                  id={`footerCol${i}-${j}`}
-                                  class='s12 vp125 flex ctr black pointer accLabel uppercase'
-                                  aria-label={`Open ${column2.footer_clolumn_name} accordion`}
-                                >
-                                  <span>{column2.footer_clolumn_name}</span>
+    // Render on server after ContentStack data is fetched
+    <Resource
+      value={footerResource}
+      // TODO
+      onRejected={() => <div>© Bed Bath & Beyond</div>}
+      onResolved={(footer: any) => {
+        return <FooterWrap footer={footer} />
+      }}
+    />
+  )
+})
 
-                                  <svg class='wi175em wiChev dHide'>
-                                    <use
-                                      xmlns:xlink='http://www.w3.org/1999/xlink'
-                                      xlink:href='#chevron-down'
-                                    ></use>
-                                  </svg>
-                                </h3>
-                              )}
-                              <ul
-                                class={`g0 gp0 v0 vp0 footerAcc {{colClass}} ${
-                                  alwaysExpanded ? '' : 'wHide accPanel21'
-                                }
-                                `}
-                              >
-                                {column2.footer_column_link.map((link: any) => {
-                                  if (link.type[0] == 'list-style-social') {
-                                    return (
-                                      <>
-                                        <li>
-                                          <a
-                                            href={link.cta.href}
-                                            class='linkBlk block v075 socialFooterLink'
-                                            title={link.cta.title}
-                                            aria-label={link.cta.title}
-                                            target={link.target}
-                                          >
-                                            {link.cta.title}
-                                          </a>
-                                        </li>
-                                      </>
-                                    )
-                                  } else if (link.type[0] == 'signup-email') {
-                                    return <div>Bottom Dock Email</div>
-                                  } else if (
-                                    link.type[0] == 'list-style-download'
-                                  ) {
-                                    return <div>Download Icon</div>
-                                  } else {
-                                    return (
-                                      <li class='vp075 dskVp0 footerAccItem'>
-                                        <a
-                                          href={link.cta.href}
-                                          class='linkBlk block v075 footerAccLink'
-                                          target={link.target}
-                                        >
-                                          {link.cta.title}
-                                        </a>
-                                      </li>
-                                    )
-                                  }
-                                })}
-                              </ul>
-                            </div>
-                          )
-                        })}
-                      </div>
-                    ))}
-                  </div>
-                </footer>
-              </div>
-            </>
-          )
-        }}
-      />
-    </>
+/**
+ * Footer Section
+ */
+export const FooterWrap = component$(({ footer }) => {
+  return (
+    <div id='wm_footer' class='contVis'>
+      <footer data-locator='footer' id='footer'>
+        <div class='container flex wrap'>
+          <FooterColumns columns={footer.footer_columns} />
+          <div>Footer API fetch time - {footer.fetchTime / 1000} seconds</div>
+        </div>
+      </footer>
+    </div>
+  )
+})
+
+/**
+ * Footer Desktop Columns
+ */
+export const FooterColumns = component$(({ columns }) => {
+  return columns.map((column1: any, i: number) => (
+    <div class='s12 d3 gpr3' key={i}>
+      <FooterColumnRows rows={column1.columns} />
+    </div>
+  ))
+})
+
+/**
+ * Footer Acccordion Rows
+ */
+export const FooterColumnRows = component$(({ rows }) => {
+  return rows.map((section: any) => <FooterAccordion section={section} />)
+})
+
+/**
+ * Footer Acccordion Component
+ * Expands and Collapses on H3 click
+ */
+export const FooterAccordion = component$(({ section }) => {
+  const columnId = section.footer_clolumn_name.replace(/ /g, '_')
+  const alwaysExpanded = !!(
+    section.footer_column_link[0].type && section.footer_column_link[0].type[0]
+  )
+  const isOpen = useSignal(alwaysExpanded)
+  return (
+    <div
+      class={`s12 accWrap ${isOpen.value == true ? 'accExpanded' : ''}`}
+      key={columnId}
+    >
+      {alwaysExpanded ? (
+        <h3 class='vp125 flex ctr uppercase'>{section.footer_clolumn_name}</h3>
+      ) : (
+        <h3
+          class='s12 vp125 flex ctr black pointer accLabel uppercase'
+          aria-label={`Open ${section.footer_clolumn_name} accordion`}
+          onClick$={() => (isOpen.value = !isOpen.value)}
+        >
+          <span>{section.footer_clolumn_name}</span>
+          <svg class='wi175em wiChev dHide'>
+            <use
+              xmlns:xlink='http://www.w3.org/1999/xlink'
+              xlink:href='#chevron-down'
+            ></use>
+          </svg>
+        </h3>
+      )}
+      <ul
+        class={`g0 gp0 v0 vp0 footerAcc {{colClass}} ${
+          alwaysExpanded ? '' : 'wHide accPanel21'
+        }
+        `}
+      >
+        {section.footer_column_link.map((link: any) => {
+          return <FooterLinkSort link={link} />
+        })}
+      </ul>
+    </div>
+  )
+})
+
+/**
+ * Footer Link sorting.
+ * Returns appropriate footer link component
+ */
+export const FooterLinkSort = component$(({ link }) => {
+  if (link.type[0] == 'list-style-social')
+    return <FooterLinkSocial link={link} />
+  else if (link.type[0] == 'signup-email')
+    return <FooterLinkEmail link={link} />
+  else if (link.type[0] == 'list-style-download')
+    return <FooterLinkDownload link={link} />
+  else return <FooterLinkText link={link} />
+})
+
+/**
+ * Footer social icons
+ */
+export const FooterLinkSocial = component$(({ link }) => {
+  return (
+    <li>
+      <a
+        href={link.cta.href}
+        class='linkBlk block v075 socialFooterLink'
+        title={link.cta.title}
+        aria-label={link.cta.title}
+        target={link.target}
+      >
+        {link.cta.title}
+      </a>
+    </li>
+  )
+})
+
+/**
+ * Footer email capture form
+ */
+export const FooterLinkEmail = component$(({ link }) => {
+  return <div>Bottom Dock Email</div>
+})
+
+/**
+ * Footer app downloads
+ */
+export const FooterLinkDownload = component$(({ link }) => {
+  return <div>Download Icon</div>
+})
+
+/**
+ * Footer text links
+ */
+export const FooterLinkText = component$(({ link }) => {
+  return (
+    <li class='vp075 dskVp0 footerAccItem'>
+      <a
+        href={link.cta.href}
+        class='linkBlk block v075 footerAccLink'
+        target={link.target}
+      >
+        {link.cta.title}
+      </a>
+    </li>
   )
 })
