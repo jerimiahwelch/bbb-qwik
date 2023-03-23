@@ -9,7 +9,6 @@ import {
 import './footer.css'
 
 export default component$(() => {
-  const footerApiFetchTime = useSignal(0)
   const openFooterAccordions: any = useStore({})
 
   const footerResource = useResource$(async () => {
@@ -26,8 +25,8 @@ export default component$(() => {
         },
       },
     )
-    footerApiFetchTime.value = Date.now() - start
     const data = await footerApiRes.json()
+    data.entries[0].fetchTime = Date.now() - start
     return data.entries[0]
   })
 
@@ -40,8 +39,7 @@ export default component$(() => {
           return (
             <>
               <div>
-                Footer API fetch time - {footerApiFetchTime.value / 1000}{' '}
-                seconds
+                Footer API fetch time - {footer.fetchTime / 1000} seconds
               </div>
               <div id='wm_footer' class='contVis'>
                 <footer data-locator='footer' id='footer'>
