@@ -1,0 +1,33 @@
+/* protect */
+.accWrap {
+  border-top: 2px solid #e7e7ea;
+  border-bottom: 2px solid #e7e7ea;
+}
+.accWrap + .accWrap {
+  border-top: none;
+}
+/* .accLabel {
+  border: none;
+} */
+/* accIconWrap removed as it was unused */
+
+.accExpanded.accWrapChild .accChildIconPlus,
+.accChildPanel,
+.accWrapChild .accChildIconMinus,
+/* preceding classes are for a nested accordion ie productBundles*/
+.accExpanded .accIconPlus,
+.accordWrap21 .accIconMinus,
+.accPanel21 {
+  display: none;
+}
+
+.accExpanded.accWrapChild .accChildIconMinus,
+.accExpanded > .accChildPanel,
+/* preceding classes are for a nested accordion ie productBundles*/
+.accExpanded .accIconMinus,
+.accExpanded .accPanel21 {
+  display: block;
+}
+.mAccordHead21 .wi {
+  height: 38px;
+}

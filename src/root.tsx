@@ -12,6 +12,7 @@ import font from './sitewide/font.css?inline'
 import layout from './sitewide/layout.css?inline'
 import typography from './sitewide/typography.css?inline'
 import elements from './sitewide/elements.css?inline'
+import accordion from './sitewide/accordion.css?inline'
 import svg from './sitewide/svg.css?inline'
 
 import SvgDefs from './sitewide/svg'
@@ -23,6 +24,7 @@ export default component$(() => {
   useStyles$(layout)
   useStyles$(typography)
   useStyles$(elements)
+  useStyles$(accordion)
   useStyles$(svg)
   /**
    * The root of a QwikCity site always start with the <QwikCityProvider> component,

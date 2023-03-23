@@ -1,9 +1,16 @@
-import { component$, Resource, useSignal, useResource$ } from '@builder.io/qwik'
+import {
+  component$,
+  Resource,
+  useSignal,
+  useResource$,
+  useStore,
+} from '@builder.io/qwik'
 
 import './footer.css'
 
 export default component$(() => {
   const footerApiFetchTime = useSignal(0)
+  const openFooterAccordions: any = useStore({})
 
   const footerResource = useResource$(async () => {
     console.log('Rendering <Footer />')
@@ -31,49 +38,110 @@ export default component$(() => {
         onRejected={() => <div>Failed to load Prod List API</div>}
         onResolved={(footer: any) => {
           return (
-            <div id='wm_footer' class='contVis'>
-              <footer data-locator='footer' id='footer'>
-                <div>
-                  Footer API fetch time - {footerApiFetchTime.value / 1000}{' '}
-                  seconds
-                </div>
-                <div class='container flex wrap borderTop'>
-                  {footer.footer_columns.map((column1: any) => (
-                    <div class='s12 d3 gpr3'>
-                      {column1.columns.map((column2: any) => (
-                        <div class='s12 gr1'>
-                          {column2.footer_clolumn_name ? (
-                            column2.accordion ? (
-                              <h3
-                                class='s12 vp125 flex ctr black pointer accLabel uppercase'
-                                on='tap:AMP.setState({u: { {_metadata.uid}: !u.{_metadata.uid} })'
-                                tabindex='0'
-                                role='button'
-                                aria-label='Open {footer_clolumn_name} accordion'
+            <>
+              <div>
+                Footer API fetch time - {footerApiFetchTime.value / 1000}{' '}
+                seconds
+              </div>
+              <div id='wm_footer' class='contVis'>
+                <footer data-locator='footer' id='footer'>
+                  <div class='container flex wrap'>
+                    {footer.footer_columns.map((column1: any, i: number) => (
+                      <div class='s12 d3 gpr3' key={i}>
+                        {column1.columns.map((column2: any, j: number) => {
+                          const alwaysExpanded =
+                            column2.footer_column_link[0].type &&
+                            column2.footer_column_link[0].type[0]
+                          const columnId = column2.footer_clolumn_name.replace(
+                            / /g,
+                            '_',
+                          )
+                          return (
+                            <div
+                              class={`s12 accWrap ${
+                                openFooterAccordions[columnId]
+                                  ? 'accExpanded'
+                                  : ''
+                              }`}
+                              onClick$={() => {
+                                openFooterAccordions[columnId] =
+                                  !openFooterAccordions[columnId]
+                              }}
+                              key={columnId}
+                            >
+                              {alwaysExpanded ? (
+                                <h3 class='vp125 flex ctr uppercase'>
+                                  {column2.footer_clolumn_name}
+                                </h3>
+                              ) : (
+                                <h3
+                                  id={`footerCol${i}-${j}`}
+                                  class='s12 vp125 flex ctr black pointer accLabel uppercase'
+                                  aria-label={`Open ${column2.footer_clolumn_name} accordion`}
+                                >
+                                  <span>{column2.footer_clolumn_name}</span>
+
+                                  <svg class='wi175em wiChev dHide'>
+                                    <use
+                                      xmlns:xlink='http://www.w3.org/1999/xlink'
+                                      xlink:href='#chevron-down'
+                                    ></use>
+                                  </svg>
+                                </h3>
+                              )}
+                              <ul
+                                class={`g0 gp0 v0 vp0 footerAcc {{colClass}} ${
+                                  alwaysExpanded ? '' : 'wHide accPanel21'
+                                }
+                                `}
                               >
-                                {column2.footer_clolumn_name}
-                                <svg class='wi175em wiChev dHide'>
-                                  <use
-                                    xmlns:xlink='http://www.w3.org/1999/xlink'
-                                    xlink:href='#chevron-down'
-                                  ></use>
-                                </svg>
-                              </h3>
-                            ) : (
-                              <h3 class='vp125 flex ctr uppercase'>
-                                {column2.footer_clolumn_name}
-                              </h3>
-                            )
-                          ) : (
-                            ''
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              </footer>
-            </div>
+                                {column2.footer_column_link.map((link: any) => {
+                                  if (link.type[0] == 'list-style-social') {
+                                    return (
+                                      <>
+                                        <li>
+                                          <a
+                                            href={link.cta.href}
+                                            class='linkBlk block v075 socialFooterLink'
+                                            title={link.cta.title}
+                                            aria-label={link.cta.title}
+                                            target={link.target}
+                                          >
+                                            {link.cta.title}
+                                          </a>
+                                        </li>
+                                      </>
+                                    )
+                                  } else if (link.type[0] == 'signup-email') {
+                                    return <div>Bottom Dock Email</div>
+                                  } else if (
+                                    link.type[0] == 'list-style-download'
+                                  ) {
+                                    return <div>Download Icon</div>
+                                  } else {
+                                    return (
+                                      <li class='vp075 dskVp0 footerAccItem'>
+                                        <a
+                                          href={link.cta.href}
+                                          class='linkBlk block v075 footerAccLink'
+                                          target={link.target}
+                                        >
+                                          {link.cta.title}
+                                        </a>
+                                      </li>
+                                    )
+                                  }
+                                })}
+                              </ul>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    ))}
+                  </div>
+                </footer>
+              </div>
+            </>
           )
         }}
       />
