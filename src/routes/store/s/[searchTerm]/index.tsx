@@ -6,7 +6,7 @@ import {
   useStyles$,
 } from '@builder.io/qwik'
 import { decode } from 'html-entities'
-// import { useLocation } from "@builder.io/qwik-city";
+import { useLocation } from '@builder.io/qwik-city'
 
 export const tempCSS = /* css */ `
 .block {
@@ -18,18 +18,17 @@ export const tempCSS = /* css */ `
 }
 `
 
+export const apiProdListHrefGet = (searchTerm: string) => {
+  return `https://www.bedbathandbeyond.com/apis/services/composite/product-listing/v1.0/all?web3feo=1&site=BedBathUS&currencyCode=USD&country=US&rT=xtCompat&tz=420&displayAdsAt=6&q=${searchTerm}&wt=json&badge_ids=7464&url=%2Fstore%2Fs&noFacet=false&facets=%7B%7D&start=0&perPage=48&sws=&storeOnlyProducts=false&customPriceRange=false&__amp_source_origin=https%3A%2F%2Fwww.bedbathandbeyond.com`
+}
+
 export default component$(() => {
-  // TODO - Helper booleans for isClient, isServer
-  // console.log(isClient, isServer)
-  // const loc = useLocation();
+  const loc = useLocation()
   useStyles$(tempCSS)
 
-  const apiProdListHrefRacoons =
-    'https://www.bedbathandbeyond.com/apis/services/composite/product-listing/v1.0/all?web3feo=1&site=BedBathUS&currencyCode=USD&country=US&rT=xtCompat&tz=420&displayAdsAt=6&q=racoons&wt=json&badge_ids=7464&url=%2Fstore%2Fs&noFacet=false&facets=%7B%7D&start=0&perPage=48&sws=&storeOnlyProducts=false&customPriceRange=false&__amp_source_origin=https%3A%2F%2Fwww.bedbathandbeyond.com'
-  const apiProdListHrefKittens =
-    'https://www.bedbathandbeyond.com/apis/services/composite/product-listing/v1.0/all?web3feo=1&site=BedBathUS&currencyCode=USD&country=US&rT=xtCompat&tz=420&displayAdsAt=6&q=kittens&wt=json&badge_ids=7464&url=%2Fstore%2Fs&noFacet=false&facets=%7B%7D&start=0&perPage=48&sws=&storeOnlyProducts=false&customPriceRange=false&__amp_source_origin=https%3A%2F%2Fwww.bedbathandbeyond.com'
-
-  const apiProdListTrigger = useSignal(apiProdListHrefRacoons)
+  const apiProdListHref = apiProdListHrefGet(loc.params.searchTerm)
+  console.log(apiProdListHref)
+  const apiProdListTrigger = useSignal(apiProdListHref)
   const prodListApiMs = useSignal(0)
 
   const apiProdListResource = useResource$(async ctx => {
@@ -63,13 +62,10 @@ export default component$(() => {
               <div>API fetch time - {prodListApiMs.value / 1000} seconds</div>
               <button
                 onClick$={() =>
-                  (apiProdListTrigger.value =
-                    apiProdListTrigger.value == apiProdListHrefRacoons
-                      ? apiProdListHrefKittens
-                      : apiProdListHrefRacoons)
+                  (apiProdListTrigger.value = apiProdListHrefGet('kittens'))
                 }
               >
-                Toggle Results
+                Search for kittens
               </button>
               {list.response.docs.map((p: any, i: number) => {
                 // Decode HTML encoded properties

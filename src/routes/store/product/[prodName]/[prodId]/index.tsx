@@ -28,7 +28,7 @@ export default component$(() => {
   const apiPdpTrigger = useSignal(
     `${apiPdpHrefBase}${loc.params.prodId}?web3feo=1&siteId=BedBathUS&allSkus=true&ssr=true&skuId=${loc.params.skuId}`,
   )
-  const prodListApiFetchTime = useSignal(0)
+  const pdpDetFetchTime = useSignal(1)
 
   const apiProdResource = useResource$(async ctx => {
     // the resource will rerun when bar.value changes.
@@ -45,7 +45,8 @@ export default component$(() => {
       },
     })
     const prodListApi = await prodApiRes.json()
-    prodListApiFetchTime.value = Date.now() - start
+    pdpDetFetchTime.value = Date.now() - start
+    console.log(pdpDetFetchTime.value)
     return prodListApi
   })
 
@@ -77,55 +78,82 @@ export default component$(() => {
           return (
             <>
               <h2>{pdpDet.DISPLAY_NAME}</h2>
-              <div>
-                API fetch time - {prodListApiFetchTime.value / 1000} seconds
+              {activeSku.PRODUCT_IMG_ARRAY &&
+                activeSku.PRODUCT_IMG_ARRAY.slice(0, 1).map(
+                  (imgData: any, i: number) => {
+                    // p is a product object
+                    // TODO: figure out how to add fetchpriority property to an HTMLImageElment type
+                    // and turn package.json > build.types tsc script back on
+                    return (
+                      <img
+                        alt={`${imgData.description}. View a larger version of this product image.`}
+                        class='midCtr contain'
+                        fetchpriority={i == 0 ? 'high' : 'low'}
+                        height='380'
+                        loading={i == 0 ? 'eager' : 'lazy'}
+                        noloading
+                        src={`https://b3h2.scene7.com/is/image/BedBathandBeyond/${imgData.imageId}?$380$&wid=380&hei=380`}
+                        srcset={`
+                          https://b3h2.scene7.com/is/image/BedBathandBeyond/${imgData.imageId}?$380$&wid=380&hei=380 379w, 
+                          https://b3h2.scene7.com/is/image/BedBathandBeyond/${imgData.imageId}?$713$&wid=713&hei=713 500w
+                        `}
+                        width='380'
+                      />
+                    )
+                  },
+                )}
+              <div class='flex mid'>
+                {(() => {
+                  const sizes = pdpDet.facets.sizes
+                  if (sizes && sizes.length > 1)
+                    return sizes.map((facet: any) => (
+                      <button
+                        class='gr05 btn btnPrimary'
+                        onClick$={() => {
+                          const facetSku = skuByColorSize(
+                            pdp.data,
+                            facet.color,
+                            facet.size,
+                          )
+                          const skuId = facetSku.SKU_ID
+                          const skuUrl = new URL(location.href)
+                          skuUrl.searchParams.set('skuId', skuId)
+                          history.replaceState(null, '', skuUrl.href)
+                          apiPdpTrigger.value = `${apiPdpHrefBase}${loc.params.prodId}?web3feo=1&siteId=BedBathUS&allSkus=true&ssr=true&skuId=${skuId}`
+                        }}
+                      >
+                        {facet.size}
+                      </button>
+                    ))
+                })()}
               </div>
               <div class='flex mid'>
-                {pdpDet.facets.sizes.map((facet: any) => {
-                  return (
-                    <button
-                      class='gr05 btn btnPrimary'
-                      onClick$={() => {
-                        const facetSku = skuByColorSize(
-                          pdp.data,
-                          facet.color,
-                          facet.size,
-                        )
-                        const skuId = facetSku.SKU_ID
-                        const skuUrl = new URL(location.href)
-                        skuUrl.searchParams.set('skuId', skuId)
-                        history.pushState(null, '', skuUrl.href)
-                        apiPdpTrigger.value = `${apiPdpHrefBase}${loc.params.prodId}?web3feo=1&siteId=BedBathUS&allSkus=true&ssr=true&skuId=${skuId}`
-                      }}
-                    >
-                      {facet.size}
-                    </button>
-                  )
-                })}
+                {(() => {
+                  const colors = pdpDet.facets.colors
+                  if (colors && colors.length > 1)
+                    return colors.map((facet: any) => {
+                      return (
+                        <button
+                          class='gr05 btn btnPrimary'
+                          onClick$={() => {
+                            const facetSku = skuByColorSize(
+                              pdp.data,
+                              facet.color,
+                              facet.size,
+                            )
+                            const skuId = facetSku.SKU_ID
+                            const skuUrl = new URL(location.href)
+                            skuUrl.searchParams.set('skuId', skuId)
+                            history.pushState(null, '', skuUrl.href)
+                            apiPdpTrigger.value = `${apiPdpHrefBase}${loc.params.prodId}?web3feo=1&siteId=BedBathUS&allSkus=true&ssr=true&skuId=${skuId}`
+                          }}
+                        >
+                          {facet.color}
+                        </button>
+                      )
+                    })
+                })()}
               </div>
-              {activeSku.PRODUCT_IMG_ARRAY.slice(0, 1).map(
-                (imgData: any, i: number) => {
-                  // p is a product object
-                  // TODO: figure out how to add fetchpriority property to an HTMLImageElment type
-                  // and turn package.json > build.types tsc script back on
-                  return (
-                    <img
-                      alt={`${imgData.description}. View a larger version of this product image.`}
-                      class='midCtr contain'
-                      fetchpriority={i == 0 ? 'high' : 'low'}
-                      height='380'
-                      loading={i == 0 ? 'eager' : 'lazy'}
-                      noloading
-                      src={`https://b3h2.scene7.com/is/image/BedBathandBeyond/${imgData.imageId}?$380$&wid=380&hei=380`}
-                      srcset={`
-                      https://b3h2.scene7.com/is/image/BedBathandBeyond/${imgData.imageId}?$380$&wid=380&hei=380 379w, 
-                      https://b3h2.scene7.com/is/image/BedBathandBeyond/${imgData.imageId}?$713$&wid=713&hei=713 500w
-                    `}
-                      width='380'
-                    />
-                  )
-                },
-              )}
             </>
           )
         }}
