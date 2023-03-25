@@ -49,7 +49,7 @@ export default component$(() => {
 /**
  * Footer Section
  */
-export const FooterWrap = component$(({ footer }) => {
+const FooterWrap = component$(({ footer }) => {
   return (
     <div id='wm_footer' class='contVis'>
       <footer data-locator='footer' id='footer'>
@@ -65,7 +65,7 @@ export const FooterWrap = component$(({ footer }) => {
 /**
  * Footer Desktop Columns
  */
-export const FooterColumns = component$(({ columns }) => {
+const FooterColumns = component$(({ columns }) => {
   return columns.map((column1: any, i: number) => (
     <div class='s12 d3 gpr3' key={i}>
       <FooterColumnRows rows={column1.columns} />
@@ -76,7 +76,7 @@ export const FooterColumns = component$(({ columns }) => {
 /**
  * Footer Acccordion Rows
  */
-export const FooterColumnRows = component$(({ rows }) => {
+const FooterColumnRows = component$(({ rows }) => {
   return rows.map((section: any, i: number) => (
     <FooterAccordion section={section} key={i} />
   ))
@@ -86,7 +86,7 @@ export const FooterColumnRows = component$(({ rows }) => {
  * Footer Acccordion Component
  * Expands and Collapses on H3 click
  */
-export const FooterAccordion = component$(({ section }) => {
+const FooterAccordion = component$(({ section }) => {
   const columnId = section.footer_clolumn_name.replace(/ /g, '_')
   const alwaysExpanded = !!(
     section.footer_column_link[0].type && section.footer_column_link[0].type[0]
@@ -132,7 +132,7 @@ export const FooterAccordion = component$(({ section }) => {
  * Footer Link sorting.
  * Returns appropriate footer link component
  */
-export const FooterLinkSort = component$(({ link }) => {
+const FooterLinkSort = component$(({ link }) => {
   if (link.type[0] == 'list-style-social')
     return <FooterLinkSocial link={link} />
   else if (link.type[0] == 'signup-email')
@@ -145,7 +145,7 @@ export const FooterLinkSort = component$(({ link }) => {
 /**
  * Footer social icons
  */
-export const FooterLinkSocial = component$(({ link }) => {
+const FooterLinkSocial = component$(({ link }) => {
   return (
     <li>
       <a
@@ -164,21 +164,21 @@ export const FooterLinkSocial = component$(({ link }) => {
 /**
  * Footer email capture form
  */
-export const FooterLinkEmail = component$(() => {
+const FooterLinkEmail = component$(() => {
   return <div>Bottom Dock Email</div>
 })
 
 /**
  * Footer app downloads
  */
-export const FooterLinkDownload = component$(() => {
+const FooterLinkDownload = component$(() => {
   return <div>Download Icon</div>
 })
 
 /**
  * Footer text links
  */
-export const FooterLinkText = component$(({ link }) => {
+const FooterLinkText = component$(({ link }) => {
   return (
     <li class='vp075 dskVp0 footerAccItem'>
       <a
