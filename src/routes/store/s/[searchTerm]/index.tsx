@@ -1,22 +1,6 @@
-import {
-  component$,
-  Resource,
-  useResource$,
-  useSignal,
-  useStyles$,
-} from '@builder.io/qwik'
+import { component$, Resource, useResource$, useSignal } from '@builder.io/qwik'
 import { decode } from 'html-entities'
 import { useLocation } from '@builder.io/qwik-city'
-
-export const tempCSS = /* css */ `
-.block {
-  display: block;
-}
-.v05 {
-  margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
-}
-`
 
 export const apiProdListHrefGet = (searchTerm: string) => {
   return `https://www.bedbathandbeyond.com/apis/services/composite/product-listing/v1.0/all?web3feo=1&site=BedBathUS&currencyCode=USD&country=US&rT=xtCompat&tz=420&displayAdsAt=6&q=${searchTerm}&wt=json&badge_ids=7464&url=%2Fstore%2Fs&noFacet=false&facets=%7B%7D&start=0&perPage=48&sws=&storeOnlyProducts=false&customPriceRange=false&__amp_source_origin=https%3A%2F%2Fwww.bedbathandbeyond.com`
@@ -24,7 +8,6 @@ export const apiProdListHrefGet = (searchTerm: string) => {
 
 export default component$(() => {
   const loc = useLocation()
-  useStyles$(tempCSS)
 
   const apiProdListHref = apiProdListHrefGet(loc.params.searchTerm)
   console.log(apiProdListHref)
