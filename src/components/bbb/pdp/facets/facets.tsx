@@ -6,7 +6,6 @@ import {
   type SkuDetail,
   type SkuFacets,
 } from '~/routes/store/product/[prodName]/[prodId]'
-import { encode } from 'html-entities'
 
 export interface SizeFacet {
   size: string
