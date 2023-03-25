@@ -571,3 +571,12 @@ deal with display: inline-block!important ruining fixed-height layout */
 .contVis {
   content-visibility: auto;
 }
+
+.hScroll {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
