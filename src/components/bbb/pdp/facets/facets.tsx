@@ -155,7 +155,7 @@ export const Facets = component$<Facets>(({ facets, type }) => {
         <b>Color</b>
         <span>- {titleCase(skuFacets.color)}</span>
       </div>
-      <div class='s11 flex wrap'>
+      <div class='s11 flex wrap showAllColor'>
         {facets.map((facet: any, i: number) => (
           <FacetColor facet={facet} i={i} key={i} />
         ))}
