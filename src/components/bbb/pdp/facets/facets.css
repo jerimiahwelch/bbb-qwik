@@ -1,0 +1,281 @@
+/**
+    This file supports facet styling for PDPs that do not contain an accessory section
+    and are not a starterpack
+*/
+
+/** childReplacement facetVar2 **/
+body {
+  --facetBtn: 300 16px/1.2 var(--fontMain);
+  --facetBtnW: 88px;
+}
+/** end childReplacement facetVar2 **/
+
+/* Sitewide */
+.static {
+  position: static;
+}
+/* TODO - move to sitewide */
+.input .wiCaret {
+  color: #595959;
+  font-size: 12px;
+  position: absolute;
+  margin: -6px 13px 0;
+  right: 0;
+  top: 50%;
+}
+
+/* TODO - SDD and BOPIS alert message filtering HTML - top level products only */
+/*.filtersWrap {
+            min-height: 48px;
+        }
+        .filtersAlert {
+            font-size: 17px;
+        }*/
+
+/* Color/Finish & Size Facet amp-list Wrapper */
+.facetsWrap {
+  min-height: 63px;
+}
+
+/* Facets */
+/* Facet Label */
+.facetLabelWrap {
+  line-height: 19px;
+}
+
+/* Color/Finish Facet - Image Swatch */
+.swatchTap,
+.swatchToggle {
+  border: 2px solid transparent;
+  border-radius: 50%;
+  height: 40px;
+  margin: 4px 4px 0 0;
+  padding: 0;
+  width: 40px;
+}
+
+/* Collections & Accessories have tighter swatch spacing */
+.cProdCard .swatchTap,
+.cProdCard .swatchToggle {
+  margin: 2px 2px 0 0;
+}
+.swatch {
+  border-radius: 50%;
+  box-shadow: none;
+  border: 1px solid #d6d6d6;
+}
+.swatchToggle {
+  color: var(--btnLinkColor);
+}
+@media (min-width: 400px) {
+  .swatchTap,
+  .swatchToggle {
+    height: 42px;
+    width: 42px;
+  }
+  .swatch {
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+/* Color/Finish Facet - Out of stock */
+.outStock .swatch {
+  border: 2px solid #d8d8d8;
+  height: calc(2rem + 4px);
+  width: calc(2rem + 4px);
+}
+.outStock .swatch:after,
+.outStockOnline.outStockSdd.outStockBopis::after,
+.outStockOnline.outStockSdd.outStockBopis.active::after {
+  border: 1px solid #fff;
+  content: '';
+  left: 1px;
+  margin-top: -1px;
+  position: absolute;
+  top: 50%;
+}
+.outStockSdd.outStockBopis.outStockOnline::after,
+.pickup .outStockBopis.active::after,
+.sdd .outStockSdd.active::after {
+  width: calc(100% - 1px);
+}
+.swatchTap.outStockSdd.outStockBopis.outStockOnline::after {
+  transform: rotate(-45deg);
+}
+.swatchTap.outStockSdd.outStockBopis.outStockOnline.active::after,
+.swatchTap.outStockSdd.outStockBopis.outStockOnline:hover::after {
+  border-color: #1377c9;
+}
+
+/* Color/Finish Facet - Active & hover classes */
+/** childReplacement cssSwatches **/
+.swatchTap.active,
+.swatchTap:hover,
+.outStockOnline.active::after {
+  border-color: #1377c9;
+}
+/** end childReplacement cssSwatches **/
+
+/* Size Options - Buttons */
+.btnSize {
+  display: inline-flex;
+  flex-direction: column;
+  font: var(--facetBtn);
+  padding: 0.625rem;
+  min-width: var(--facetBtnW);
+  color: #000;
+}
+/* unused in pdpv3 */
+/* .pdpv21 .btnSize.active,
+.pdpv21 .btnSize:hover {
+  border: solid 1px var(--btnPri);
+} */
+
+.btnSize.active,
+.btnSize:hover {
+  outline: solid 2px var(--btnPri);
+  outline-offset: -2px;
+}
+
+/* Enable by default - child products */
+/* Size Options - More than 6 sizes - dropdown list */
+.prodFacetBtn {
+  display: none;
+}
+/* Move to {pdp_qtyPtSsr} css ?*/
+.active.optionList {
+  display: block;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  position: absolute;
+  background: #fff;
+  border: 2px solid #d6d6d6;
+  z-index: 2;
+  border-radius: 4px;
+  max-height: 25vh;
+  overflow-x: scroll;
+  box-shadow: 10px 13px 22px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  /* padding: 0.5rem; */
+}
+
+/* Color & Size form error messages */
+.alert .errMsg {
+  display: inline-block;
+}
+
+/* Size Options - Facet Out of Stock */
+.btnSize.outStock {
+  background: #d6d6d6;
+  color: #888;
+  text-decoration: none;
+}
+
+/*
+  Removed all styling related to just shipping
+  https://app.zeplin.io/project/6185735e7edc2f34a1824e8b/screen/6185767e173fd032010b3690
+  https://bedbathandbeyond.atlassian.net/browse/PP-3046
+  */
+
+/* .btnSize.outStockOnline {
+    background-color: #e2e2e2;
+    text-decoration: line-through;
+  } */
+
+/* 
+    Color/Finish and Size Facet - disabled 
+    These are facets that do exist for this size color combination
+    These used to be greyed out but the following ticket directed us to hide them
+    https://bedbathandbeyond.atlassian.net/browse/PP-3015
+  */
+.swatchTap.disabled,
+.btnSize.disabled {
+  display: none;
+  /* We disabled the on="tap" attribute using mustache 
+                instead of "pointer-events: none;" css rule
+                so that hovering will still 
+                produce a blue outline on hover 
+            */
+  /*pointer-events: none;*/
+}
+
+/* Desktop Hover - Tooltip display - 
+        Depends on enabling overflow for facet amp-lists. 
+        amp-list overflow display!important only possible in PWA */
+.outStockOnline .ttDark {
+  display: none;
+}
+
+/* TODO - remove conflict from Desktop CSS & this override
+            after full transition to single api 
+            moving from 
+                btnSize.outStockOnline
+            to 
+                btnSize.outStockOnline .ttDark
+        */
+.btnSize.btnSize.outStockOnline::after {
+  content: none;
+}
+.btnSize.outStockOnline.outStockBopis.outStockSdd {
+  overflow: hidden;
+}
+.btnSize.outStockOnline.outStockBopis.outStockSdd:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 1px;
+  left: 3px;
+  display: block;
+  border: none;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) calc(50% - 2px),
+    #d6d6d6,
+    rgba(255, 255, 255, 0) calc(50% + 1px)
+  );
+}
+.btnSize.outStockOnline.outStockBopis.outStockSdd:hover:after,
+.btnSize.outStockOnline.outStockBopis.outStockSdd.active:after {
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) calc(50% - 2px),
+    var(--btnPri),
+    rgba(255, 255, 255, 0) calc(50% + 1px)
+  );
+}
+.disabled .bundleCbh:before {
+  opacity: 0.5;
+}
+
+/* TODO - SDD and BOPIS facet filtering HTML */
+/* Unset facet overflow */
+/* .sdd.colorsSixPlus button.swatchTap:nth-of-type(n + 7),
+    .pickup.colorsSixPlus button.swatchTap:nth-of-type(n + 7),
+    .sdd.colorsThirteenPlus button.swatchTap:nth-of-type(n + 14),
+    .pickup.colorsThirteenPlus button.swatchTap:nth-of-type(n + 14) {
+      display: flex;
+    } */
+
+/* Hide according to &sdd=true or &pickup=true param (&toggle) 
+          Extra specificity to override desktop .listView .colorsThirteenToggle
+    */
+.sdd .swatchToggle,
+.pickup .swatchToggle,
+.sdd.sdd.sdd.sdd.sdd .outStockSdd,
+.pickup.pickup.pickup.pickup.pickup .outStockBopis,
+.facetsWrap2 .btnSize,
+.facetsWrap2 .btnColor,
+.parent.facetsWrap2 .btnSize.disabled,
+.parent.facetsWrap2 .btnColor.disabled {
+  display: none;
+}
+.facetsWrap2 .btnColor:nth-child(-n + 6),
+.facetsWrap2 .showAllColor .btnColor {
+  display: flex;
+}
+.facetsWrap2 .btnSize:nth-child(-n + 4):not(.disabled),
+.facetsWrap2 .showAll .btnSize {
+  display: block;
+}

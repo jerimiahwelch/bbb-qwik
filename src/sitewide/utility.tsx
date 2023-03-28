@@ -13,6 +13,19 @@ export const decodeProps = (obj: any, props: string[]) => {
 }
 
 /**
+ * Returns a "Title Case String"
+ * @param str input string
+ * @returns string
+ */
+export const titleCase = (str: string | null) => {
+  if (str == null) return
+  return str
+    .split(' ')
+    .map(str => str[0].toUpperCase() + str.slice(1).toLowerCase())
+    .join(' ')
+}
+
+/**
  * Prepares a value for inclusion in a string literal.
  * Prevents this kind of unexpected behavior:
  *   `${undefined}` => 'undefined'

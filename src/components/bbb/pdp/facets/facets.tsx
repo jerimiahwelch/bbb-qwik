@@ -1,5 +1,5 @@
-import { component$, useContext } from '@builder.io/qwik'
-import { decodeProps } from '~/sitewide/utility'
+import { component$, useContext, useStyles$ } from '@builder.io/qwik'
+import { decodeProps, titleCase } from '~/sitewide/utility'
 import {
   apiPdpHrefBase,
   skuFacetContext,
@@ -7,25 +7,29 @@ import {
   type SkuFacets,
 } from '~/routes/store/product/[prodName]/[prodId]'
 
+import facetStyles from './facets.css?inline'
+
 export interface SizeFacet {
-  size: string
-  SKU_ID?: string
   bopisAvailable?: boolean
+  facetAvailable?: boolean
+  isBackorder?: boolean
+  isPreorder?: boolean
   ONLINE_INVENTORY?: boolean
   sddAvailable?: boolean
-  isPreorder?: boolean
-  isBackorder?: boolean
+  size: string
+  SKU_ID?: string
 }
 
 export interface ColorFacet {
-  color: string
-  SWATCH_IMAGE_ID?: string
-  SKU_ID?: string
   bopisAvailable?: boolean
+  color: string
+  facetAvailable?: boolean
+  isBackorder?: boolean
+  isPreorder?: boolean
   ONLINE_INVENTORY?: boolean
   sddAvailable?: boolean
-  isPreorder?: boolean
-  isBackorder?: boolean
+  SKU_ID?: string
+  SWATCH_IMAGE_ID?: string
 }
 
 /**
@@ -88,11 +92,23 @@ const FacetColor = component$<FacetColor>(({ facet, i }) => {
   decodeProps(facet, ['color'])
   return (
     <button
-      class='gr05 btn btnPrimary'
+      class={`
+        parent midCtr swatchTap btnColor 
+        ${!facet.bopisAvailable ? 'outStockBopis ' : ''}
+        ${!facet.sddAvailable ? 'outStockSdd ' : ''}
+        ${!facet.ONLINE_INVENTORY ? 'outStockOnline ' : ''}
+        ${skuFacets.color == facet.color ? 'active ' : ''}
+      `}
       key={i}
       onClick$={() => _facetUpdate(skuFacets, facet.color, null)}
     >
-      {facet.color}
+      <img
+        class='swatch parent noTap'
+        height='32px'
+        width='32px'
+        alt={facet.color}
+        src={`https://b3h2.scene7.com/is/image/BedBathandBeyond/${facet.SWATCH_IMAGE_ID}?$32$&wid=32&hei=32`}
+      />
     </button>
   )
 })
@@ -106,7 +122,13 @@ const FacetSize = component$<FacetSize>(({ facet, i }) => {
   decodeProps(facet, ['size'])
   return (
     <button
-      class='gr05 btn btnPrimary'
+      class={`
+        v025 gr1 parent btn hDivider whiteBg btnSize 
+        ${!facet.bopisAvailable ? 'outStockBopis ' : ''}
+        ${!facet.sddAvailable ? 'outStockSdd ' : ''}
+        ${!facet.ONLINE_INVENTORY ? 'outStockOnline ' : ''}
+        ${skuFacets.size == facet.size ? 'active ' : ''}
+      `}
       key={i}
       onClick$={() => {
         _facetUpdate(skuFacets, null, facet.size)
@@ -122,18 +144,34 @@ interface Facets {
   type: 'colors' | 'size'
 }
 export const Facets = component$<Facets>(({ facets, type }) => {
+  const skuFacets = useContext(skuFacetContext)
+  useStyles$(facetStyles)
   console.log(`Building <Facets type=${type} />`)
   const isColor = type == 'colors'
   if (!facets || facets.length <= 1) return null
-  return (
-    <div class='flex mid hScroll'>
-      {facets.map((facet: any, i: number) =>
-        isColor ? (
+  return isColor ? (
+    <div class='vt1 s12 parent facetsWrap2'>
+      <div class='facetLabelWrap'>
+        <b>Color</b>
+        <span>- {titleCase(skuFacets.color)}</span>
+      </div>
+      <div class='s11 flex wrap'>
+        {facets.map((facet: any, i: number) => (
           <FacetColor facet={facet} i={i} key={i} />
-        ) : (
+        ))}
+      </div>
+    </div>
+  ) : (
+    <div class='vt1 s12 parent facetsWrap2'>
+      <div class='facetLabelWrap'>
+        <b>Size</b>
+        <span>- {titleCase(skuFacets.size)}</span>
+      </div>
+      <div class='s12 flex wrap optionList showAll'>
+        {facets.map((facet: any, i: number) => (
           <FacetSize facet={facet} i={i} key={i} />
-        ),
-      )}
+        ))}
+      </div>
     </div>
   )
 })
