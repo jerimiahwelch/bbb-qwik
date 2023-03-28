@@ -26,6 +26,26 @@ export const titleCase = (str: string | null) => {
 }
 
 /**
+ * Returns a "dash-lower-case String"
+ * @param str "Input String"
+ * @returns string "input-string"
+ */
+export const dashLowerCase = (str: string | null) => {
+  if (str == null) return
+  return str.toLowerCase().replace(/\s+/g, '-')
+}
+
+/**
+ * converts a dash-case string to "space case"
+ * @param str "input-string"
+ * @returns str "input string"
+ */
+export const spaceCase = (str: string | null) => {
+  if (str == null) return
+  return str.toLowerCase().replace(/-/g, ' ')
+}
+
+/**
  * Prepares a value for inclusion in a string literal.
  * Prevents this kind of unexpected behavior:
  *   `${undefined}` => 'undefined'

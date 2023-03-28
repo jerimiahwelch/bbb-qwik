@@ -1,11 +1,31 @@
-import { component$ } from '@builder.io/qwik'
+import { component$, useSignal, useStore } from '@builder.io/qwik'
+import { useLocation } from '@builder.io/qwik-city'
+import { spaceCase } from '~/sitewide/utility'
 
 import './header.css'
 
+import { SearchModal } from './search-modal/search-modal'
+
+export interface ModalStore {
+  navActive: boolean
+  searchActive: boolean
+}
+
 export default component$(() => {
+  /* Search Term */
+  const serverLoc = useLocation()
+  const searchTermVal = spaceCase(serverLoc.params.searchTerm || '')
+  const searchTerm = useSignal(searchTermVal)
+
+  /* Modals Store - Later: transfer to context */
+  const u = useStore<ModalStore>({
+    navActive: false,
+    searchActive: false,
+  })
+
   return (
     <header
-      data-amp-bind-class="'s12 fixedheader fixed' + (navState.isCatNav ? ' catNav' : '')"
+      // class={`'s12 fixedheader fixed' + (navState.isCatNav ? ' catNav' : '')`}
       class='s12 fixedheader fixed'
       data-modal-close
       id='headerWrap'
@@ -25,9 +45,7 @@ export default component$(() => {
         noloading
         src='amp-state:navV2Data'
         template='pencilBannerTemplate'
-      >
-        {' '}
-      </amp-list>
+      ></amp-list>
       <div class='mixedBanner vp0'>
         <div id='CBCCBanner' class='flex tabWrapper'>
           <div class='cbccWrap flex h100 sHide'>
@@ -123,7 +141,7 @@ export default component$(() => {
               <svg
                 aria-hidden='true'
                 class='gl025 wi wi-down-arrow'
-                data-amp-bind-class="'gl025 wi wi-down-arrow ' + (u.cbModal ? 'deg180' : '')"
+                // class={`'gl025 wi wi-down-arrow ' + (u.cbModal ? 'deg180' : '')`}
                 width={12}
                 height={12}
                 viewBox='0 0 12 12'
@@ -211,16 +229,13 @@ export default component$(() => {
               src='https://www.bedbathandbeyond.com/apis/services/store/v1.0/getDefaultStoreByLatLong?storeId=QUERY_PARAM(store)'
               data-amp-bind-src='updateStoreApi()'
               template='csModal'
-            >
-              {' '}
-            </amp-list>
+            ></amp-list>
           </div>
         </div>
       </div>
       <div
         id='header'
         class='s12 midJust header headerRow1'
-        data-amp-bind-class="'s12 midJust header headerRow1' + (u.search == 'active' ? ' searchActive' : '')"
         data-test='HomeBurgerMenu'
       >
         <button
@@ -229,7 +244,22 @@ export default component$(() => {
           aria-label='Open Menu'
           data-modal-open
           data-modal-close
-          on="tap:AMP.setState({ u: { nav: 'active' }, changeStore: { csModal: false }, navState: { isAccount: false, activeDskNav: '', isCatNav: false, nav1Header:'', nav1Obj: navV2Data.entriesdata-amp-bind-0.top_navigation, nav2Header:'', nav2Obj: null, } }),navWrap.focus"
+          // on="tap:AMP.setState(
+          //   {
+          //   u: {
+
+          //     nav: 'active'
+          //   },
+          //   changeStore: { csModal: false },
+          //   navState: { isAccount: false,
+          //     activeDskNav: '',
+          //     isCatNav: false,
+          //     nav1Header:'',
+          //     nav1Obj: navV2Data.entriesdata-amp-bind-0.top_navigation,
+          //     nav2Header:'',
+          //     nav2Obj: null,
+          //   }
+          // }),navWrap.focus"
         >
           <svg class='wi wiMenu noTap'>
             <use
@@ -240,7 +270,7 @@ export default component$(() => {
         </button>
         <a
           id='logo'
-          href='https://www.bedbathandbeyond.com/'
+          href='/'
           aria-label='Navigate To Home Page'
           class='midCtr logo white'
           data-vars-link='https://www.bedbathandbeyond.com/'
@@ -251,11 +281,16 @@ export default component$(() => {
         </a>
         <div class='gl1 grow1 parent searchCont'>
           <label
+            class={`gp0 midCtr whiteBg black ellipsis searchInput ${
+              searchTerm ? ' active ' : ''
+            }`}
             for='searchInput'
-            class='gp0 midCtr whiteBg black ellipsis searchInput '
-            data-amp-bind-class="'gp0 midCtr whiteBg black ellipsis searchInput ' + ((searchTerm && searchTerm != '') ? ' active ': '')"
             id='searchlabel'
-            on="tap:AMP.setState({ searchTerm: searchTerm || '', u: { search: 'active' }, changeStore: { csModal: false } }),searchInput.focus"
+            onClick$={() => {
+              u.searchActive = true
+              const searchInput = document.getElementById('searchInput')
+              if (searchInput) searchInput.focus()
+            }}
             role='button'
             tabIndex={0}
           >
@@ -279,149 +314,7 @@ export default component$(() => {
               What product can we help you find?
             </div>
           </label>
-          <div
-            id='searchcontainer'
-            data-amp-bind-class="u.search == 'active' ? 'active' : ''"
-          >
-            <form
-              action='https://www.bedbathandbeyond.com/store/s/'
-              class='flex mid parent'
-              custom-validation-reporting='show-all-on-submit'
-              data-pwa-handler='recentSearchFormHandler'
-              id='mainSearch'
-              on="submit:AMP.setState({'searching': true});invalid:AMP.setState({ u: {search: null} })"
-              target='_top'
-            >
-              <div class='gl1 parent grow1 searchInputWrap'>
-                {' '}
-                <input
-                  aria-label='Search'
-                  aria-owns='searchSuggestions'
-                  autoComplete='off'
-                  class='s12 whiteBg searchInput'
-                  data-locator='searchbar'
-                  id='searchInput'
-                  name='searchInput'
-                  on="input-debounced:AMP.setState({'searchTerm': event.value}); tap:AMP.setState({u: {nav: null}, navState: {activeDskNav: null, nav1Header: null, nav1Obj: null, flyoutMenu: null}})"
-                  required
-                  spellCheck='false'
-                  tabIndex={-1}
-                  type='search'
-                  defaultValue
-                />
-                <button
-                  type='button'
-                  class='midCtr absolute black searchInputClear'
-                  aria-label='Clear Search'
-                  tabIndex={0}
-                  on="tap:AMP.setState({searchTerm: ''}),mainSearch.clear()"
-                >
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    height={8}
-                    width={8}
-                    viewBox='0 0 10.49 10.48'
-                    id='close'
-                  >
-                    <g data-name='Layer 2'>
-                      <path
-                        fill='currentColor'
-                        d='M5.24 3.83L8.78.29a1 1 0 111.41 1.41L6.66 5.24l3.54 3.54a1 1 0 11-1.41 1.41L5.24 6.66l-3.53 3.53A1 1 0 01.29 8.78l3.54-3.54L.29 1.71A1 1 0 011.71.29z'
-                        data-name='Layer 1'
-                      />
-                    </g>
-                  </svg>
-                </button>
-              </div>
-              <label
-                data-amp-bind-hidden="u.search!='active'"
-                aria-label='Clear Search'
-                class='midCtr headerBtn search clear parent searchClose'
-                data-modal-close
-                for='searchcb'
-                hidden
-                on="tap:AMP.setState({u: {search: null}, searchTerm: '' }),mainSearch.clear()"
-                role='button'
-                tabIndex={0}
-              >
-                <svg class='wi175em noTap' aria-hidden='true'>
-                  <use
-                    xmlns:xlink='http://www.w3.org/1999/xlink'
-                    xlink:href='#menu-close'
-                  />
-                </svg>
-              </label>
-              <button
-                type='submit'
-                aria-label='submit search'
-                class='gr05 sHide searchSubmit'
-                tabIndex={0}
-                on='tap:AMP.setState({ u: { search: null }})'
-                hidden
-                data-amp-bind-hidden="(u.search != 'active')"
-              >
-                <svg class='wi175em currColor' aria-hidden='true'>
-                  <use
-                    xmlns:xlink='http://www.w3.org/1999/xlink'
-                    xlink:href='#dskSearchIcon'
-                  />
-                </svg>
-              </button>
-            </form>
-            <div class='parent'>
-              <amp-list
-                class='variableAmpList'
-                data-amp-bind-hidden='searchTerm.length >= 2'
-                id='recentSearchList'
-                layout='fill'
-                single-item
-                items='.'
-                data-amp-bind-src='searchTerm.length < 2 ? recentSearches : empty'
-                binding='always'
-                template='recentSearchTemplate'
-              >
-                {' '}
-              </amp-list>
-            </div>
-            <div class='scrollSearch'>
-              <div class='flex'>
-                <div class='parent s12 searchTermsCont'>
-                  <amp-list
-                    binding='refresh'
-                    class='variableAmpList'
-                    data-postrender-handler='sayt.topProductsRender()'
-                    id='searchSuggestions'
-                    layout='fill'
-                    single-item
-                    items='.'
-                    src='amp-state:searchQuicklinks'
-                    data-amp-bind-src="searchTerm.length >= 2 ? 'https://www.bedbathandbeyond.com/apis/services/saytSearch/v1.0/all?wt=json&query=' + encodeURIComponent(searchTerm) + '&site=BedBathUS&isGroupby=true&isBrowser=true' : searchQuicklinks"
-                    template='searchSuggestionsTemplate'
-                  >
-                    {' '}
-                  </amp-list>
-                </div>
-                <div
-                  class='dskWideShow topProducts parent'
-                  hidden
-                  data-amp-bind-hidden='searchTerm.length < 2 '
-                >
-                  <amp-list
-                    id='topProdList'
-                    data-postrender-handler='sayt.topProdListPostRender()'
-                    layout='fill'
-                    single-item
-                    items='.'
-                    src='amp-state:topProdSearchState'
-                    data-amp-bind-src='topProdSearchState'
-                    binding='refresh'
-                    reset-on-refresh
-                    template='topProdTmp'
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+          <SearchModal u={u} searchTerm={searchTerm} />
         </div>
         <div class='wHide dwPreload dwShow parent dskAcctCont'>
           <div
@@ -429,8 +322,12 @@ export default component$(() => {
             aria-label='Close sign in modal'
             role='button'
             tabIndex={0}
-            data-amp-bind-class="'acct modal wHide fixed' + (u.signInNav == true ? ' active' : '')"
-            on='tap:AMP.setState({ u: { signInNav: false } })'
+            // class={`'acct modal wHide fixed' + (u.signInNav == true ? ' active' : '')`}
+            // on='tap:AMP.setState({
+            //   u: {
+            //     signInNav: false
+            //   }
+            // })'
           />
           <a
             class='headerBtn midCtr headerAccount'
@@ -449,7 +346,7 @@ export default component$(() => {
             </svg>
           </a>
           <amp-list
-            data-amp-bind-class="'dskAccountNav noLoader dwPreload dwShow ' + (u.signInNav ? 'active ' : ' ' ) + (user.data.userFirstName ? 'hasAcct ' : ' ' ) "
+            class={`'dskAccountNav noLoader dwPreload dwShow ' + (u.signInNav ? 'active ' : ' ' ) + (user.data.userFirstName ? 'hasAcct ' : ' ' ) `}
             binding='always'
             class='dskAccountNav noLoader dwPreload dwShow '
             data-postrender-handler='loyalty.accountListPostRender()'

@@ -1,27 +1,27 @@
 import { component$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
 
-import Counter from '~/components/starter/counter/counter'
-import Hero from '~/components/starter/hero/hero'
-import Infobox from '~/components/starter/infobox/infobox'
-import Starter from '~/components/starter/next-steps/next-steps'
+// import Counter from '~/components/starter/counter/counter'
+// import Hero from '~/components/starter/hero/hero'
+// import Infobox from '~/components/starter/infobox/infobox'
+// import Starter from '~/components/starter/next-steps/next-steps'
 
 export default component$(() => {
   return (
     <>
-      <a class='block' href='/components/header-footer/'>
-        /components/header-footer/
-      </a>
-      <a class='block' href='/store/s/kitchenaid-mixer'>
+      <a class='v1 block' href='/store/s/kitchenaid-mixer'>
         /store/s/kitchenaid-mixer
       </a>
       <a
-        class='block'
+        class='v1 block'
         href='/store/product/kitchenaid-artisan-series-5-qt-tilt-head-stand-mixer/102986/'
       >
         /store/product/kitchenaid-artisan-series-5-qt-tilt-head-stand-mixer/102986/
       </a>
-      <Hero />
+      <a class='v1 block' href='/components/header-footer/'>
+        /components/header-footer/
+      </a>
+      {/* <Hero />
 
       <div class='section bright'>
         <div class='container center'>
@@ -113,7 +113,7 @@ export default component$(() => {
             </Infobox>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   )
 })
