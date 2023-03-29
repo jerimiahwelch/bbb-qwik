@@ -119,11 +119,15 @@ export default component$(() => {
 })
 
 export const head: DocumentHead = {
-  title: 'Welcome to Qwik',
+  title: 'Qwik Demo - Bed Bath and Beyond',
   meta: [
     {
+      name: 'robots',
+      content: 'noindex, nofollow',
+    },
+    {
       name: 'description',
-      content: 'Qwik site description',
+      content: 'Testing Bed Bath and Beyond feature set in Qwik framework',
     },
   ],
 }
