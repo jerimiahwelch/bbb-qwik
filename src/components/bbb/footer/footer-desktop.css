@@ -1,0 +1,209 @@
+/*********************************************/
+/*site footer*/
+/*********************************************/
+@import './footer-desktop-offers.css';
+
+#wm_footer ul a.ampOnly {
+  display: none;
+}
+
+#wm_footer .socialL a:hover {
+  color: var(--btnLinkColor);
+}
+
+/* Tablet Portrait (768px) */
+@media (min-width: 48rem) {
+  #wm_footer .socialL svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  #wm_footer .socialParent ul.flex {
+    justify-content: space-between;
+  }
+
+  #wm_footer .downloadIconParent li {
+    width: 100%;
+  }
+
+  #wm_footer .downloadIconParent ul {
+    flex-wrap: wrap;
+  }
+
+  .offersBtn {
+    max-height: 50px;
+  }
+}
+
+/* Tablet Landscape (1024px) */
+@media (min-width: 64rem) {
+  .footerCol {
+    padding-right: 0.5rem;
+    margin-bottom: 40px;
+  }
+
+  .footerCol:first-child {
+    padding-left: 0.5rem;
+  }
+
+  #wm_footer label h3,
+  #wm_footer h3 {
+    border: none;
+    padding: 0;
+    margin: 14px 0 26px;
+    line-height: 1.67;
+  }
+
+  #wm_footer label h3 svg {
+    display: none;
+  }
+
+  #wm_footer .accordion-collapsed {
+    display: block;
+  }
+
+  #wm_footer ul {
+    margin: 0 0 28px;
+    position: relative;
+  }
+
+  #wm_footer ul li {
+    padding: 0;
+  }
+
+  #wm_footer .accordion-collapsed a {
+    padding: 0;
+  }
+
+  #wm_footer ul a:not(.ampOnly):not(.btnPrimary):not(.disclaimerText) {
+    display: inline-block;
+  }
+
+  #wm_footer a:not(.btnPrimary):not(.disclaimerText),
+  .footerBtn {
+    font-weight: 300;
+    font-size: var(--txtSm);
+    font-family: var(--fontMain);
+    line-height: 1.2;
+  }
+
+  #top-footer a,
+  #top-footer .footerBtn {
+    font-size: 14px;
+  }
+
+  #wm_footer li {
+    margin: 0 0 8px;
+  }
+
+  .footerCol .flex {
+    flex-wrap: wrap;
+  }
+
+  .footerCol .d3 {
+    padding-right: 5%;
+  }
+
+  .offersWrap {
+    padding: 1.5rem 0 0.5rem;
+  }
+
+  #wm_footer .appDownload {
+    margin-left: 0;
+  }
+
+  #wm_footer ul.socialL li {
+    margin: 0 10px 8px 0;
+  }
+
+  #wm_footer ul.socialL {
+    justify-content: flex-start;
+    padding: 6px 0;
+  }
+
+  #wm_footer p {
+    font-size: var(--txtSm);
+    font-weight: var(--txtMedWeight);
+  }
+
+  .baby #SignUpEmailFooterWrapper .mobileOfferWelcome {
+    font-size: 24px;
+  }
+  .baby #SignUpEmailFooterWrapper .successMsgMobileOffer {
+    font-size: 18px;
+  }
+  .baby #SignUpEmailFooterWrapper .contentSubText div {
+    font-size: 14px;
+  }
+
+  /* current footer styling causing me to up specificity */
+  /* Old Content Stack Footer - delete once entire site is on new footer */
+  #wm_footer .footerCol {
+    column-count: 4;
+  }
+
+  #wm_footer .accPanel,
+  #wm_footer .accPanel21 {
+    margin-bottom: 2rem;
+  }
+
+  .footerCol .fCol {
+    break-inside: avoid;
+    padding-right: 1rem;
+  }
+
+  .download-our-app {
+    break-after: column;
+  }
+
+  /* New Content Stack Footer - 7.30.21 */
+  .gpr5 {
+    padding-right: 5%;
+  }
+
+  .gpr3 {
+    padding-right: 3%;
+  }
+
+  /*
+        This is here to break the column under the download section
+        I requested that Rob George return the API in col format
+        This can be removed when we get the data in this way.
+      */
+  #wm_footer .accPanel,
+  #wm_footer .accPanel21 {
+    display: revert;
+  }
+
+  #wm_footer .accWrap {
+    border: none;
+  }
+
+  /* bump to the next col until we get a better api */
+  .download-our-app {
+    margin-bottom: 20%;
+  }
+
+  .offersText h3.h3,
+  .offersText h3.h3 strong {
+    font: var(--h2);
+    font-size: var(--offersContainerHeadSize);
+  }
+
+  .plp .social,
+  .ca .social {
+    justify-content: flex-start;
+  }
+
+  .plp .social a,
+  .ca .social a {
+    margin-right: 26px;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .offers .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

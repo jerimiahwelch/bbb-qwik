@@ -1,0 +1,81 @@
+/*********************************************/
+/*css baby variables*/
+/*********************************************/
+body {
+    --changeStoreTopOffset: 8px;
+    --registryHeadWt: 300;
+    --cartQtyDisplay: initial;
+    --navWrapCaret: #15838b;
+}
+
+@media screen and (min-width: 48rem) {
+    body {
+        --hRow1: 68px;
+        --logoWidth: 128px;
+        --acctLinkColor: #fff;
+        --headHeight: 152px;
+        --changeStoreTopOffset: 12px;
+        --btnPri: #068488;
+        --boldHeaderFont: 500 14px var(--fontMain);
+        --acctHeaderText: 600 18px/1.44 var(--fontMain);
+        --capitalizeHead: Capitalize;
+        --menuBurgerMargin: 0 1rem 0 -10px;
+        --logoPadLeft: 0;
+        --offersContainerHeadSize: 32px;
+        --offersInputWidth: 58%;
+        --txtMedWeight: 400;
+        --ideaBrdTTColor: #068488;
+        --priceFont: var(--fontMain);
+        --prodInfoHeadSize: 34px;
+        --prodInfoHeadSizeV2: 24px;
+        --prodInfoHeadFont: 900 var(--prodInfoHeadSizeV2) / 0.83 var(--fontDisplay);
+        --nrCatPadding: 8px;
+        --narCatHeadSpacing: initial;
+        --heroModCarouselBtn: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.01 6.15" width="18" height="16" fill="%23068488"%3E%3Cpath d="M6 6.15a1.07 1.07 0 01-.6-.2l-5-4.2A1 1 0 01.25.35a1 1 0 011.4-.1L6 3.85l4.4-3.6a1 1 0 011.4.1 1 1 0 01-.1 1.4L6.65 6a1.85 1.85 0 01-.65.15z"/%3E%3C/svg%3E');
+        --mpcSavePercentFont: 14px;
+        --mpcPriceFont: 32px;
+        --mpcPriceLHeight: 32px;
+        --modContentHeadColor: #000;
+    }
+}
+
+@media screen and (min-width: 64rem) {
+    body {
+        --hRow1: 74px;
+        --changeStoreTopOffset: 12px;
+        --headHeight: 157px;
+        --offersInputWidth: 50%;
+        --signUpFormFlexDirection: row;
+        --plpCatTitle: 500 42px/0.84 var(--fontDisplay);
+        --nrHeadSize: 34px;
+        --ttBorderColor: #8eedff;
+        --logoWidth: 155px;
+        --fbtHeadFont: var(--displayWeight) 28px/1.29 var(--fontDisplay);
+        --collectionSliderHt: 260px;
+        --premHt: 128px;
+    }
+}
+
+@media screen and (min-width: 80rem) {
+    body {
+        --hRow1: 78px;
+        --headHeight: 161px;
+        --csBannerWidth: 35%;
+        --csModalLeft: 66.666666%;
+        --changeStoreTopOffset: 12px;
+        --registryHeadTxtSize: 24px;
+        --navItemHeadingSize: 14px;
+        --navWrapBoxShadow: none;
+        --menuMarginTop: 0.01rem;
+        --registryHeadColor: #000;
+        --cartSubtotalWeight: 400;
+        --cartSubtotalSize: 1rem;
+        --priceDisclaimerSize: 0.72rem;
+        --miniCartWidth: 345px;
+        --shipThreshTxtWeight: 500;
+        --dskNavTextTransform: lowercase;
+        --pdpStickyHeight: 85px;
+        --logoWidth: 213px;
+        --revHeadSize: 24px;
+    }
+}

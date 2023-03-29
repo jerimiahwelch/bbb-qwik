@@ -1,0 +1,68 @@
+/*********************************************/
+/*site_signUpForOffersPt*/
+/*********************************************/
+@media screen and (min-width: 48rem) {
+  .offersText h3,
+  .offersText p {
+    text-align: left;
+  }
+
+  .offersFormWrap {
+    margin: 0;
+  }
+
+  .offersFormWrap > form {
+    align-content: flex-start;
+  }
+
+  .offersFormWrap .offersInput {
+    margin-right: 1rem;
+    width: var(--offersInputWidth);
+  }
+
+  .offersInput .user-invalid .focus100 ~ .valueMissingMsg,
+  .offersInput .typeMismatch ~ .typeMismatchMsg,
+  .offersInput .valueMissing ~ .valueMissingMsg,
+  .offersInput .user-invalid.focus1 ~ .alert {
+    visibility: visible;
+    display: block;
+  }
+
+  .offersInput .typeMismatchMsg,
+  .valueMissingMsg {
+    visibility: hidden;
+    font-size: 14px;
+    display: block;
+  }
+
+  .offersText h3 {
+    font-size: var(--offersContainerHeadSize);
+  }
+
+  .offersText {
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .offersFormWrap > form {
+    flex-direction: var(--signUpFormFlexDirection);
+  }
+
+  .offersFormWrap .offersInput {
+    margin-right: 1rem;
+    margin-bottom: 0;
+    width: var(--offersInputWidth);
+  }
+
+  .signUpForOffersInner {
+    max-width: 84rem;
+    margin: 0 auto;
+    align-items: center;
+    padding-bottom: 1rem;
+  }
+
+  .offersText {
+    padding: 0 0 0 1rem;
+  }
+}

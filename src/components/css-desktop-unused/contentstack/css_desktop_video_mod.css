@@ -1,0 +1,32 @@
+/*********************************************/
+/*Home S7 Video*/
+/*********************************************/
+@media screen and (min-width: 48rem) {
+    .click-to-play-overlay.mobile,
+    .click-to-play-overlay.desktop {
+        display: none;
+    }
+
+    .click-to-play-overlay.tablet {
+        display: flex;
+    }
+
+    .s7AmpVideo {
+        margin-left: 0;
+        margin-right: 0;
+        /* correct 7px btm gap being introduced somehow*/
+        /* margin-bottom: -7px; */
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 64rem) {
+    .click-to-play-overlay.mobile,
+    .click-to-play-overlay.tablet {
+        display: none;
+    }
+
+    .click-to-play-overlay.desktop {
+        display: flex;
+    }
+}

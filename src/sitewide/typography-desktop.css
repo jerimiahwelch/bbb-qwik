@@ -1,0 +1,99 @@
+/*********************************************/
+/* css_typography */
+/*********************************************/
+.noTxtSelect {
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+@media (min-width: 48rem) {
+  .tTxtLeft {
+    text-align: left;
+  }
+
+  .tTxt1125 {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
+  .tTxt875 {
+    font-size: 0.875rem;
+  }
+
+  .tTxt125 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .smHead {
+    font: var(--weightDisplay) 22px/1.36 var(--fontMain);
+  }
+
+  .dskLowerCase.dskLowerCase {
+    text-transform: lowercase;
+  }
+
+  /* React PLP makes h3s and h2s same size starting at landscape */
+  .h3.h3 {
+    font: var(--h2);
+    font-family: var(--fontDisplay);
+  }
+
+  /* Disable PDP accordion expand/contract titles */
+  .h3.accTitle {
+    pointer-events: none;
+  }
+
+  .h3.accTitle,
+  .specsCont .smHead,
+  .qaHeader {
+    text-transform: var(--pdpHeaderTransform);
+  }
+
+  /* text color */
+  .dTxtWhite {
+    color: #fff;
+  }
+
+  .dTxtWhite:hover {
+    color: #fff;
+  }
+
+  .dTxtLight {
+    font-weight: var(--weightMain);
+  }
+
+  /* text size */
+  .dTxt875 {
+    font-size: 0.875rem;
+  }
+
+  .dTxt1 {
+    font-size: 1rem;
+  }
+
+  .dtxt2 {
+    font-size: 2rem;
+  }
+
+  .dtxt125 {
+    font-size: 1.125rem;
+  }
+
+  .dtxt12 {
+    font-size: 1.25rem;
+  }
+
+  .dTxtMed {
+    font-size: var(--txtMed);
+  }
+
+  .dTxtMLrg {
+    font-size: var(--txtMLrg);
+  }
+}

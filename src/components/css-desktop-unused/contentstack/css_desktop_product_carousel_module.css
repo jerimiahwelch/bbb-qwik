@@ -1,0 +1,73 @@
+/*********************************************/
+/* Module Product Carousel */
+/*********************************************/
+@media screen and (min-width: 48rem) {
+    .modProductCarousel.viewV5 .modProdCarousel {
+        height: 373px !important;
+    }
+
+    .modProductCarousel.viewV5.sliderWrap {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .modProductCarousel.viewV5 .sliderCard {
+        padding: 12px;
+        width: 204px;
+        height: 373px;
+    }
+
+    .modProductCarousel.viewV5 .savePercent {
+        font-size: var(--mpcSavePercentFont);
+    }
+
+    .modProductCarousel.viewV5 .price {
+        font-size: var(--mpcPriceFont);
+        line-height: var(--mpcPriceLHeight);
+    }
+
+    .modProductCarousel.viewV5 .amp-scrollable-carousel-slide {
+        margin: 0 8px;
+    }
+
+    .modProductCarousel.viewV5 amp-img {
+        margin: 0 0 20px 0;
+    }
+}
+
+@media screen and (min-width: 1101px) {
+    #wm_content>.modProductCarousel.viewV5.sliderWrap {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+    }
+
+    .modProductCarousel.viewV5 .amp-scrollable-carousel-slide {
+        margin: 0;
+    }
+
+    .modProductCarousel.viewV5 .sliderCard.dskSliderCard {
+        padding-top: 0;
+        padding-bottom: 0;
+        background: none;
+    }
+}
+
+@media screen and (min-width: 80rem) {
+    #wm_content>.modProductCarousel.viewV5.sliderWrap {
+        margin-left: 24px;
+        margin-right: 24px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .modProductCarousel.viewV5 .modProdCarousel {
+        height: 437px !important;
+    }
+
+    .modProductCarousel.viewV5 .sliderCard {
+        padding: 16px;
+        width: auto;
+        height: 437px;
+    }
+}

@@ -1,0 +1,115 @@
+/*********************************************/
+/*pdp_prodDetailsPt*/
+/*********************************************/
+@media screen and (min-width: 48rem) {
+    .fillerCell {
+        display: inherit;
+    }
+
+    .prodInfoHead,
+    .mAccordHead .prodInfoHead {
+        font: var(--weightDisplay) var(--prodInfoHeadSize) / 1.36 var(--fontDisplay);
+        text-transform: lowercase;
+    }
+
+    .accPanel21 .prodInfoHead {
+        font: var(--prodInfoHeadFont);
+    }
+
+    .pdpV21 .limited {
+        max-height: 369px;
+        overflow: hidden;
+    }
+
+    .prodDetBdr {
+        border: none;
+    }
+}
+
+@media (min-width: 64rem) {
+
+    .prodInfoHead,
+    .mAccordHead .prodInfoHead {
+        --prodInfoHeadSize: 28px;
+    }
+
+    .mAccordHead:not(.accTitle) {
+        display: none;
+    }
+
+    .tblLimit {
+        max-height: initial;
+        overflow: hidden;
+    }
+
+    .featuresExpandBtn,
+    .specsExpandBtn {
+        display: none;
+    }
+
+    .featuresTbl,
+    .specsTblCont {
+        font-size: 16px;
+    }
+
+    .featuresTbl,
+    .specsTblCont {
+        margin-top: 0;
+    }
+
+    .tblLimit .featTb,
+    .tblLimit .specsContentCont {
+        display: inherit;
+    }
+
+    .specsContentCont {
+        padding-bottom: inherit;
+        margin-top: 1rem;
+    }
+
+    .prodDescCont {
+        padding: inherit;
+    }
+
+    .featuresTbl {
+        margin: 1rem 0;
+    }
+
+    /* pdpv21 specific css  */
+    .featuresTbl2 {
+        margin: 0;
+    }
+
+    .prodAttrCont {
+        margin-left: 1rem;
+    }
+
+    .prodInfoCont {
+        margin-top: 3rem;
+    }
+
+    .descTxt {
+        position: relative;
+        overflow: hidden;
+        min-height: 100%;
+    }
+
+    .dDescLimit .featuresSpecCont {
+        max-height: 500px;
+        overflow: hidden;
+    }
+
+    .dDescLimit .descLimit {
+        max-height: none;
+        overflow: visible;
+    }
+
+    .wHide1.showMoreCover {
+        display: block !important;
+    }
+
+    /* baby modifications */
+    .baby .freqBoughtCont h2 {
+        font: 900 22px/1.27 var(--fontDisplay);
+    }
+}

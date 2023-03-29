@@ -1,0 +1,223 @@
+/*********************************************/
+/* Select a store modal */
+/*********************************************/
+@media (min-width: 30rem) {
+    .csCol {
+        width: initial;
+    }
+}
+
+@media screen and (min-width: 40rem) {
+    .ssItm .csBtn {
+        min-width: 140px;
+    }
+}
+
+@media screen and (min-width: 48rem) {
+    .csModal {
+        margin: 2px 0;
+    }
+    
+    .pickItModal .distanceCont {
+        padding: 0;
+        margin: auto;
+    }
+
+    .pickItModal .buttonsWrap {
+        margin: 2rem 0 auto auto;
+        max-width: 30%;
+    }
+
+    .clFm {
+        display: flex;
+    }
+
+    .clFmIpts {
+        flex-grow: 1;
+    }
+
+    .clIpt {
+        position: relative;
+        overflow: visible;
+    }
+
+    .PWAMP .ssMRad,
+    .PWAMP .ssMState,
+    .PWAMP .ssMCollege {
+        top: 120%;
+        max-height: 190px;
+        box-shadow: 10px 13px 22px 0 rgba(0, 0, 0, 0.2);
+        border: 2px solid #d6d6d6;
+        width: 100%;
+        min-width: 150px;
+    }
+
+    .ssMRad h2,
+    .ssMState h2,
+    .ssMCollege h2 {
+        display: none;
+    }
+
+    .ssMRad .ssClose,
+    .ssMState .ssClose,
+    .ssMCollege .ssClose {
+        display: none;
+    }
+
+    .radList {
+        margin-top: 0;
+    }
+
+    .radItm {
+        padding: 6px 21px;
+    }
+
+    .radItm+.radItm {
+        border: none;
+    }
+
+    .radList .radItm[selected] {
+        color: #000;
+        background-color: #d6d6d6;
+    }
+
+    .clIpt .radBtn {
+        max-height: 100%;
+        padding: 0 0 6px 16px;
+    }
+
+    .radBtn span {
+        line-height: 1rem;
+    }
+
+    .ssModal address a.bold {
+        font-weight: 300;
+        color: #000;
+    }
+
+    .clWrap .csBtn {
+        flex-basis: 25%;
+        margin-left: 8px;
+        width: 25%;
+    }
+
+    .ssItm {
+        align-items: center;
+    }
+
+    .ssModal .storesfoundNearby {
+        display: block;
+    }
+
+    .ssItm>div.csStoreDetails {
+        width: 58.33333%;
+    }
+
+    .findMyCollegeBtn {
+        margin-left: 8px;
+    }
+}
+
+@media screen and (min-width: 64rem) {
+    .ssModal {
+        background: rgba(0, 0, 0, 0.5);
+        /* display: block; */
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        top: 0;
+        left: 0;
+        z-index: 2000;
+        padding: 0;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    @supports (-webkit-appearance: none) {
+        .ssModal {
+            height: 105vh;
+        }
+    }
+
+    .modalWrap {
+        width: 83.33%;
+        max-width: 1064px;
+        padding: 58px 48px;
+        /* top: var(--headHeight); */
+        background: #fff;
+        margin: 120px auto;
+        /* height: calc(100vh - var(--headHeight)); */
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: left;
+        cursor: initial;
+    }
+
+    .modalHdr h2 {
+        font: 600 22px/1.45 var(--fontMain);
+    }
+
+    .modalBody {
+        position: relative;
+        display: block;
+    }
+
+    .clFmIpts {
+        flex-basis: 80%;
+    }
+
+    .clFm {
+        display: flex;
+        max-height: 50px;
+    }
+
+    .clGps {
+        text-align: left;
+        margin-left: 0;
+        flex-basis: 100%;
+        padding-left: 0;
+        border-radius: 0;
+    }
+
+    .hBet {
+        align-items: center;
+        flex-basis: 75%;
+    }
+
+    .ssItm {
+        display: flex;
+        align-items: center;
+    }
+
+    .distanceCont {
+        text-align: right;
+    }
+
+    .ssMRad,
+    .ssMState,
+    .ssMCollege {
+        z-index: 202;
+    }
+
+    .csModal .hBet {
+        align-items: flex-start;
+    }
+
+    address a[href*="tel:"],
+    address a[href*="tel:"] strong {
+        color: var(--btnLinkColor);
+        font-weight: 300;
+        text-decoration: none;
+    }
+
+    .pickItModal .modalContent {
+        max-width: 858px;
+    }
+
+    .pickItModal .modalContentInner {
+        padding: 25px 32px;
+    }
+}

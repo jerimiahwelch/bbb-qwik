@@ -1,0 +1,171 @@
+/********************************/
+/* pdp_templates_childProds */
+/********************************/
+@media screen and (min-width: 48rem) {
+    /* Child Product Card - XT List View option begins at 39.9375rem
+        Starting at Tablet portrait (48rem) for now.
+        Consider moving PWAMP desktop trigger to 39.9375 rem to match
+        @media (min-width: 39.9375rem) {
+    */
+    /* GridView - 2 columns */
+    .gridView .cProdCardList,
+    .gridView .cProdCardList.cProdCardList.cProdCardList>div[class*="replaced-content"],
+    .gridView .cProdCardList.cProdCardList>div>div:not(.cProdCard),
+    .gridView .cProdCardList>div:not([placeholder]):not([fallback]):not([overflow]) {
+        height: 100% !important;
+    }
+
+    .gridView .cProdCardListWrap {
+        width: 50%;
+    }
+
+    .gridView .cProdCardListWrap>div[class*="replaced-content"],
+    .gridView .cProdCardListWrap>div:not([placeholder]):not([fallback]):not([overflow]) {
+        height: 100%;
+    }
+
+    .gridView .cProdCard {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        height: calc(100% - 0.5rem);
+    }
+
+    .gridView .cProdImgWrap,
+    .gridView .cProdFulfillWrap {
+        flex: 0 0 auto;
+    }
+
+    .gridView .cProdDetailWrap {
+        flex: 1 0 auto;
+    }
+
+    .cProdFulfillWrap {
+        justify-self: flex-end;
+    }
+
+    /* Column colors */
+    .gridView .swatchTap,
+    .gridView .swatchToggle {
+        height: 36px;
+        width: 36px;
+    }
+
+    .gridView .cProdFulfillWrap,
+    .gridView .cProdFullmentList {
+        min-height: 200px;
+    }
+
+    .gridView .colorSwatches div.swatchTap:nth-of-type(n + 7),
+    .gridView .colorSwatches button.swatchTap:nth-of-type(n + 7) {
+        display: none;
+    }
+
+    /* swatchToggle */
+    .gridView .swatchToggle.colorsSixToggle,
+    .gridView .colorsSixPlus.expanded button.swatchTap:nth-of-type(n + 7) {
+        display: flex;
+    }
+
+    .swatchToggle.colorsThirteenToggle {
+        display: none;
+    }
+
+    /* Child products - List View */
+    .listView .cProdImgWrap {
+        flex-basis: 19.5%;
+        max-width: 19.5%;
+        padding-right: 20px;
+    }
+
+    .listView .cProdDetailWrap {
+        flex-basis: 56.5%;
+        max-width: 56.5%;
+        padding-right: 56px;
+    }
+
+    .listView .cProdCtaWrap {
+        max-width: 80%;
+        flex-basis: 80%;
+        margin-left: 19.5%;
+    }
+
+    .listView .cProdTitle {
+        font-size: 18px;
+    }
+
+    /* list view size facet styling for child products */
+    .listView .sizesSixPlus .prodFacetBtn {
+        display: none;
+    }
+
+    .listView .sizesSixPlus .optionList,
+    .listView .sizesSixPlus .optionList.active {
+        display: flex;
+    }
+
+    .listView .sizesSixPlus .btnSize {
+        color: #000;
+        display: inline-flex;
+        flex-direction: column;
+        font-weight: var(--weightDisplay);
+        padding: 1rem;
+        width: fit-content;
+        background: #fff;
+        border: 2px solid #d6d6d6;
+        margin: 0.25rem;
+        border-radius: var(--btnBorderRad);
+    }
+
+    .listView .sizesSixPlus .btnSize:hover,
+    .listView .sizesSixPlus .btnSize.active {
+        border-color: #1377c9;
+    }
+
+    .listView .sizesWrap.sizesSixPlusListView {
+        width: 50%;
+    }
+
+    #accessories .accPanel {
+        display: initial;
+    }
+}
+
+@media screen and (min-width: 64rem) {
+    .accProdBtnCont {
+        align-items: flex-start;
+    }
+
+    .ProductThumbTile,
+    .productTile {
+        padding-right: 1rem;
+    }
+
+    .accListMain .productItem {
+        border: none;
+        border-bottom: 2px solid #e7e7ea;
+        border-radius: 0;
+    }
+
+    .accListMain .productItem:first-child {
+        border-top: 2px solid #e7e7ea;
+    }
+}
+
+/* Child Product Card - Just under Desktop - 4 columns, grid & list view
+  */
+@media (min-width: 1200px) {
+    .cProds {
+        --minCardHt: 380px;
+    }
+
+    .gridView .cProdCardListWrap {
+        width: 25%;
+    }
+
+    .modalImg:not(.active) .prodSlideSelector,
+    .modalImg:not(.active) .prodSlideSelectorWrap,
+    .modalImg:not(.active) .prodThumbCarousel {
+        /* min-height: 300px; */
+        min-height: 70px;
+    }
+}

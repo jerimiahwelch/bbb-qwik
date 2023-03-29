@@ -1,0 +1,503 @@
+/*********************************************/
+/*pdp_reviewsPtCsr*/
+/*********************************************/
+
+#reviewOverviewSlider amp-img {
+    margin-bottom: 0;
+}
+
+.noReviewsBtn {
+    display: block !important;
+}
+
+.pdpStickyFixed .pdpTabItem2 .stickyRatingCount {
+    bottom: -3px;
+    height: 15px !important;
+}
+
+.pdpStickyNotFixed .pdpTabItem2 .stickyRatingCount {
+    bottom: -3px;
+}
+
+/* Tablet Styles */
+@media (min-width: 48rem) {
+    .reviewsHeading {
+        --revHeadSize: 24px;
+    }
+
+    .ratingsAverageContainer {
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    .reviewTextLight {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .ratingsAverage {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .starsTxtContainer {
+        width: 50%;
+        flex-basis: 2;
+    }
+
+    .ratingsAverageNumber {
+        display: inline-block;
+        width: auto;
+        margin-right: 1rem;
+    }
+
+    .averageStarsContainer,
+    .ratingsAverageTotals {
+        text-align: left;
+        font-size: 11px;
+    }
+
+    .singleChart svg.circularchart {
+        width: auto;
+        max-height: 66px;
+        max-width: 66px;
+    }
+
+    .ratingsAverage .singleChart {
+        position: relative;
+        margin-right: 1rem;
+    }
+
+    .recTxtContainer {
+        text-align: left;
+    }
+
+    .snpTxt.bold {
+        text-align: left;
+        font-size: 16px;
+    }
+
+    .filtersButton label {
+        padding: 1rem;
+    }
+
+    .reviewsCont {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .reviewsCont .hDivider {
+        display: none;
+    }
+
+    .reviewsCont .revDivider {
+        display: none;
+    }
+
+    .ratingsCont {
+        align-items: start;
+        justify-content: start;
+    }
+
+    .recommendedWrapper {
+        margin-left: 1rem;
+    }
+
+    .ratingSnapContainer {
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    #reviewsFiltersListPreview {
+        overflow: visible !important;
+    }
+
+    #photoModal .ratingSnapContainer {
+        justify-content: start;
+    }
+
+    #photoModal.active .modalContentInner {
+        padding: 40px;
+    }
+
+    #photoModal .ratingsCont {
+        margin-bottom: 0.625rem;
+    }
+
+    #photoModal .reviewCont {
+        margin-left: 50px;
+    }
+
+    #photoModal .ratingSnapContainer {
+        justify-content: start;
+    }
+
+    #photoModal .activeThumb {
+        border: 3px solid var(--btnPri);
+    }
+
+    #reviewsFiltersListPreview {
+        overflow: visible !important;
+    }
+}
+
+@media (min-width: 64rem) {
+    .reviewsContainer {
+        position: relative;
+        height: auto;
+        z-index: auto;
+        display: block;
+        padding: 0;
+    }
+
+    .reviewsContainer .modalContent {
+        width: initial;
+        max-width: initial;
+    }
+
+    .mostHelpfulCont,
+    .leastHelpfulCont {
+        display: flex;
+        flex-direction: column;
+        justify-items: stretch;
+        justify-content: stretch;
+    }
+
+    .helpfulReviewCont,
+    .criticalReviewCont {
+        height: auto;
+        flex-grow: 2;
+    }
+
+    .dVb05 {
+        margin-bottom: 0.5rem;
+    }
+
+    .ratingSnapContainer {
+        justify-content: center;
+    }
+
+    .mostHelpfulCont {
+        padding-right: 0.5rem;
+    }
+
+    .filtersReviewsCont {
+        display: none;
+    }
+
+    .modalActive.filtersReviewsCont {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        overflow: hidden auto;
+        z-index: 101;
+    }
+
+    .dskReviewModalContent {
+        background: #fff;
+        width: 83.33%;
+        max-width: 1064px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .dskReviewModalContent .dskReviewHeadWrap {
+        padding: 3rem 2rem 0.3rem 2rem;
+        margin-top: 0;
+        position: fixed;
+        top: 0;
+        background: #fff;
+        width: calc(83.33% - 1rem);
+        max-width: 1064px;
+        z-index: 103;
+    }
+
+    .dskReviewModalContent .reviewsList {
+        padding: 150px 2rem 2rem 2rem;
+    }
+
+    .dskReviewModalContent .reviewsList.withFilters {
+        padding-top: 200px;
+    }
+
+    .reviewsHeading {
+        --revHeadSize: 28px;
+        margin-top: 2rem;
+        text-transform: lowercase;
+        letter-spacing: -0.5px;
+        border-bottom: 2px solid #000;
+        padding-bottom: 0.75rem;
+        font: var(--weightDisplay) var(--revHeadSize) / 1.22 var(--fontDisplay);
+        display: block;
+    }
+
+    .filterModalCont .modalHead,
+    .sortModalCont .modalHead {
+        display: none;
+    }
+
+    .filterModalCont.modalView,
+    .sortModalCont.modalView {
+        display: block;
+        position: relative;
+        z-index: unset;
+        height: initial;
+        width: auto;
+        padding: 0;
+        overflow: visible;
+    }
+
+    .filterOptionsCont {
+        display: flex;
+    }
+
+    .filterListHead {
+        padding: 0 1rem;
+        align-items: center;
+        font: var(--qTxt);
+    }
+
+    .filtersList {
+        padding-bottom: 0;
+    }
+
+    .filterViewCont {
+        padding: 0;
+    }
+
+    .filterFooter,
+    .seeAllBtn {
+        display: none;
+    }
+
+    .headingTxt {
+        font: var(--qTxt);
+        color: #595959;
+        line-height: 46px;
+    }
+
+    .headingTxt::after,
+    .active .headingTxt:after {
+        content: "";
+        display: none;
+    }
+
+    .ratingsCbh:checked~label .headingTxt:after {
+        height: 0;
+        width: 0;
+    }
+
+    .accordionBtn,
+    .dskSortBtn {
+        border: 2px solid #8c8c8c;
+        border-radius: 4px;
+        background: transparent;
+        color: #595959;
+        padding: 0;
+    }
+
+    .sortAccordion {
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .accordionBody,
+    .sortAccordion {
+        position: absolute;
+        min-width: 300px;
+        background: #fff;
+        border-radius: 4px;
+    }
+
+    .desktopReviewPreview.modalActive .active .accordionBody {
+        display: none;
+    }
+
+    .active .accordionBody,
+    .sortModalCont.active .sortAccordion {
+        max-height: initial;
+        padding: 1rem;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+        border: 2px solid #d6d6d6;
+        overflow: auto;
+        margin-top: 0.5rem;
+        z-index: 104;
+    }
+
+    .active .sortAccordion {
+        padding: 0 0 0 0.4rem;
+        margin-top: 0;
+        right: 0;
+    }
+
+    .ratingsFilterCont {
+        position: relative;
+        margin-right: 1rem;
+        border-top: none;
+        padding-bottom: 0.4rem;
+    }
+
+    .downArrowIcon {
+        margin-left: 0.5rem;
+        transition: transform 300ms ease-in;
+    }
+
+    .filtersReviewsCont .customerReviewsCont {
+        margin-top: 0;
+    }
+
+    .customerReviewsCont,
+    .filterModalCont.modalView {
+        overflow: visible;
+    }
+
+    .filtersButton {
+        display: none;
+    }
+
+    .filterSortModalCont {
+        margin-bottom: 0.7rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .sortButton {
+        font: var(--menuLight);
+        display: block;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .sortButton.active,
+    .sortButton:hover {
+        background: #d6d6d6;
+        color: #000;
+    }
+
+    .sortItem {
+        border: none;
+        padding-top: 0.2rem;
+    }
+
+    li.sortItem:last-child {
+        border: none;
+    }
+
+    .sortAccordion ul {
+        margin: 0.2rem 0;
+    }
+
+    .ratingsFilterCont.active .downArrowIcon,
+    .sortModalCont.active .downArrowIcon {
+        transform: rotate(180deg);
+    }
+
+    .plpratingsFilterItemCont {
+        min-width: 150px;
+    }
+
+    .plpratingsFilterItemCont label {
+        margin-left: 0.5rem;
+        margin-right: 1rem;
+    }
+
+    .photoList {
+        margin-left: 1rem;
+    }
+
+    .clientInfo {
+        width: 100%;
+        border-top: 1px solid #d6d6d6;
+        align-content: unset;
+        padding-top: 0.3rem;
+    }
+
+    .reviewsCont {
+        flex-wrap: wrap;
+    }
+
+    .clientLogo {
+        max-height: 20px;
+        overflow: hidden;
+        position: relative;
+        min-width: 70px;
+        width: auto;
+    }
+
+    .clientLogo amp-img {
+        width: inherit;
+        height: inherit;
+    }
+
+    .reviewsMain {
+        border: none;
+    }
+
+    /* desktop photos modal */
+    p.galleryTitle {
+        display: none;
+    }
+
+    .photosModal .modalContent {
+        width: 90vw;
+        min-height: inherit;
+        padding: 0;
+    }
+
+    .photosModal .backButton {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .galleryItems {
+        height: initial;
+        width: initial;
+    }
+
+    .galleryItem {
+        max-width: 510px;
+        height: 510px;
+    }
+
+    #photoModal h6 {
+        font-size: 1.375rem;
+    }
+
+    #photoModal .modalContent {
+        width: 83.33%;
+        max-width: 1062px;
+        min-height: 590px;
+    }
+
+    #photoModal .ratingsPhotos {
+        display: block;
+    }
+
+    #photoModal .photoItemLg {
+        width: 150px;
+        height: 150px;
+    }
+
+    #photoModal #reviewOverviewSlider {
+        min-height: 150px;
+    }
+
+    #reviewOverviewSlider {
+        min-height: 200px;
+    }
+
+    /* end desktop modal */
+}
+
+@media (min-width: 80rem) {
+    #photoModal .reviewCont {
+        width: 355px;
+        margin-left: 75px;
+    }
+}

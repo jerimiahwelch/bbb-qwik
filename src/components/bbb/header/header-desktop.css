@@ -1,0 +1,228 @@
+/*********************************************/
+/*Header -  */
+/*********************************************/
+/* 
+  @import './nav-desktop.css';
+  @import './store-modal-desktop.css';
+*/
+
+#headerWrap {
+  /* This was for scrollbar but scrollbar appears to be visible */
+  width: var(--scrollbarWidth);
+}
+
+@media screen and (min-width: 48rem) {
+  .baby .csLocate strong {
+    font-size: 12px;
+  }
+
+  #headerWrap .headerRow2 {
+    transition: max-height 700ms ease-in-out;
+    min-height: 0;
+  }
+
+  .miniHeader .headerRow2 {
+    max-height: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+  }
+
+  .headerRow2 {
+    max-height: 100vh;
+  }
+
+  .menuBurger {
+    padding-left: 16px;
+    margin-right: 10px;
+  }
+
+  .csLocMsg {
+    max-width: 100%;
+  }
+
+  .logo {
+    margin-left: 0;
+  }
+
+  .baby .logo {
+    padding: 0;
+    width: var(--logoWidth);
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .baby .csLocate strong {
+    font-size: 14px;
+  }
+
+  .headerRow2,
+  .catBarWrap {
+    max-width: 84rem;
+    max-height: 4.875rem;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin: 0 auto;
+  }
+
+  .catBarWrap {
+    width: fit-content;
+  }
+
+  .headerRow1,
+  .tabWrapper {
+    max-width: 84rem;
+    max-height: 4.875rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    margin: 0 auto;
+  }
+
+  .header .logo {
+    margin-right: 50px;
+  }
+
+  .menuBurger {
+    display: block;
+    padding-left: 0px;
+  }
+}
+
+/*********************************************/
+/*Search header -  */
+/*********************************************/
+@media screen and (min-width: 48rem) {
+  .searchInput {
+    border-radius: 20px;
+    display: flex;
+    font-size: var(--txtP);
+    min-height: 40px;
+    padding: 0 1rem;
+  }
+
+  .searchCont {
+    flex-grow: 1;
+    position: relative;
+  }
+
+  .searchCont .modal {
+    background: transparent;
+  }
+
+  #mainSearch {
+    background: #fff;
+    padding: 2px 0;
+  }
+
+  #searchcontainer :focus {
+    outline: 1px dashed #757575;
+  }
+
+  #searchcontainer {
+    width: 100%;
+    border-radius: 20px;
+    height: calc(100vh - 109px);
+    border: 2px solid #d6d6d6;
+    box-shadow: 0.5rem 0.5rem 1.5rem 0 rgba(0, 0, 0, 0.15);
+  }
+
+  #searchcontainer.active {
+    position: fixed;
+    margin: 0 1%;
+    width: 98%;
+    margin-top: 3rem;
+  }
+
+  .hidePencil #searchcontainer.active {
+    top: 0;
+  }
+
+  .searchClear {
+    background: #fff;
+    color: #595959;
+  }
+
+  .inputSearchCancel {
+    display: none;
+  }
+
+  .searchSubmit {
+    color: var(--btnLinkColor);
+    border: none;
+    font-size: 0.65rem;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+
+  .searchClear {
+    cursor: pointer;
+  }
+
+  .typeAhead .searchLink:hover,
+  .typeAhead .navSearchLink:hover {
+    text-decoration: underline;
+    color: var(--btnLinkColor);
+  }
+
+  .typeAhead .searchLink,
+  .quickLinks .searchLink,
+  .recentSearchLink {
+    border: none;
+    padding: 5px 0;
+    display: block;
+  }
+
+  .searchLink:hover,
+  .header .navSelected {
+    color: var(--btnLinkColor);
+    background: #f7f7f7;
+  }
+
+  /* Only highlight Read -> section */
+  .contentSearchCard:hover {
+    color: unset;
+    text-decoration: none;
+    box-shadow: 0 2px 4px 0 rgb(0, 0, 0, 0.5);
+  }
+
+  .contentSearchTitle {
+    font-size: 10px;
+    height: 16px;
+    line-height: 1;
+  }
+
+  .header .contentSearchLink {
+    color: var(--priClr);
+  }
+
+  .header .contentSearchCard:hover .contentSearchLink {
+    text-decoration: underline;
+  }
+
+  .searchClose svg {
+    color: #595959;
+  }
+
+  .searchInputClear {
+    display: none;
+  }
+
+  .searchInput svg {
+    font-size: 0.58rem;
+    margin-right: 0.3rem;
+    margin-top: -2px;
+  }
+
+  .searchInput div.sHide {
+    display: inline-block;
+  }
+
+  label.searchInput.active {
+    justify-content: flex-start;
+    padding-left: 1rem;
+  }
+
+  .searchInput.active svg {
+    display: none;
+  }
+}

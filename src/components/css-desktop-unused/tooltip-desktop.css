@@ -1,0 +1,109 @@
+
+@media (min-width: 48rem) {
+    .PWAMP .pwaOnly.pwaOnly.addToIdeaBrd {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ideaBrdTooltip,
+    .ttDark,
+    .btnSize.outStockOnline::before,
+    .addToIdeaBrd::before {
+        display: none;
+        background-color: var(--ideaBrdTTColor);
+        clip: auto;
+        height: auto;
+        overflow: inherit;
+        top: 45px;
+        right: -62px;
+        border-radius: 6px;
+        padding: 11px 20px;
+        transition: opacity 0.3s ease-out;
+        text-align: center;
+        position: absolute;
+        min-width: 168px;
+    }
+
+    .addToIdeaBrd::before {
+        min-width: 148px;
+    }
+
+    .ttDark,
+    .btnSize.outStockOnline::before {
+        top: unset;
+        right: unset;
+        bottom: 130%;
+        font-weight: var(--weightMain);
+        color: #fff;
+    }
+
+    .addToIdeaBrd:hover .ideaBrdTooltip,
+    .ttWrap .ttDark,
+    .btnSize.outStockOnline:hover:before,
+    .btnSize.outStockOnline:hover:after,
+    .addToIdeaBrd:hover::before,
+    .addToIdeaBrd:hover::after {
+        display: block;
+        z-index: 2;
+    }
+
+    .ttDark.bottom {
+        top: 130%;
+        bottom: unset;
+    }
+
+    .ttDark.bottom:after {
+        border-top: none;
+        border-bottom: 8px solid var(--ideaBrdTTColor);
+        bottom: unset;
+        top: -8px;
+    }
+
+    /* Desktop size select */
+    .ideaBrdTooltip::after,
+    .ttDark::after,
+    .btnSize.outStockOnline::after,
+    .addToIdeaBrd::after {
+        content: "";
+        border-bottom: 8px solid var(--ideaBrdTTColor);
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        left: 50%;
+        position: absolute;
+        margin-left: -4px;
+        top: -6px;
+    }
+
+    .ttDark::after,
+    .btnSize.outStockOnline::after {
+        top: unset;
+        bottom: -8px;
+        border-top: 8px solid var(--ideaBrdTTColor);
+        border-bottom: none;
+    }
+
+    .btnSize.outStockOnline::after,
+    .addToIdeaBrd::after {
+        display: none;
+        bottom: calc(100% + 8px);
+    }
+
+    .addToIdeaBrd:hover::before {
+        content: "Add to Ideaboard";
+        right: 0;
+        white-space: nowrap;
+    }
+
+    .addToIdeaBrd:hover::after {
+        bottom: -10px;
+        margin-left: 0;
+        left: auto;
+    }
+
+    .addToIdeaBrd.btnReset {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

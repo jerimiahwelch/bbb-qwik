@@ -1,0 +1,221 @@
+/*********************************************/
+/*PDP - Dsk Nav Sticky -  */
+/*********************************************/
+
+@media screen and (min-width: 64rem) {
+  .pdpStickyNotFixed {
+    margin-left: -2%;
+    width: 100vw;
+    z-index: 1;
+  }
+
+  .pdpStickyFixed .navContainer2.cta {
+    flex-direction: row-reverse;
+  }
+
+  /** Remove after pdpCollectionV2 deployment */
+  #stickyCtaList {
+    height: 51px;
+  }
+
+  .pdpNavTabsCont2.pdpStickyFixed {
+    left: 0;
+    margin-left: 0;
+    top: 0;
+    bottom: unset;
+  }
+
+  .pdpNavTabsCont2 {
+    width: 100vw;
+    padding-left: 2%;
+    padding-right: 2%;
+    justify-content: center;
+  }
+
+  .pdpNavTabsCont2 .navContainer2 {
+    max-width: 80rem;
+  }
+
+  .navContainer2 .stickyScrollToTop {
+    top: -20px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .navContainer2.pdpStickyFixed .stickyScrollToTop {
+    top: -15px;
+  }
+
+  .navContainer2 .scroll-top-txt {
+    font-size: 11px;
+    bottom: -5px;
+  }
+
+  .navContainer2 .icon.icon-arrow-up {
+    top: 9px;
+  }
+
+  .pdpNavTabsCont2.flush {
+    margin-left: -2%;
+    margin-right: -2%;
+  }
+
+  /* collectionV2 */
+  .collectionV2 .cProdCard .active.qtyOptionList.ffOptionList {
+    width: 100%;
+  }
+
+  .collectionV2 .cProdCard .active.qtyOptionList {
+    max-height: 190px;
+  }
+
+  #collectionCtaList #stickyCtaList {
+    height: initial;
+  }
+
+  .collectionV2 .variableAmpList.variableAmpList.cProdCardList,
+  .collectionV2 .cProdCardListWrap {
+    min-height: 406px;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  /* be careful adjusting these. They affect the PDP sticky nav.
+  The nav may not select the correct item on click if these are not adjusted propertly */
+  #prodInfoScrollTarget,
+  .pdpStickyActive .scrollTarget {
+    top: calc(-1 * (var(--headHeight) - var(--hRow2) + 85px));
+  }
+
+  .pdpStickyActive #socialannexScrollTarget {
+    top: calc(-1 * var(--headHeight) + 2.5rem);
+  }
+
+  .dwGp0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* 
+  Old sticky
+  This can be removed once old sticky is deprecated
+  */
+  .pdpNavTabsCont {
+    border-top: 2px solid #eaeaea;
+    border-bottom: 2px solid #eaeaea;
+    margin-top: 58px;
+    top: var(--headHeight);
+    background: #fff;
+    z-index: 99;
+  }
+
+  .miniHeader .pdpNavTabsCont {
+    top: calc(var(--headHeight) - var(--hRow2));
+  }
+
+  .bundleContainer+.pdpNavTabsCont,
+  .bundleContainer2+.pdpNavTabsCont {
+    margin-top: 0;
+    border-top: 0;
+  }
+
+  .pdpNavTabs {
+    padding: 0;
+    margin: 0;
+  }
+
+  .pdpTabItem {
+    display: inline-block;
+  }
+
+  .pdpTabLink,
+  .pdpTabLink:hover {
+    color: var(--btnLinkColor);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 7px solid #fff;
+    transition: border-color 100ms ease-in;
+  }
+
+  .pdpTabLink.active {
+    border-color: var(--btnLinkColor);
+  }
+
+  .pdpNavTabsContHead {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+    background-color: #fff;
+    transition: 300ms max-height ease-in;
+    transition: 300ms opacity ease-in;
+  }
+
+  .pdpStickyActive .pdpNavTabsContHead {
+    border-bottom: 2px solid #eaeaea;
+    max-height: var(--pdpStickyHeight);
+    opacity: 1;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.15);
+  }
+
+  .pdpNavTabsContHead .pdpNavTabsCont {
+    max-width: 80rem;
+    margin: 0 auto;
+    border-bottom: none;
+    border-top: none;
+  }
+
+  .pdpNavTabsContHead .pdpTabLink {
+    padding-top: 0.5rem;
+    padding-bottom: 0.4rem;
+  }
+
+  .stickyImgCont,
+  .stickyProdHeadCont {
+    display: none;
+  }
+
+  .pdpNavTabsContHead .stickyProdHeadCont {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+  }
+
+  .pdpNavTabsContHead .stickyImgCont,
+  .pdpNavTabsContHead .stickyProdHeadCont {
+    display: flex;
+  }
+
+  .stickyImgCont {
+    min-width: 56px;
+  }
+
+  .stickyRating {
+    width: 79px;
+    height: 15px;
+  }
+
+  /* end old sticky */
+  /* new Sticky */
+  /* collectionV2 */
+  .collectionV2 .variableAmpList.variableAmpList.cProdCardList,
+  .collectionV2 .cProdCardListWrap {
+    min-height: 487px;
+  }
+}
+
+@media screen and (min-width: 84rem) {
+  .pdpStickyNotFixed.flush {
+    margin-left: calc(calc(calc(84rem - 4.3%) - 100vw) / 2);
+  }
+
+  /* collectionV2 */
+  .collectionV2 .variableAmpList.variableAmpList.cProdCardList,
+  .collectionV2 .cProdCardListWrap {
+    min-height: 505px;
+  }
+}

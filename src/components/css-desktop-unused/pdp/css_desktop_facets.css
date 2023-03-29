@@ -1,0 +1,50 @@
+/*********************************************/
+/* PDP facets2 */
+/*********************************************/
+@media (min-width: 48rem) {
+
+    /* Desktop Hover - Tooltip display -
+            Depends on enabling overflow for facet amp-lists.
+            amp-list overflow display!important only possible in PWA
+      */
+    .outStockSdd:hover .ttDark,
+    .outStockOnline:hover .ttDark {
+        display: block;
+    }
+
+    .outStockSdd:hover .ttDark.wHide,
+    .outStockOnline:hover .ttDark.wHide {
+        display: none;
+    }
+
+    .facetsWrap2 .btnColor:nth-child(n + 7) {
+        display: none;
+    }
+    .facetsWrap2 .showAllColor .btnColor {
+        display: flex;
+    }
+}
+
+@media (min-width: 64rem) {
+    .facetsWrap2 .btnColor:nth-child(-n + 9),
+    .facetsWrap2 .showAllColor .btnColor {
+        display: flex;
+    }
+}
+
+@media (min-width: 1200px) {
+    /* Color/Finish Facet - Toggle swatches */
+    .listView .colorsSixPlus button.swatchTap:nth-of-type(n + 7) {
+        display: flex;
+    }
+
+    .listView .colorsSixToggle,
+    .listView .colorsThirteenPlus button.swatchTap:nth-of-type(n + 14) {
+        display: none;
+    }
+
+    .listView .colorsThirteenToggle,
+    .listView .colorsThirteenPlus.expanded button.swatchTap:nth-of-type(n + 14) {
+        display: flex;
+    }
+}

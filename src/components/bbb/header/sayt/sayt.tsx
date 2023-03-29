@@ -2,17 +2,17 @@ import { component$, useStyles$ } from '@builder.io/qwik'
 import type { Signal } from '@builder.io/qwik'
 import { useNavigate } from '@builder.io/qwik-city'
 import { dashLowerCase } from '~/sitewide/utility'
-import { ModalStore } from '../header'
+import { ModalsStore } from '../header'
 
-import searchModal from './search-modal.css?inline'
+import saytCss from './sayt.css?inline'
 
-interface SearchModal {
-  u: ModalStore
+interface Sayt {
+  u: ModalsStore
   searchTerm: Signal
 }
 
-export const SearchModal = component$<SearchModal>(({ u, searchTerm }) => {
-  useStyles$(searchModal)
+export const Sayt = component$<Sayt>(({ u, searchTerm }) => {
+  useStyles$(saytCss)
 
   /* Custom URL on search form submission */
   const nav = useNavigate()

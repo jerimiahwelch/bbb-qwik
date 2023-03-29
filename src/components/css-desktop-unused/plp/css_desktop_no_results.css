@@ -1,0 +1,114 @@
+/*********************************************/
+/*PLP No Results  */
+/*********************************************/
+
+/* Tablet Portrait (768px) */
+@media (min-width: 48rem) {
+/* no results category styling */
+    ul.nrCategories {
+        margin: 0;
+        padding: 0;
+    }
+
+    .nrCatImgCont {
+        max-height: 60px;
+        overflow: hidden;
+        align-items: center;
+        display: flex;
+    }
+
+    .nrCat {
+        padding: 0 0.75rem;
+        list-style-type: none;
+    }
+
+    .nrCatLink:hover p {
+        text-decoration: underline;
+        color: var(--btnLinkColor);
+    }
+
+    .nrCatHead {
+        text-align: left;
+        padding: 0 0.75rem;
+        letter-spacing: var(--narCatHeadSpacing);
+    }
+
+    .nrCat {
+        padding: var(--nrCatPadding);
+    }
+}
+
+@media (min-width: 64rem) {
+    /* no products found snippet styling */
+    .nrCont {
+        flex-wrap: nowrap;
+    }
+
+    .nrRegCont {
+        padding: 64px 40px;
+        background: #eef2f3 url(https://www.bedbathandbeyond.com/static/assets/images/placeholder.png) 100% 0 no-repeat;
+        background-size: contain;
+        margin-right: 1rem;
+    }
+
+    .nrRegHead,
+    .nrHelpHead {
+        font-size: var(--nrHeadSize);
+    }
+
+    .nrCont .parent {
+        margin-bottom: 1.5rem;
+    }
+
+    .nrRegHead {
+        margin-bottom: 2.5rem;
+    }
+
+    .nrHelpTxt {
+        font-size: 16px;
+    }
+
+    .nrCont,
+    .nrCatCont {
+        max-width: 84rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 4%;
+        padding-left: 4%;
+    }
+
+    /* no results category styling */
+    .nrCatItemCont {
+        height: 102px;
+        overflow: hidden;
+        align-items: center;
+        display: flex;
+        position: relative;
+        justify-content: left;
+    }
+
+    .nrCatImgCont {
+        min-height: 100%;
+        overflow: hidden;
+        align-items: center;
+        display: flex;
+        position: absolute;
+        min-width: 100%;
+    }
+
+    .nrCatTitle {
+        font-size: 18px;
+        margin: 0 10%;
+        z-index: 1;
+    }
+
+    .nrCatHead {
+        font-size: var(--nrHeadSize);
+    }
+
+    .baby .nrCatImgCont {
+        min-height: calc(100% * 1.2);
+        min-width: calc(100% * 1.2);
+        right: -2%;
+    }
+}

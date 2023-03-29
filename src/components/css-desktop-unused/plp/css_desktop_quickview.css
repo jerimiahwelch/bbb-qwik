@@ -1,0 +1,73 @@
+/*********************************************/
+/* PDP - Quick View Modal */
+/*********************************************/
+/* for PLP quickView Btn, see product card section */
+#wm_contentQv {
+    padding: 3rem 1rem;
+}
+
+div.qvSliderWrap.qvSliderWrap {
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.qvSliderWrap .sliderRating {
+    justify-content: center;
+}
+
+@media (min-width: 48rem) {
+    body.quickView .prodThumbCarousel {
+        min-height: 300px;
+    }
+
+    .prodDetailsQv {
+        flex-wrap: nowrap;
+    }
+
+    .prodSlidesQv {
+        margin-right: 30px;
+    }
+
+    .prodConfigQv {
+        min-height: 550px;
+    }
+
+    .btnQuickViewWrap {
+        bottom: 4px;
+        position: absolute;
+        z-index: 2;
+    }
+
+    .btnQuickView {
+        animation: loadfadein 0.3s;
+        height: 36px;
+        max-width: 85%;
+    }
+}
+
+/* QuickView only elements like "why we love this" and link. */
+body.quickView .quickView {
+    display: block;
+}
+
+@media (min-width: 64rem) {
+    /* AMP document Body */
+    body.quickView {
+        margin: 120px auto;
+        padding: 0;
+        width: 880px;
+    }
+
+    #wm_contentQv {
+        padding: 1.5rem 3rem;
+    }
+
+    .quickView .dskClickPrompt {
+        display: none;
+    }
+
+    div.qvSliderWrap.qvSliderWrap {
+        margin-left: -2rem;
+        margin-right: -2rem;
+    }
+}

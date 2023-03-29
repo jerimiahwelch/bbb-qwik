@@ -1,0 +1,18 @@
+/* ***************************************** */
+/* Module Story Hero */
+/* ***************************************** */
+/* info box positioning. Comes from api */
+/* Box position depend on background image content */
+
+@media (min-width: 468px) {
+    .storyHeroInfo {
+        --sHSpace1: 1.5rem;
+        --sHSpace2: 2.5rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .storyHeroInfo button {
+        display: block;
+    }
+}

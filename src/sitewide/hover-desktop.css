@@ -1,0 +1,107 @@
+/*********************************************/
+/*site hover*/
+/*********************************************/
+.pointer,
+.btn,
+.link,
+.swatchTap,
+.swatchToggle,
+.wiInfoIcon,
+button,
+.proofLink,
+.csLocate,
+.addToIdeaBrd {
+    cursor: pointer;
+}
+
+.pointAll {
+    pointer-events: all;
+}
+
+a:hover,
+a:hover .black,
+.proofLink:hover,
+.sliderRatingCount:hover {
+    color: var(--btnLinkColor);
+}
+
+a:hover .linkTxt,
+.linkTxt:hover,
+.accountTxt:hover,
+a:hover,
+.csLocate:hover {
+    text-decoration: underline;
+}
+
+.cbccWrap a:hover,
+.mixBanLogo a:hover,
+.csBannerList a:hover {
+    color: #fff;
+}
+
+.bbbLogoSb:hover {
+    color: #1a4e8a;
+}
+
+.babyLogoSb:hover {
+    color: #068488;
+}
+
+.navItemBtn:hover {
+    text-decoration: underline;
+}
+
+.feedbackItm:hover {
+    background: #d6d6d6;
+}
+
+.babyCaLogo:hover,
+.headerAccount:hover,
+.headerCart:hover {
+    color: var(--hLinksSec);
+}
+
+.header .logo:hover {
+    color: #1a4e8a;
+}
+
+.btnPrimary:hover,
+.csBtn:hover {
+    background-color: var(--btnBg);
+    color: #fff;
+}
+
+.linkBlk:hover {
+    color: var(--btnLinkColor);
+}
+
+#wm_footer .linkBlk:hover {
+    color: var(--primary-color);
+}
+
+#wm_footer .footerBtn:hover {
+    color: var(--btnLinkColor);
+    text-decoration: underline;
+}
+
+.moddark:hover {
+    color: #000;
+}
+
+.modlight:hover {
+    color: #fff;
+}
+
+.modlight .btnOutlinePrimary:hover {
+    border-color: #fff;
+}
+
+/* baby modifications */
+.baby .csSdd:hover {
+    color: var(--hLinksSec);
+}
+.baby .headerAccount:hover,
+.baby .header .logo:hover,
+.baby .headerCart:hover {
+    color: #15838b;
+}

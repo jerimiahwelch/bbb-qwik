@@ -1,0 +1,195 @@
+@media screen and (min-width: 48rem) and (max-width: 80rem) {
+  #searchcontainer.active {
+    position: absolute;
+    margin: 0;
+    height: auto;
+    min-height: initial;
+    padding-bottom: 0;
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .searchActive .logo,
+  .searchActive .menuBurger,
+  .searchActive .babyCaLogo {
+    display: none;
+  }
+
+  .searchActive .headerBtn {
+    color: rgb(89, 89, 89);
+    min-height: 30px;
+  }
+
+  .searchList.typeAhead {
+    min-height: 600px;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  #searchcontainer.active {
+    position: absolute;
+    margin: initial;
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border-radius: 20px 20px 8px 8px;
+    padding-bottom: 0;
+  }
+
+  .scrollSearch {
+    max-height: calc(100vh - 161px);
+    overflow-y: auto;
+  }
+
+  #searchSuggestions {
+    top: 0;
+    min-height: 1px;
+    min-width: 1px;
+    position: relative;
+    height: auto !important;
+  }
+
+  #searchSuggestions > div:not([placeholder]):not([fallback]):not([overflow]) {
+    position: static;
+    height: auto !important;
+    min-height: fit-content !important;
+  }
+
+  .searchList {
+    position: relative;
+    padding-top: 0;
+  }
+
+  .searchClear {
+    background: none;
+  }
+
+  .searchList.typeAhead {
+    min-height: 625px;
+    margin-top: 0;
+    margin-right: 0;
+  }
+
+  .quickLinks .searchLink,
+  .recentSearchLink {
+    font-size: var(--txtSm);
+    margin: 3px 0;
+  }
+
+  .quickLinks .recentSearches {
+    justify-content: initial;
+  }
+
+  .topProducts {
+    background: #f7f7f7;
+    height: auto !important;
+    width: 56.5%;
+  }
+
+  .searchTermsCont {
+    width: 43.5%;
+  }
+
+  .topProductsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 1.1rem;
+  }
+
+  .topSearchCard {
+    flex-basis: 33.333333333333333%;
+    padding: 15px 1rem 0 0;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .topProdHead {
+    padding: 1.2rem 1.1rem 0 1.1rem;
+  }
+
+  .topProdHead b {
+    font-weight: normal;
+  }
+
+  .lineClamp2 {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    line-height: 1.2em;
+    max-height: 2.8em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .topTitleCont {
+    margin: 8px 0;
+    font-size: var(--txtSm);
+  }
+
+  .topRatingCont {
+    margin: 8px 0;
+  }
+
+  .ratingBackdrop {
+    color: #888;
+    fill: currentColor;
+  }
+
+  .searchCardLink {
+    display: block;
+    width: 100%;
+  }
+
+  .searchList h4,
+  .searchLink + .searchTitle {
+    color: #000;
+    font-size: var(--txtSm);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .quickLinks .searchTitle,
+  .quickLinks .searchLink,
+  .recentSearchLink {
+    margin: 0;
+    padding: 6px 0;
+  }
+
+  .typeAhead a.navSearchLink {
+    font-weight: 300;
+    width: 100%;
+    display: block;
+    line-height: 1.2rem;
+    padding: 5px 0;
+    transition: opacity 300ms ease-in;
+    opacity: 1;
+  }
+
+  .linkClearRecent {
+    margin-left: 0.4rem;
+  }
+
+  /* baby modifications */
+  .baby .quickLinks .searchTitle,
+  .baby .quickLinks .searchLink {
+    padding: 10px 0;
+  }
+  .baby .searchList.typeAhead {
+    min-height: 600px;
+  }
+
+  .searchInput {
+    height: 42px;
+    line-height: 32px;
+    border-radius: 25px;
+    min-width: 100%;
+  }
+
+  #header.searchActive {
+    z-index: 112;
+  }
+}

@@ -1,0 +1,32 @@
+/*********************************************/
+/*Marketing Banner*/
+/*********************************************/
+@media screen and (min-width: 48rem) {
+    .modMarketingBanner .amp-carousel-button {
+        padding: 0 10%;
+    }
+}
+
+.modMarketingBanner .amp-carousel-button-prev {
+    transform: rotate(90deg);
+}
+
+.modMarketingBanner .amp-carousel-button:hover {
+    cursor: pointer;
+}
+
+.modMarketingBanner .amp-carousel-button:focus {
+    border: none;
+    outline: none;
+}
+
+.modMarketingBanner .amp-disabled {
+    clip-path: none;
+    /* pointer-events: all; */
+}
+
+@media screen and (min-width: 80rem) {
+    .modMarketingBanner {
+        margin-top: 4px;
+    }
+}

@@ -1,0 +1,44 @@
+
+@media (min-width: 64rem) {
+    /* height was covering the facet text */
+    .visualFilterWrap {
+        min-height: 225px;
+    }
+
+    .visualFilter {
+        width: 145px;
+    }
+
+    .visualFilterImg {
+        height: 141px;
+        width: 141px;
+    }
+
+    /* Related Searches - Free Text Search */
+    .rsCont {
+        display: block;
+        text-align: center;
+    }
+
+    .rsTxtIntro,
+    .rsItemCont,
+    .rsItemsScrollCont {
+        display: inline;
+    }
+
+    .rsTxtIntro {
+        margin-right: 0.5rem;
+    }
+
+    .rsItemCont:after {
+        content: none;
+    }
+
+    #relatedSearchesVisualFacetsList .rsLinks {
+        margin-bottom: 0.25rem;
+    }
+
+    .rsSearchList {
+        margin-top: 0;
+    }
+}

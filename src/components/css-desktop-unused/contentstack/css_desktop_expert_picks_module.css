@@ -1,0 +1,33 @@
+/*********************************************/
+/* Expert Picks Module */
+/*********************************************/
+
+#expertPicksCarousel div[role="listitem"]:hover {
+    position: relative;
+    z-index: 2;
+}
+
+/* Tablet Portrait (768px) */
+@media (min-width: 48rem) {
+    /* expertPicks container individual card */
+    .expertPicksCard {
+        width: 362px;
+    }
+}
+
+/* Tablet Landscape (1024px) */
+@media (min-width: 64rem) {
+    amp-carousel.overflowExpertPicks .amp-sacrifice {
+        flex-basis: 33.33%;
+    }
+
+    amp-carousel.overflowExpertPicks .i-amphtml-carousel-scroll {
+        display: flex !important;
+        white-space: unset !important;
+    }
+
+    .overflowExpertPicks,
+    .overflowExpertPicks .i-amphtml-carousel-scroll {
+        overflow: visible !important;
+    }
+}

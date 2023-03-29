@@ -1,0 +1,67 @@
+/*********************************************/
+/*Module Merchandising Module -  */
+/*********************************************/
+@media screen and (min-width: 48rem) {
+    .modMerchModule .right,
+    .modMerchModule .left {
+        min-width: unset;
+        transform: none;
+    }
+
+    .modMerchText.modMerchText {
+        position: absolute;
+        top: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        background: none;
+    }
+
+    .viewV12 .modMerchText {
+        width: 60%;
+        right: 0;
+    }
+
+    .modMerchBrandLogo {
+        width: 160px !important;
+    }
+
+    .modMerchText.right {
+        right: 0;
+        text-align: right;
+    }
+
+    .modMerchText.right .modMerchCta {
+        justify-content: end;
+    }
+
+    .modMerchText .modMerchTitle {
+        font-size: 18px;
+    }
+
+    /* merch module v7 styling */
+    .modMerchTwoUp {
+        margin-right: 0.5rem;
+    }
+
+    .modMerchTwoUp+.modMerchTwoUp {
+        margin: 0 0 0 0.5rem;
+    }
+
+    .modMerchTitleV7 {
+        font: var(--theme-h3-serif-font);
+        letter-spacing: var(--theme-serif-letter-spacing);
+    }
+}
+
+@media screen and (min-width: 64rem) {
+    .modMerchTwoUpTxt {
+        padding: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 80rem) {
+    .modMerchText .modMerchTitle {
+        margin-bottom: 1rem;
+        font-size: 24px;
+    }
+}

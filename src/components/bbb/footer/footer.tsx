@@ -2,6 +2,7 @@ import { component$, Resource, useSignal, useResource$ } from '@builder.io/qwik'
 import { isServer } from '@builder.io/qwik/build'
 
 import './footer.css'
+import './footer-desktop.css'
 
 /**
  * Render footer

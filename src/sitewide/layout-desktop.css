@@ -1,0 +1,779 @@
+/*********************************************/
+/*css_layout */
+/*********************************************/
+.btnPrimary {
+    cursor: pointer;
+}
+
+.csBtn,
+.btnPrimary {
+    transition: all 0.5s ease;
+}
+
+/* Tablet Portrait (768px) */
+@media (min-width: 48rem) {
+    .tCol {
+        flex-direction: column;
+    }
+    .t2 {
+        width: 16.67%;
+    }
+    .t3 {
+        width: 25%;
+    }
+    .t4 {
+        width: 33.33333%;
+    }
+    .t5 {
+        width: 41.6667%;
+    }
+    .t6 {
+        width: 50%;
+    }
+    .t7 {
+        width: 58.33333%;
+    }
+    .t8 {
+        width: 66.666666%;
+    }
+    .t9 {
+        width: 75%;
+    }
+    .t10 {
+        width: 83.333%;
+    }
+    .t12 {
+        width: 100%;
+    }
+    .tShow {
+        display: unset;
+    }
+    .hideTb {
+        display: none;
+    }
+    .tExpand {
+        max-height: none;
+    }
+    .tExpand~.toggle {
+        display: none;
+    }
+    .tFlex {
+        display: flex;
+    }
+    .tMidCtr {
+        align-items: center;
+        justify-content: center;
+    }
+    .tGridCol6 {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+    .tColGap075 {
+        column-gap: 0.75rem;
+    }
+    .tNoBorder {
+        border: none;
+    }
+    .tNoRad {
+        border-radius: unset;
+    }
+    .tRad08 {
+        border-radius: 0.8rem;
+        overflow: hidden;
+    }
+    .tTxtLft {
+        text-align: left;
+    }
+    .tTxtRt {
+        text-align: right;
+    }
+    .tTxtCenter {
+        text-align: center;
+    }
+    .tRow {
+        flex-direction: row;
+    }
+    .tRowR {
+        flex-direction: row-reverse;
+    }
+    .tVariableAmpListWrap {
+        min-height: 1px;
+    }
+    .tVariableAmpList {
+        min-height: 1px;
+        min-width: 1px;
+        position: relative;
+    }
+    .tVariableAmpList > div[class*="replaced-content"],
+    .tVariableAmpList > div:not([placeholder]):not([fallback]):not([overflow]) {
+        /*animation: loadfadein 0.4s;*/
+        position: static;
+        height: auto;
+        min-height: fit-content;
+    }
+
+    /*************************
+    css grid utility classes
+    **************************/
+    .tGrid {
+        display: grid;
+    }
+    .tGridCol2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .tGridCol4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    /* column classes */
+    .tGridCol1 {
+        grid-column: 1 / 2;
+    }
+    .tGridCol2 {
+        grid-column: 2 / 3;
+    }
+    .tGridCol3 {
+        grid-column: 3 / 4;
+    }
+    .tGridCol4 {
+        grid-column: 4 / 5;
+    }
+    .tGridColSpan1-2 {
+        grid-column: 1 / 3;
+    }
+    .tGridColSpan2-4 {
+        grid-column: 3 /5;
+    }
+    /* row classes */
+    .tRowSpan1-3 {
+        grid-row: 1 / 3;
+    }
+    .tRowSpan1-4 {
+        grid-row: 1 / 4;
+    }
+
+    .headerRow1,
+    .headerRow2,
+    .catBarWrap,
+    .tabWrapper,
+    .container {
+        max-width: 84rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+    #scrollToTopButton {
+        display: none;
+    }
+
+    /* tablet utility classes */
+    .tV0 {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .tV025 {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .tG0 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .tg05 {
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
+
+    .tGl2 {
+        padding-left: 2rem;
+    }
+
+    .tv0 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .tvb0 {
+        margin-bottom: 0;
+    }
+
+    .tv05 {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .tV1 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .tVb05 {
+        margin-bottom: 0.5rem;
+    }
+
+    .tVb1 {
+        margin-bottom: 1rem;
+    }
+
+    .tvp0 {
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+    }
+
+    .tvp1 {
+        padding-top: 1rem;
+    }
+
+    .tVp1 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .tvp15 {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .tvp25 {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .tgp0 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .tgp1 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .tgr05 {
+        margin-right: 0.5rem;
+    }
+
+    .tgpr05 {
+        padding-right: 0.5rem;
+    }
+
+    .tgpl05 {
+        padding-left: 0.5rem;
+    }
+
+    .tgpr1 {
+        padding-right: 1rem;
+    }
+
+    .tgpr2 {
+        padding-right: 2rem;
+    }
+
+    .tgpl1 {
+        padding-left: 1rem;
+    }
+
+    .tgpl2 {
+        padding-left: 2rem;
+    }
+
+    .tgl2col {
+        padding-left: 16.67%;
+    }
+
+    .tvt15 {
+        margin-top: 1.5rem;
+    }
+
+    .tvt2 {
+        margin-top: 2rem;
+    }
+
+    .tgpl05 {
+        padding-left: 0.5rem;
+    }
+
+    .tInlineFlex {
+        display: inline-flex;
+    }
+
+    .tBorderTop {
+        border-top: 2px solid #e7e7ea;
+    }
+
+    .tBorderBottom {
+        border-bottom: 2px solid #e7e7ea;
+    }
+
+    .tFill {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .tStretch {
+        align-items: stretch;
+    }
+
+    .tCtr {
+        align-content: center;
+    }
+
+    .tFend {
+        justify-content: flex-end;
+    }
+
+    .tNoWrap {
+        flex-wrap: nowrap;
+    }
+
+    .sliderWrap .amp-scrollable-carousel-slide {
+        margin: 0 0.5rem 0 0.5rem;
+    }
+
+    .tTxt125.lineClamp1 {
+        line-height: 1.4em;
+        max-height: 2em;
+    }
+
+    .tSticky {
+        position: sticky;
+    }
+
+    .tLightGreyBg {
+        background-color: #f7f7f8;
+    }
+}
+  /* Tablet Landscape (1024px) */
+@media (min-width: 64rem) {
+    .d1 {
+        width: 8.33333%;
+    }
+    .d2 {
+        width: 16.666666%;
+    }
+    .d3 {
+        width: 25%;
+    }
+    .d4 {
+        width: 33.333333%;
+    }
+    .d5 {
+        width: 41.666666%;
+    }
+    .d6 {
+        width: 50%;
+    }
+    .d7 {
+        width: 58.333333%;
+    }
+    .d8 {
+        width: 66.666666%;
+    }
+    .d9 {
+        width: 75%;
+    }
+    .d10 {
+        width: 83.333333%;
+    }
+    .d11 {
+        width: 91.666667%;
+    }
+    .d12 {
+        width: 100%;
+    }
+    .dShow,
+    .dShow1.dShow1 {
+        display: unset;
+    }
+    .dShow.flex {
+        display: flex;
+    }
+    .dHide {
+        display: none;
+    }
+    .dHideImport {
+        display: none !important;
+    }
+    .dExpand {
+        max-height: none;
+    }
+    .dExpand~.toggle {
+        display: none;
+    }
+    .vd0 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .dFlex {
+        display: flex;
+    }
+    /* for pdp details before 2 col layout */
+    .dRowR {
+        flex-direction: row-reverse;
+    }
+    /* pdpv21 specific css  */
+    .dRow {
+        flex-direction: row;
+    }
+    .dEnd {
+        justify-content: flex-end;
+    }
+    .dStart {
+        justify-content: flex-start;
+    }
+    .dShrink0 {
+        flex-shrink: 0;
+    }
+    .dCenter {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .dRad08 {
+        border-radius: 0.8rem;
+        overflow: hidden;
+    }
+    /* Was 1200px, now 1024 - refactor needed */
+    .hide1200 {
+        display: none;
+    }
+    .show1200 {
+        display: flex;
+        pointer-events: all;
+    }
+    /*************************
+    css grid utility classes
+    **************************/
+    /* only adding what I need for collections
+    .dGrid {
+        display: grid;
+    }
+      */
+    .dGridCol3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    /* column classes */
+    .dGridCol2 {
+        grid-column: 2 / 3;
+    }
+    .dGridCol3 {
+        grid-column: 3 / 4;
+    }
+    /* row classes */
+    .dRow1 {
+        grid-row: 1 / 2;
+    }
+    .dRowSpan3 {
+        grid-row: 1 / 4;
+    }
+
+    .dskFlex {
+        display: flex;
+    }
+
+    .dskMidCtr {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dskfend {
+        justify-content: flex-end;
+    }
+
+    .dSelfEnd {
+        align-self: flex-end;
+    }
+
+    .dskNoWrap {
+        flex-wrap: nowrap;
+    }
+
+    .dFlush1 {
+        margin-left: -1rem;
+        margin-right: -1rem;
+    }
+
+    .dskV0 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .dskVt0 {
+        margin-top: 0;
+    }
+
+    .dskVb1 {
+        margin-bottom: 1rem;
+    }
+
+    .dskVb15 {
+        margin-bottom: 1.5rem;
+    }
+
+    .dskVb25 {
+        margin-bottom: 2.5rem;
+    }
+
+    .dskVt025 {
+        margin-top: 0.25rem;
+    }
+
+    .dskVt05 {
+        margin-top: 0.5rem;
+    }
+
+    .dskVt1 {
+        margin-top: 1rem;
+    }
+
+    .dskVt125 {
+        margin-top: 1.25rem;
+    }
+
+    .dskVt2 {
+        margin-top: 2rem;
+    }
+
+    .dskVt3 {
+        margin-top: 3rem;
+    }
+
+    .dskV1 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .dskVpt0 {
+        padding-top: 0;
+    }
+
+    .dskVpt025 {
+        padding-top: 0.25rem;
+    }
+
+    .dskVpt05 {
+        padding-top: 0.5rem;
+    }
+
+    .dskVpt2 {
+        padding-top: 2rem;
+    }
+
+    .dskVp2 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .dskVpb0 {
+        padding-bottom: 0;
+    }
+
+    .dskVpb075 {
+        padding-bottom: 0.75rem;
+    }
+
+    .dskVp15 {
+        padding-bottom: 1.5rem;
+    }
+
+    .dskVpb25 {
+        padding-bottom: 2.5rem;
+    }
+
+    .dskGpr1 {
+        padding-right: 1rem;
+    }
+
+    .dskGpl1 {
+        padding-left: 1rem;
+    }
+
+    .dVb05 {
+        margin-bottom: 0.5rem;
+    }
+
+    .dskVp0 {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+
+    .dskVp1 {
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+    }
+
+    .dskVp25 {
+        padding-bottom: 2.5rem;
+        padding-top: 2.5rem;
+    }
+
+    .dGp0 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .dG0 {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .dG05 {
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
+
+    .dGl1 {
+        margin-left: 1rem;
+    }
+
+    .dGr1 {
+        margin-right: 1rem;
+    }
+
+    .dGr2 {
+        margin-right: 2rem;
+    }
+
+    .dGl025 {
+        margin-left: 0.25rem;
+    }
+
+    .dGl05 {
+        margin-left: 0.5rem;
+    }
+
+    .dGlp025 {
+        padding-left: 0.25rem;
+    }
+
+    .dGlp05 {
+        padding-left: 0.5rem;
+    }
+
+    .dgp075 {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .dGp1 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .dGp2 {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .dGpr05 {
+        padding-right: 0.5rem;
+    }
+
+    .dGpr1 {
+        padding-right: 1rem;
+    }
+
+    .dGpl1 {
+        padding-left: 1rem;
+    }
+
+    .dGpr2 {
+        padding-right: 2rem;
+    }
+
+    .dGp5 {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    /* desktop positionoing */
+    .dAbsolute {
+        position: absolute;
+    }
+
+    .dPosBtm1 {
+        bottom: 1rem;
+    }
+
+    /* desktop border */
+    .dskNoBorder {
+        border: none;
+    }
+
+    .dskNoBorderTop {
+        border-top: none;
+    }
+
+    .dskNoBorderBottom {
+        border-bottom: none;
+    }
+
+    .dskBorderTop {
+        border-top: 2px solid #e7e7ea;
+    }
+
+    .dskBorderBottomDrk {
+        border-bottom: 2px solid #000;
+    }
+
+    .dInlineBlock {
+        display: inline-block;
+    }
+
+    .dBRad0375 {
+        border-radius: 0.375rem;
+    }
+
+    .dBRad05 {
+        border-radius: 0.5rem;
+    }
+
+    .dTxtBaseline {
+        vertical-align: baseline;
+    }
+}
+  /* Desktop Wide (1280px) */
+@media (min-width: 80rem) {
+    .dw3 {
+        width: 25%;
+    }
+    .dw2 {
+        width: 16.6667%;
+    }
+    .dw4 {
+        width: 33.333333%;
+    }
+    .dw5 {
+        width: 41.66667%;
+    }
+    .dw6 {
+        width: 50%;
+    }
+    .dw7 {
+        width: 58.333333%;
+    }
+    .dw8 {
+        width: 66.666666%;
+    }
+    .dw10 {
+        width: 83.3334%;
+    }
+    .dskWHide {
+        display: none;
+    }
+    .dwShow {
+        display: unset;
+    }
+    .dwFlex {
+        display: flex;
+    }
+    .dwMidCtr {
+        align-items: center;
+    }
+}

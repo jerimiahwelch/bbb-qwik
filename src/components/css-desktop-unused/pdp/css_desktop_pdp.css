@@ -1,0 +1,1041 @@
+/*********************************************/
+/* PDP css */
+/*********************************************/
+@import './css_desktop_stickynav.css';
+@import './css_desktop_reviews.css';
+@import './css_desktop_qa.css';
+@import './css_desktop_prod_details.css';
+@import './css_desktop_oos_modal.css';
+@import './css_desktop_product_bundles.css';
+@import './css_desktop_facets.css';
+@import './css_desktop_child_products.css';
+@import './css_desktop_related_categories.css';
+
+/* Tablet Portrait (768px) */
+@media (min-width: 48rem) {
+    .pdp #wm_content {
+        max-width: 84rem;
+    }
+
+    /* Collection ATC btn styling */
+    .collectItemCnt {
+        font-size: 1.375rem;
+    }
+
+    /* collectionV2 */
+    .collectionV2 .cProdCard .active.qtyOptionList.ffOptionList {
+        width: 120%;
+    }
+
+    .collectionV2 .variableAmpList.variableAmpList.cProdCardList,
+    .collectionV2 .cProdCardListWrap {
+        min-height: 383px;
+    }
+
+    /* id="first" Responsive Breakpoints */
+    /* 3 column alley */
+    .prodSlides {
+        padding-right: 30px;
+    }
+
+    /* Same Day Delivery Tooltips */
+    [data-sdd-filter] .outStockSdd:hover .facetTip {
+        background-color: #595959;
+        border-radius: 6px;
+        bottom: calc(100% + 12px);
+        color: #fff;
+        display: block;
+        font: var(--menuLight);
+        left: 50%;
+        padding: 11px 20px;
+        position: absolute;
+        text-decoration: none;
+        transform: translateX(-50%);
+        width: 180px;
+    }
+
+    [data-sdd-filter] .outStockSdd:hover .facetTip::before {
+        content: "";
+        height: 12px;
+        transform: rotate(45deg);
+        width: 12px;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        background: #595959;
+        left: 50%;
+        margin: 0 0 -6px -8.5px;
+    }
+
+    /* Facet tooltip styling */
+    .prodRegisterItStoreList:hover,
+    .pickItList:hover,
+    .estDelivDateList:hover,
+    #prodDeliverZipList:hover {
+        overflow: visible !important;
+    }
+
+    #prodDeliverZipList .cartPanel {
+        margin: 0;
+    }
+
+    .prodRegisterItBtn:hover::before {
+        box-sizing: border-box;
+    }
+
+    .colorSelected .ttColor,
+    .sizeSelected .ttSize,
+    .sizeSelected .ttConjunction,
+    .colorSelected .ttConjunction,
+    .colorSelected.sizeSelected .ttMsgWrap,
+    .colorSelected.sizeSelected .tooltipWrap::before {
+        display: none;
+    }
+
+    .facetBtn {
+        position: relative;
+        overflow: visible;
+        min-height: 50px;
+    }
+
+    .prodRegisterItBtn {
+        padding-right: 2rem;
+        height: auto;
+    }
+
+    /* pdp version 2 */
+    a.prodRegisterItBtn {
+        min-height: auto;
+        padding-right: 0;
+    }
+
+    .cartPanel .btn {
+        min-height: 50px;
+    }
+
+    .prodRegisterIt .facetBtn::before,
+    .prodRegisterIt .facetBtn::after,
+    .pBarCont::before,
+    .pBarCont::after {
+        display: none;
+    }
+
+    .prodRegisterIt.noColor .facetBtn:hover::before,
+    .prodRegisterIt.noSize .facetBtn:hover::before,
+    .facetBtn:hover::before,
+    .pBarCont:hover::before {
+        padding: 11px 16px;
+        border: 1px solid var(--ttClr);
+        position: absolute;
+        display: inline-block;
+        background: #fff;
+        bottom: 100%;
+        margin-bottom: 15px;
+        color: #000;
+        font-size: var(--txtSm);
+        font-weight: var(--weightMain);
+        width: 100%;
+        overflow: hidden;
+        white-space: normal;
+        border-radius: 6px;
+    }
+
+    .reviewsPopTmp .pBarCont:hover::before {
+        margin-bottom: 14px;
+    }
+
+    .facetBtn.noColor:hover::after,
+    .facetBtn.noSize:hover::after,
+    .prodRegisterIt.noColor .facetBtn:hover::after,
+    .prodRegisterIt.noSize .facetBtn:hover::after,
+    .pBarCont:hover::after {
+        background: linear-gradient(135deg,
+                transparent,
+                transparent 45%,
+                white 45%,
+                white);
+        border: 1px solid var(--ttClr);
+        border-top: none;
+        border-left: none;
+        bottom: 100%;
+        left: 50%;
+        width: 1em;
+        height: 1em;
+        transform: translateX(-50%) rotate(45deg);
+        content: "";
+        position: absolute;
+        margin-bottom: 7px;
+        display: inline-block;
+    }
+
+    .prodRegisterIt.noColor.noSize .facetBtn:hover::before,
+    .facetBtn.noColor.noSize:hover::before {
+        content: "Please select a Color and Size";
+    }
+
+    .prodRegisterIt.noColor .facetBtn:hover::before,
+    .facetBtn.noColor:hover::before {
+        content: "Please select a Color";
+    }
+
+    .prodRegisterIt.noSize .facetBtn:hover::before,
+    .facetBtn.noSize:hover::before {
+        content: "Please select a Size";
+    }
+
+    /* reviews bar chart tooltip */
+    .pBarCont {
+        text-align: center;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .pBarCont:hover::before {
+        max-width: 255px;
+        left: auto;
+    }
+
+    .pBarCont:hover::after {
+        margin-bottom: 7px;
+    }
+
+    .pBarCont[data-p-bar="5"]:hover::before {
+        content: "click to see 5 star reviews only";
+    }
+
+    .pBarCont[data-p-bar="4"]:hover::before {
+        content: "click to see 4 star reviews only";
+    }
+
+    .pBarCont[data-p-bar="3"]:hover::before {
+        content: "click to see 3 star reviews only";
+    }
+
+    .pBarCont[data-p-bar="2"]:hover::before {
+        content: "click to see 2 star reviews only";
+    }
+
+    .pBarCont[data-p-bar="1"]:hover::before {
+        content: "click to see 1 star reviews only";
+    }
+
+    /* swatches */
+    .swatchTap,
+    .swatchToggle {
+        margin: 2px 2px 0 0;
+    }
+
+    .swatchTap:hover {
+        border: 2px solid var(--btnLinkColor);
+    }
+
+    .price,
+    .pricesList .price,
+    .priceInCart_true.priceCartOnly {
+        font: var(--weightHeavy) 18px/1.28 var(--priceFont);
+    }
+
+    .priceInCart_true.price {
+        font-size: var(--txtSm);
+        font-family: var(--fontMain);
+    }
+
+    .title {
+        font-size: 24px;
+        line-height: 1.22;
+    }
+
+    /* for prod photo tooltip */
+    .prodPhotoListWrap:hover {
+        overflow: visible;
+    }
+
+    /* PDP2.1 styling */
+    .modalImg.tSticky {
+        top: calc(var(--headHeight) + var(--navV2HeadHeightOffset));
+    }
+
+    .modalImg:hover {
+        z-index: 1;
+    }
+
+    .modalImg.active:hover {
+        z-index: 100;
+    }
+
+    .stickyCont {
+        overflow: visible;
+    }
+
+    .pdpv21 .modalImg.active .prodThumbCarousel,
+    .pdpv3 .modalImg.active .prodThumbCarousel {
+        max-height: unset;
+    }
+
+    /*img zoom */
+    .pdpv21 .zoomImg {
+        display: none;
+    }
+
+    .pdpv3 .zoomImg {
+        display: initial;
+    }
+
+    .pdpv21 .modalImg.active .zoomImg {
+        display: initial;
+    }
+
+    .prodBuy21.tRad08 {
+        overflow: visible;
+    }
+
+    .pdpv3 .prodImgSeeMore2,
+    .pdpv3 .prodPhotoList .amp-carousel-button {
+        transition: border-color 300ms ease-in-out;
+    }
+
+    .pdpv3 .seeMore:hover .prodImgSeeMore2,
+    .pdpv3 .prodPhotoList .amp-carousel-button:hover:not(.amp-disabled) {
+        border-color: var(--btnBg);
+    }
+
+    .pdpv3 .prodPhotoList .amp-carousel-button.amp-disabled {
+        clip: unset;
+        -webkit-clip-path: unset;
+        clip-path: unset;
+        height: unset;
+        width: unset;
+        opacity: 0.4;
+        color: #656476;
+        pointer-events: all;
+    }
+
+    .pdpv3 .singleImg .prodPhotoList .amp-carousel-button.amp-disabled {
+        visibility: hidden;
+    }
+
+    /* Left Column, Add Cart sub-column */
+    .prodSlides {
+        width: 58%;
+    }
+
+    /* Right Column, Prod Descr sub-column */
+    .prodConfig {
+        width: 42%;
+        max-width: 370px;
+    }
+
+    /* Desktop size select */
+    .sizesSixPlus .btnSize.outStockOnline:hover:before {
+        display: none;
+    }
+
+    .sizesSixPlus .btnSize {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .starterPackItem .sizesSixPlus .outStockOnline {
+        text-decoration: line-through;
+    }
+
+    .sizesSixPlus .btnSize .ttDark {
+        display: none;
+    }
+
+    .loyaltyPointsMsg .couponEligibility .ttMsgWrap {
+        margin-right: -2.5rem;
+    }
+
+    /*
+    https://www.bedbathandbeyond.com/store/product/stainless-steel-mixing-bowl/100366/?wmPwa=true&wmDebug=1
+    https://em02-www.bbbyapp.com/store/product/jaipur-living-calypso-havana-rug-in-beige/5312721?keyword=5312721&wmPwa&wmDebug=1*/
+    .btnSize.outStockOnline:hover {
+        overflow: visible;
+        z-index: 1;
+    }
+}
+
+/* PDP - Tablet Landscape */
+@media (min-width: 64rem) {
+    /* 3 column alley */
+    .prodDescr {
+        padding-right: 30px;
+    }
+
+    .parent .prodFulfillmentList2:hover {
+        overflow: visible !important;
+    }
+
+    /* Left Column, Add Cart sub-column */
+    .prodSlides {
+        flex: unset;
+        width: 31.5%;
+    }
+
+    .prodBuy {
+        border-top: none;
+        padding-top: 0;
+        width: 52%;
+    }
+
+    /* Right Column, Prod Descr sub-column */
+    .prodConfig {
+        flex-wrap: nowrap;
+        max-width: unset;
+        width: 68%;
+    }
+
+    .prodDescr {
+        width: 55%;
+    }
+
+    .modal .Shipping.Policies table {
+        width: inherit;
+    }
+
+    .Shipping.Policy.modalContentInner {
+        padding: 1rem 0 0 0;
+    }
+
+    /* Image Modal */
+    .modalImg.active .modalImgContent {
+        height: calc(100vh - 6rem);
+        margin: 3rem;
+        padding: 0;
+        max-width: calc(100vw - 6rem);
+        width: 100%;
+    }
+
+    .modalImg:not(.active) {
+        transition: opacity 300ms ease-in-out;
+    }
+
+    .secondPt {
+        background: #fff;
+        z-index: 2;
+        position: relative;
+    }
+
+    /* PDP v2.1 */
+    .pdpv21 .prodPhotoListWrap {
+        order: 1;
+        padding-top: 83.333%;
+    }
+
+    .pdpv21 .singleImg .prodPhotoListWrap {
+        padding-top: 100%;
+        width: 100%;
+    }
+
+    .pdpv21 .collectionImg .prodPhotoListWrap {
+        padding-top: 100%;
+    }
+
+    .pdpv21 .collectionImg .modalImg.active .prodPhotoListWrap {
+        padding-top: 0;
+    }
+
+    .pdpv21 .modalImg.active .prodPhotoListWrap {
+        order: inherit;
+    }
+
+    .modalImg.active .prodPhotoListWrap {
+        height: calc(100vh - 6rem - 95px);
+        width: 100%;
+    }
+
+    .prodSlideSelector {
+        align-items: unset;
+        display: block;
+        height: unset;
+        justify-content: unset;
+    }
+
+    .prodSlideSelectorWrap {
+        min-height: 70px;
+    }
+
+    .pdpV21 .prodPhotoSelList {
+        min-height: 515px;
+    }
+
+    .pdpV21 .active .prodPhotoSelList {
+        min-height: 150px;
+    }
+
+    .tapTarget {
+        display: none;
+    }
+
+    .modalImg.active .prodPhotoSelList {
+        margin: 0;
+    }
+
+    .prodThumbCarousel .prodSlideThumb {
+        left: unset;
+        position: relative;
+        margin: 0 10px 0 0;
+    }
+
+    /* PDP2.1 */
+    .pdpv21 .prodSlideThumb {
+        margin-right: 0;
+    }
+
+    .pdpv21 .modalImg.active .prodSlideThumb,
+    .pdpv3 .modalImg.active .prodSlideThumb {
+        width: unset;
+        height: unset;
+    }
+
+    .colorSwatches div.swatchTap:nth-of-type(n + 7),
+    .colorSwatches button.swatchTap:nth-of-type(n + 7) {
+        display: flex;
+    }
+
+    .colorSwatches div.swatchTap:nth-of-type(n + 14),
+    .colorSwatches button.swatchTap:nth-of-type(n + 14),
+    .less,
+    .cbh:checked+.colorSwatches .more {
+        display: none;
+    }
+
+    /* swatchToggle */
+    .swatchToggle.colorsSixToggle {
+        display: none;
+    }
+
+    .swatchToggle.clr13,
+    .swatchToggle.colorsThirteenToggle {
+        display: flex;
+    }
+
+    /* product img slides */
+    .prodSlideSelectorWrap .amp-carousel-slide:nth-child(n + 6) {
+        display: none !important;
+    }
+
+    .active .prodSlideSelectorWrap .amp-carousel-slide:nth-child(n + 6) {
+        display: inline-block !important;
+    }
+
+    .modalImg:not(.active) .prodSlideSelector,
+    .modalImg:not(.active) .prodSlideSelectorWrap,
+    .modalImg:not(.active) .prodThumbCarousel {
+        min-height: 460px;
+    }
+
+    .pdpv21 .prodSlideSelector {
+        height: 100%;
+    }
+
+    .pdpv21 .active .prodSlideSelector {
+        height: 97px;
+    }
+
+    .pdpv21 .modalImg.active .prodSlideSelectorWrap {
+        width: 100%;
+    }
+
+    .pdpv21 .modalImgContent {
+        max-height: 515px;
+    }
+
+    .pdpv21 .modalImgContent.singleImg {
+        max-height: unset;
+    }
+
+    .pdpv21 .active .modalImgContent,
+    .pdpv3 .active .modalImgContent {
+        max-height: inherit;
+    }
+
+    .pdpv21 .seeMore amp-img {
+        visibility: hidden;
+        position: absolute;
+    }
+
+    .pdpv21 .active .seeMore amp-img {
+        visibility: visible;
+        position: relative;
+    }
+
+    .pdpv21 .active .seeMore .prodImgSeeMore2 {
+        display: none;
+    }
+
+    .prodImgSeeMore {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.9);
+        font-size: var(--txtSm);
+    }
+
+    .prodImgSeeMore2 {
+        top: calc(50% - 40px);
+        border: 2px solid #d6d6d6;
+        max-width: calc(100% - 6px);
+        display: inline-block;
+    }
+
+    .image.seeMore {
+        text-align: center;
+    }
+
+    .modalImg.active .prodImgSeeMore {
+        display: none;
+    }
+
+    .modalImg .amp-scrollable-carousel-slide,
+    .modalImg .amp-sacrifice {
+        height: unset;
+        max-height: 70px;
+        max-width: 70px;
+        margin: 0 10px 10px 0;
+    }
+
+    .pdpv21 .modalImg .amp-scrollable-carousel-slide,
+    .pdpv21 .modalImg .amp-sacrifice {
+        width: 100%;
+        max-width: 92px;
+        max-height: 92px;
+        margin: 0 0 1rem 0;
+    }
+
+    .pdpv21 .active.modalImg .amp-sacrifice {
+        margin: 0 1rem 0 0;
+    }
+
+    .modalImg:not(.active) .prodThumbCarousel .i-amphtml-carousel-scroll {
+        white-space: unset !important;
+        overflow: visible;
+    }
+
+    .media .thumbVidIconCont {
+        display: flex;
+    }
+
+    .pdpv21 .media.seeMore .thumbVidIconCont {
+        display: none;
+    }
+
+    .zoomImg {
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 300ms ease-in;
+    }
+
+    .PWAMP .modalImg.active .prodPhotoListWrap {
+        height: calc(90vh - 154px);
+    }
+
+    .modalImg.active .prodSlideSelectorWrap {
+        min-height: 154px;
+        position: relative;
+    }
+
+    .PWAMP .modalImg.active .modalImgContent {
+        height: 90vh;
+    }
+
+    .prodSlide,
+    .prodThumbCarousel amp-img {
+        cursor: pointer;
+    }
+
+    .modalImg.active .prodSlideSelector {
+        min-height: 154px;
+        padding: 2.5rem 2rem;
+    }
+
+    .modalImg.active .modalImgClose {
+        background: transparent;
+    }
+
+    /*
+        pdpv3 overrides
+        increased the image size to 127px by 127px
+    */
+    .pdpv3 .modalImg.active .prodSlideSelectorWrap {
+        min-height: 175px;
+    }
+
+    .pdpv3.PWAMP .modalImg.active .prodPhotoListWrap {
+        height: calc(90vh - 175px);
+    }
+
+    .pdpv3 .modalImg.active .prodSlideSelector {
+        min-height: 155px;
+        margin: 1rem 0;
+    }
+
+    .pdpv3 .modalImg.active .prodThumbCarousel {
+        margin: 0;
+    }
+
+    body.pdpv3 {
+        --prodThumbHeight: auto;
+    }
+
+    .pdpv3 .modalImg:not(.active) .prodSlideSelector,
+    .pdpv3 .modalImg:not(.active) .prodSlideSelectorWrap,
+    .pdpv3 .modalImg:not(.active) .prodThumbCarousel,
+    .pdpv3 .prodPhotoSelList {
+        min-height: 110px;
+    }
+
+    .pdpv3 .modalImg:not(.active) .prodThumbCarousel .i-amphtml-carousel-content {
+        width: 100%;
+    }
+
+    /* dynamic content modal */
+    .dynamicCont {
+        min-height: 150px;
+    }
+
+    /* JW 8.3.22 - remove dskClickPrompt rules after pdpv3 transition */
+    .dskClickPrompt {
+        opacity: 0;
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150px;
+        border: 2px solid #d6d6d6;
+        border-radius: 20px;
+        background-color: #fff;
+        transition: opacity 300ms ease-in-out;
+        font: var(--weightHeavy) var(--txtP) var(--fontMain);
+        color: #595959;
+        line-height: 1;
+        display: block;
+    }
+
+    .pdpv21 .dskClickPrompt {
+        border-radius: 6px;
+        min-height: 40px;
+        width: 106px;
+    }
+
+    /* pdpv3 ******************/
+    .pdpv3 .prodPhotoListWrap {
+        order: unset;
+        padding-top: 100%;
+    }
+
+    .pdpv3 .modalImgContent {
+        max-height: 860px;
+        max-width: 713px;
+    }
+
+    .pdpv3 .modalImg .amp-scrollable-carousel-slide,
+    .pdpv3 .modalImg .amp-sacrifice {
+        margin: 0 0.8rem 0 0;
+        max-height: var(--prodThumbHeight);
+        max-width: var(--prodThumbHeight);
+        width: calc(20% - 0.8rem);
+    }
+
+    .pdpv3 .modalImg.active .amp-scrollable-carousel-slide,
+    .pdpv3 .modalImg.active .amp-sacrifice {
+        max-width: 127px;
+        max-height: 127px;
+    }
+
+    .pdpv3 .modalImg:not(.active) .prodSlideSelectorWrap,
+    .pdpv3 .modalImg:not(.active) .prodSlideSelector {
+        height: var(--prodThumbHeight);
+    }
+
+    .pdpv3 .seeMore amp-img {
+        position: initial;
+    }
+
+    .pdpv3 .prodImgSeeMore2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .pdpv3 .prodPhotoList .amp-carousel-button {
+        border-radius: 50%;
+        background-color: #fff;
+        border: solid 2px #f2f2f3;
+        color: #000;
+        background-image: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.01 6.15"><path d="M6 6.15a1.07 1.07 0 01-.6-.2l-5-4.2A1 1 0 01.25.35a1 1 0 011.4-.1L6 3.85l4.4-3.6a1 1 0 011.4.1 1 1 0 01-.1 1.4L6.65 6a1.85 1.85 0 01-.65.15z"/></svg>');
+        cursor: pointer;
+        padding: 1.2rem;
+        display: initial;
+    }
+
+    .pdpv3 .prodPhotoList .amp-carousel-button-next {
+        transform: rotate(270deg);
+    }
+
+    .pdpv3 .prodPhotoList .amp-carousel-button-prev {
+        transform: rotate(90deg);
+    }
+
+    /* PDPv3 zoom classes */
+    .pdpv3 .i-amphtml-carousel-slide-item[aria-hidden='false'] amp-img {
+        transform-origin: center;
+        transition: transform 0.3s;
+        will-change: transform;
+    }
+
+    .pdpv3 .zoomImg {
+        opacity: 1;
+        pointer-events: none;
+        transition: transform 0.15s;
+        will-change: transform;
+    }
+
+    .pdpv3 .zoomDetail {
+        display: none;
+    }
+
+    .pdpv3 .zoomImg .zoomDetail {
+        display: block;
+    }
+
+    .pdpv3 .zoomDetail {
+        animation: loadfadein 0.3s;
+        z-index: 1;
+    }
+
+    .fulfillBox {
+        outline: 1px solid #d6d6d6;
+        outline-offset: -1px;
+        transition: outline 100ms ease-in-out;
+    }
+
+    .fulfillBox:hover {
+        /* Outline instead of border to avoid text inside button shifting on selection */
+        outline: solid 2px var(--btnPri);
+        outline-offset: -2px;
+    }
+
+    /* end pdpv3 */
+    .dskClickPrompt:hover {
+        text-decoration: underline;
+    }
+
+    .prodPhotoListWrap:hover .dskClickPrompt {
+        opacity: 1;
+    }
+
+    .modalImg.active .dskClickPrompt {
+        display: none;
+    }
+
+    /* size select */
+    .accQtyPopupCont {
+        padding: 0.5rem;
+        overflow-x: hidden;
+    }
+
+    .accQtyPopupCont .accQtyNumbBtn {
+        max-width: 100%;
+        margin: 0.2rem 0;
+    }
+
+    .accQtyPopupCont .inStock.outStockOnline .outStockOnlineMsg {
+        display: unset;
+    }
+
+    .accQtyPopupCont .outStock {
+        background: #e2e2e2;
+        color: #888;
+        cursor: not-allowed;
+    }
+
+    .accQtyPopupCont .outStockOnline {
+        background: #e2e2e2;
+        color: #888;
+    }
+
+    .accQtyPopupCont .outStock>.stockStatus {
+        opacity: 1;
+    }
+
+    .accQtyPopupCont .active,
+    .accQtyPopupCont .accQtyNumbBtn:hover {
+        background-color: #d6d6d6;
+        color: #000;
+    }
+
+    /* Details section -> move description left & Product Highlights / attributes right. */
+    .detDescr {
+        order: 1;
+    }
+
+    /* listview buttons */
+    .viewBtns {
+        color: #d6d6d6;
+        font-size: 50px;
+        line-height: 1;
+    }
+
+    .viewBtns .wi:hover {
+        color: #1377c9;
+    }
+
+    .gridView .wi.wiGridView,
+    .listView .wi.wiListView {
+        color: #000;
+    }
+
+    /* Child products - List View */
+    .listView .cProdImgWrap {
+        flex-basis: 25%;
+        max-width: 25%;
+    }
+
+    .listView .cProdDetailWrap {
+        flex-basis: 40%;
+        max-width: 40%;
+        padding-right: 30px;
+    }
+
+    .listView .cProdCtaWrap {
+        flex-basis: 35%;
+        max-width: 35%;
+        padding-right: 0;
+        margin-left: 0;
+    }
+
+    .cProdCard .active.qtyOptionList {
+        bottom: initial;
+        box-shadow: -5px 12px 15px 0 rgb(0 0 0 / 20%);
+    }
+
+    /* registry CTA */
+    /* now is hidden until product is personalized */
+    .activeRegistryCta .pdpQtyInputCont:not(.personalize),
+    .activeRegistryCta.personalized .pdpQtyInputCont.personalize {
+        flex-basis: 20%;
+    }
+
+    .prodBuy21 .activeRegistryCta .registryCtaCont:not(.SSWP),
+    .prodBuy21 .activeRegistryCta .fulfillCtaCont:not(.personalize),
+    .prodBuy21 .activeRegistryCta.personalized .fulfillCtaCont.personalize {
+        flex-basis: 40%;
+        margin-top: 0.25rem;
+        max-width: 40%;
+    }
+
+    .activeRegistryCta.prodFulfillmentList2 .registryCtaCont,
+    .activeRegistryCta .pdpQtyInputCont {
+        padding-right: 0.5rem;
+    }
+
+    .pdpv3 .activeRegistryCta.prodFulfillmentList2 .registryCtaCont,
+    .pdpv3 .activeRegistryCta .pdpQtyInputCont {
+        padding-right: 1rem;
+    }
+
+    .customPreviewCont button:hover {
+        text-decoration: underline;
+    }
+
+    .customPreview {
+        max-height: 120px;
+        max-width: 120px;
+    }
+
+    /*
+      I really hate this type of CSS.
+      Not sure why we didn't use utility classes for adjusting the width
+    */
+
+    .pdpv3 .activeRegistryCta .registryCtaCont:not(.SSWP),
+    .pdpv3 .activeRegistryCta .fulfillCtaCont:not(.personalize),
+    .pdpv3 .activeRegistryCta.personalized .fulfillCtaCont.personalize {
+        flex-basis: auto;
+        margin-top: auto;
+        max-width: 80%;
+        padding-left: 0;
+    }
+
+    .pdpv3 .activeRegistryCta .collectionBtmCont .registryCtaCont:not(.MSWP) {
+        max-width: 100%;
+    }
+
+    .pdpv3 .activeRegistryCta.prodFulfillmentList2 .registryCtaCont {
+        padding-right: 0.5rem;
+    }
+
+    .loyaltyPointsMsg {
+        width: fit-content;
+    }
+
+    .bPlusPriceWrap {
+        min-height: 3rem;
+    }
+}
+
+@media (min-width: 75rem) {
+    /* Left Column, Add Cart sub-column */
+    .prodSlides,
+    .prodBuy {
+        width: 40%;
+    }
+
+    .prodBuy {
+        min-width: 320px;
+    }
+
+    /* Right Column, Prod Descr sub-column */
+    .prodConfig,
+    .prodDescr {
+        width: 60%;
+    }
+
+    /* 3 column alley padding */
+    .prodSlides,
+    .prodDescr {
+        padding-right: 40px;
+    }
+
+    .brandVideoFrame {
+        height: 34rem;
+    }
+}
+
+@media screen and (min-width: 80rem) {
+
+    /* size select */
+    .accQtyPopupCont {
+        /* make sure it overlaps the pdp sticky menu */
+        z-index: 100;
+    }
+
+    /*
+    PDP2.1
+    On 1280 and above the swatches wrap so toggle is on its own line.
+    Making it just slightly narrower
+    */
+    .colorSwatches {
+        width: 90%;
+    }
+
+    .pdpv3 .modalImg:not(.active) .prodThumbCarousel .i-amphtml-carousel-scroll {
+        white-space: noWrap !important;
+    }
+
+    body.pdpv3 {
+        --prodThumbHeight: 127px;
+    }
+
+    .pdpv3 .modalImg .amp-scrollable-carousel-slide,
+    .pdpv3 .modalImg .amp-sacrifice {
+        width: 100%;
+    }
+}

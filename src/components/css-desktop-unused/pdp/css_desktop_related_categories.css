@@ -1,0 +1,28 @@
+/*********************************************/
+/*PDP - pdp_relatedCategoriesSsr */
+/*********************************************/
+.relCatSlide:hover .relCatImg {
+    border-color: var(--btnLinkColor);
+}
+
+.relCatSlide:hover {
+    text-decoration: none;
+}
+
+@media screen and (min-width: 64rem) {
+    .simpleSliderWrap {
+        min-height: 188px !important;
+    }
+
+    .simpleSlider {
+        justify-content: center;
+    }
+
+    .relCatSlide {
+        flex: 0 0 145px;
+    }
+
+    .relCatImg {
+        width: 141px;
+    }
+}

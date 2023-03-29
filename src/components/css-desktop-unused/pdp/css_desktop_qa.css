@@ -1,0 +1,90 @@
+/*********************************************/
+/*pdp_qaPt*/
+/*********************************************/
+
+@media (min-width: 64rem) {
+    .sortCont .sortModalCont.modalView.sortModalCont.modalView {
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        height: initial;
+    }
+
+    .dskQA .sortCont {
+        display: none;
+    }
+
+    .questionCont:last-child {
+        border-bottom: none;
+    }
+
+    .accPanel .qaHeader {
+        display: inherit;
+    }
+
+    .modalContent .qaHeader {
+        border: none;
+        font-size: 19px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .modalContent .qaSummaryCont p {
+        margin: 0;
+    }
+
+    .wide.active.qaModal .modalContentInner {
+        padding: 0;
+    }
+
+    .modalContent .qaTopContainer {
+        padding: 3rem 2rem 0.5rem 2rem;
+        top: 0;
+        margin: 0 auto;
+        z-index: 104;
+        background: #fff;
+    }
+
+    .qaTopContainer .sortCont {
+        border-bottom: 2px solid #d6d6d6;
+        padding-bottom: 1.5rem;
+    }
+
+    .qaTopContainer .modalClose {
+        right: 1rem;
+        top: 1rem;
+        width: auto;
+    }
+
+    .modalContent .qaTotalsCont {
+        padding: 0px 2rem 2rem 2rem;
+        border-bottom: 1px solid #d6d6d6;
+    }
+
+    .qaModal .modalContentInner {
+        background: #fff;
+    }
+
+    .dskQA .qaSummaryCont p {
+        margin: 1.5rem 0;
+    }
+
+    /* pdpv21 specific css */
+    .pdpV21 .dskQA .qaSummaryCont p {
+        margin: 4px 0 8px 0;
+    }
+
+    .dskQA .qaTotalsCont {
+        border-top: 2px solid #d6d6d6;
+    }
+
+    .qaModal .active.modalView {
+        width: initial;
+        height: initial;
+    }
+
+    .qaMain.accClosed,
+    .qaMain.accClosed .accPanel {
+        display: block;
+    }
+}

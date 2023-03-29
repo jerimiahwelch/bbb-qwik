@@ -1,0 +1,129 @@
+/*********************************************/
+/* Hero Module -  */
+/*********************************************/
+@media screen and (min-width: 48rem) {
+    .modCsBRad {
+        border-radius: 8px;
+    }
+
+    .modCsHeroModule.viewV9 img,
+    .modCsHeroModule.viewV1 img {
+        min-width: unset;
+        transform: none;
+    }
+
+    .modCsHeroModule.viewV7 .modCsBgImg {
+        width: 57%;
+        margin-left: 43%;
+    }
+
+    .modCsHeroModule.viewV7 .modCsHeroText {
+        width: 43%;
+    }
+
+    .modCsHeroText {
+        position: absolute;
+        top: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        text-align: left;
+        border-bottom: 0px;
+        width: 40%;
+        padding-right: 3em;
+        padding-left: 3em;
+        align-items: flex-start;
+    }
+
+    .modCsHeroTextBg {
+        background-color: #f7f7f8 !important;
+    }
+
+    .modCsPlayBtnV9 {
+        bottom: 1.25em;
+    }
+
+    /* v6 specific classes */
+    .modCsBackgroundCont {
+        width: 60%;
+    }
+
+    .modCsHeroCont {
+        width: 40%;
+    }
+
+    .modCsHeroImg {
+        height: 171px !important;
+        margin: 0 auto;
+        width: 286px !important;
+    }
+
+    /* v1 specific classes */
+    .modCsHeroSlide {
+        margin: 0 25px;
+    }
+
+    .modCsHeroModule.viewV1 .amp-carousel-button {
+        background: none;
+        background-color: #fff;
+        background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.01 6.15" width="18" height="16" fill="%23656476"%3E%3Cpath d="M6 6.15a1.07 1.07 0 01-.6-.2l-5-4.2A1 1 0 01.25.35a1 1 0 011.4-.1L6 3.85l4.4-3.6a1 1 0 011.4.1 1 1 0 01-.1 1.4L6.65 6a1.85 1.85 0 01-.65.15z"/%3E%3C/svg%3E');
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 2px solid #e7e7ea;
+        border-radius: 50%;
+        box-shadow: 0 0 0 5px #fff;
+        display: block;
+        height: 50px;
+        margin: 0;
+        position: absolute;
+        width: 50px;
+    }
+
+    .modCsHeroModule.viewV1 .amp-carousel-button-prev {
+        transform: rotate(90deg);
+    }
+
+    .modCsHeroModule.viewV1 .amp-carousel-button-next {
+        right: 0;
+        transform: rotate(270deg);
+    }
+
+    .modCsHeroModule.viewV1 .modCsHeroTitle {
+        font-size: 20px;
+    }
+
+    .modCsHeroModule.viewV1 .amp-carousel-button:hover {
+        background-image: var(--heroModCarouselBtn);
+        border-color: var(--priClr);
+        cursor: pointer;
+    }
+
+    .viewV1 .modCsHeroText {
+        justify-content: center;
+        min-height: unset;
+    }
+
+    .modCsHeroSelector {
+        bottom: 2rem;
+    }
+}
+
+@media screen and (min-width: 64rem) {
+    .modCsHeroModule.viewV1 .modCsHeroTitle {
+        font-size: 28px;
+    }
+    
+    .brandVideoModal {
+        width: 83.33%;
+        max-width: 1024px !important;
+    }
+}
+
+@media screen and (min-width: 71rem) {
+    .modCsHeroModule.viewV9 .modCsHeroTitle {
+        font-size: 32px;
+    }
+
+    .modCsHeroModule.viewV1 .modCsHeroTitle {
+        font-size: 34px;
+    }
+}

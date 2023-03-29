@@ -1,0 +1,82 @@
+/*********************************************/
+/*Module Content Full Width -  */
+/*********************************************/
+@media screen and (min-width: 48rem) {
+    .modContBrandCta a {
+        display: inline;
+    }
+
+    .modContHotspotFlyoutCont {
+        max-width: 300px;
+    }
+
+    .hotspotFlyoutDskAlign {
+        position: absolute;
+        width: 300px;
+        top: 0;
+        bottom: 0;
+    }
+
+    #wm_content.container {
+        overflow: visible;
+    }
+
+    .hoverUnderline:hover {
+        text-decoration: underline;
+    }
+
+    .modBorderBtm {
+        border: none;
+    }
+
+    .modContentBlock.viewV7.viewV7 {
+        margin-left: -2%;
+        margin-right: -2%;
+        width: unset;
+    }
+
+    .modContLinkV7:hover {
+        text-decoration: none;
+    }
+
+    .modContLinkV7:hover .modContHeadV7,
+    .modContLinkV7:hover .modContDescV7 {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .modContLinkV7:hover .modContHeadV7 {
+        color: var(--modContentHeadColor);
+    }
+
+    .modContLinkV7:hover .black .btn {
+        text-decoration: none;
+    }
+}
+
+@media screen and (min-width: 64rem) {
+    .container .modContentBlock {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .dskFullWidth:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        bottom: 0;
+        width: 99999px;
+        z-index: -1;
+        background-color: inherit;
+        left: -50%;
+    }
+
+    .modContHeadV7 {
+        font: 400 50px/.94 var(--fontDisplay);
+    }
+
+    .modContDescV7 {
+        font: 300 16px/1.37 var(--fontMain);
+    }
+}

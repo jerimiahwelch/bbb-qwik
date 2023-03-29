@@ -1,0 +1,13 @@
+/*********************************************/
+/* Module Category */
+/*********************************************/
+@media screen and (min-width: 48rem) {
+    .modCat .visualNav:hover {
+        text-decoration: none;
+    }
+
+    .modCat.viewV6 .wrap {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+}

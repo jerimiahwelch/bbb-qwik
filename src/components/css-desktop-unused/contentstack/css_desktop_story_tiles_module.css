@@ -1,0 +1,45 @@
+/* ***************************************** */
+/* Module Story Tiles */
+/* ***************************************** */
+@media screen and (min-width: 48rem) {
+    .flex.tiles2 {
+        display: flex;
+    }
+
+    .modStoryTiles a {
+        flex-basis: 100%;
+    }
+
+    .tiles4 a {
+        width: auto;
+    }
+
+    .storyTilesTitle {
+        font-weight: 600;
+    }
+}
+
+@media screen and (min-width: 64rem) {
+    .modStoryTiles p {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .modStoryTiles .cPt16b8 {
+        padding-top: 1rem;
+    }
+
+    .modStoryTiles .cPx40 {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+
+    .modStoryTiles .cpb24 {
+        padding-bottom: 1.5rem;
+    }
+
+    .storyTilesTitle {
+        font-weight: 700;
+        font-size: 18px;
+    }
+}

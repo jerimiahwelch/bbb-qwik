@@ -1,24 +1,28 @@
-import { component$, useSignal, useStore } from '@builder.io/qwik'
+import { component$, useSignal, useStore, useStyles$ } from '@builder.io/qwik'
 import { useLocation } from '@builder.io/qwik-city'
 import { spaceCase } from '~/sitewide/utility'
 
-import './header.css'
+import headerCss from './header.css?inline'
+import headerDesktopCss from './header-desktop.css?inline'
 
-import { SearchModal } from './search-modal/search-modal'
+import { Sayt } from './sayt/sayt'
 
-export interface ModalStore {
+export interface ModalsStore {
   navActive: boolean
   searchActive: boolean
 }
 
 export default component$(() => {
+  useStyles$(headerCss)
+  useStyles$(headerDesktopCss)
+
   /* Search Term */
   const serverLoc = useLocation()
   const searchTermVal = spaceCase(serverLoc.params.searchTerm || '')
   const searchTerm = useSignal(searchTermVal)
 
   /* Modals Store - Later: transfer to context */
-  const u = useStore<ModalStore>({
+  const u = useStore<ModalsStore>({
     navActive: false,
     searchActive: false,
   })
@@ -31,7 +35,7 @@ export default component$(() => {
       id='headerWrap'
       data-header-v2='true'
     >
-      <amp-list
+      {/* <amp-list
         binding='no'
         class='pencilBannerAL'
         data-feature='siteNavV2'
@@ -45,8 +49,8 @@ export default component$(() => {
         noloading
         src='amp-state:navV2Data'
         template='pencilBannerTemplate'
-      ></amp-list>
-      <div class='mixedBanner vp0'>
+      ></amp-list> */}
+      {/* <div class='mixedBanner vp0'>
         <div id='CBCCBanner' class='flex tabWrapper'>
           <div class='cbccWrap flex h100 sHide'>
             <a
@@ -232,7 +236,7 @@ export default component$(() => {
             ></amp-list>
           </div>
         </div>
-      </div>
+      </div> */}
       <div
         id='header'
         class='s12 midJust header headerRow1'
@@ -314,7 +318,7 @@ export default component$(() => {
               What product can we help you find?
             </div>
           </label>
-          <SearchModal u={u} searchTerm={searchTerm} />
+          <Sayt u={u} searchTerm={searchTerm} />
         </div>
         <div class='wHide dwPreload dwShow parent dskAcctCont'>
           <div

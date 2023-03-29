@@ -1,0 +1,55 @@
+/*********************************************/
+/*pdp_productBundlesPt*/
+/*********************************************/
+@media screen and (min-width: 48rem) {
+    .accWrap.prodItemWrap,
+    .labelCont.accPanel,
+    .labelCont.accChildPanel {
+        display: block;
+    }
+
+    .prodItemWrap .accPanel {
+        max-height: 100vh;
+    }
+
+    .bundleContainer {
+        min-height: 350px;
+    }
+
+    .bundleChildList>div {
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        /*For three products */
+        justify-content: center;
+    }
+
+    .bundleProductName {
+        height: 80px;
+        width: 114px;
+    }
+
+    .lineClamp3 {
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        display: -webkit-box;
+        line-height: 1.25em;
+        max-height: 3.8em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media screen and (min-width: 64rem) {
+    .bundleCont:last-child {
+        justify-content: initial;
+        width: 33.3333%;
+    }
+
+    .bundleTxtCont {
+        font-size: var(--txtMed);
+    }
+
+    .bundleProductName {
+        width: 144px;
+    }
+}

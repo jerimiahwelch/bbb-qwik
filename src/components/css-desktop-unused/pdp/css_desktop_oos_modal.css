@@ -1,0 +1,69 @@
+/*********************************************/
+/*pdp_outOfStockModalPt*/
+/*********************************************/
+@media (max-width: 1063px) {
+    .cancelCont {
+        order: 3;
+    }
+}
+
+@media (min-width: 1064px) {
+    .modal.outOfStockCont.active {
+        display: flex;
+        align-items: center;
+    }
+
+    .outOfStockInner {
+        display: flex;
+    }
+
+    .outOfStockCont .modalContent {
+        padding: 1rem 0.5rem;
+    }
+
+    .outOfStockInner.formSuccess {
+        padding: 10px 40px 2rem 40px;
+    }
+
+    .formSuccess .outOfStockInner .d6:first-child {
+        padding-right: 2rem;
+    }
+
+    .parent.d6:first-child {
+        padding-right: 0.5rem;
+    }
+
+    .questionsCont {
+        height: 100%;
+        justify-content: center;
+    }
+
+    .questionsCont h2 {
+        font-size: 28px;
+    }
+
+    .findStoreBtn {
+        padding-bottom: 0;
+        min-height: inherit;
+    }
+
+    .outProdInfoCont {
+        margin-bottom: 3rem;
+    }
+
+    .outStockProdCol {
+        width: 100%;
+    }
+
+    .formSuccess .outStockProdCol {
+        width: 50%;
+    }
+
+    .stockSuggestHead {
+        font: 300 22px/1.45 var(--fontMain);
+    }
+
+    .stockSuggestImg {
+        max-width: 140px;
+    }
+}

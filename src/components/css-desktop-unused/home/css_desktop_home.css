@@ -1,0 +1,67 @@
+/*********************************************/
+/*Home*/
+/*********************************************/
+/* PWA only */
+.home .items-center,
+.clp .items-center {
+    justify-content: center;
+}
+
+a.fullImg:hover *,
+.contactless:hover * {
+    text-decoration: underline;
+}
+
+/* Tablet Portrait (768px) */
+@media screen and (min-width: 48rem) {
+    #productCarouselv5 amp-carousel {
+        min-height: 348px;
+    }
+
+    .homeV2 #wm_content,
+    .clpV2 #wm_content {
+        max-width: 48rem;
+    }
+}
+
+@media screen and (min-width: 64rem) {
+    .homeV2 #wm_content,
+    .clpV2 #wm_content {
+        max-width: 64rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    /* had to scope this to homepage as it was affecting scraped pages like CLP
+    Not sure why React is overriding this on just home page
+    https://bedbathandbeyond.atlassian.net/browse/PPS-1899 */
+    .homeV2 .heroH3 {
+        font: var(--font-weight-medium) 14px / var(--line-height-normal)
+        var(--theme-heading-eyebrow-font);
+    }
+}
+
+/* Desk Slider (4 & 6 card) Breakpoint */
+@media screen and (min-width: 1101px) {
+    #productCarouselv5 amp-carousel {
+        min-height: 421px;
+    }
+}
+
+@media screen and (min-width: 80rem) {
+    .homeV2 #wm_content,
+    .clpV2 #wm_content {
+        max-width: 80rem;
+    }
+
+    /* TODO - this is messy */
+    .homeV2 .h3:not(.sliderHeader) {
+        font: 600 40px/1.13 var(--fontDisplay);
+    }
+
+    .homeV2 .flush,
+    .clpV2 .flush {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

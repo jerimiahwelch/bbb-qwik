@@ -1,0 +1,390 @@
+/*********************************************/
+/*Dsk sliders -  */
+/*********************************************/
+.sliderControlsCont {
+    display: none;
+}
+
+@media (min-width: 48rem) {
+    .container .flush .sliderWrap {
+        margin-left: initial;
+        margin-right: initial;
+    }
+
+    .container .sliderWrap {
+        margin-left: -2%;
+        margin-right: -2%;
+    }
+
+    .sliderCard {
+        width: 154px;
+    }
+
+    .sliderWrap .sliderCard:hover {
+        z-index: 2;
+    }
+
+    .recommendationsCarousel {
+        min-height: 310px;
+    }
+}
+
+@media (min-width: 1101px) {
+    .sliderControlsCont {
+        display: block;
+    }
+
+    .container .sliderWrap {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 84rem;
+    }
+
+    .sliderControlsCont {
+        display: block;
+    }
+
+    #wm_content>.sliderWrap {
+        margin: 40px 2rem 48px;
+    }
+
+    .sliderWrap amp-carousel,
+    .certonaSliderWrap .sliderContainer,
+    .collectionsSlider .sliderSub {
+        margin-left: auto;
+        margin-right: auto;
+        width: 91.66667%;
+        overflow: hidden;
+    }
+
+    .sliderWrap .i-amphtml-carousel-scroll[hide-scrollbar="false"],
+    .tiles3.wrap::-webkit-scrollbar,
+    .scrollContainer::-webkit-scrollbar {
+        scrollbar-width: none;
+    }
+
+    .certonaSliderWrap amp-carousel>div:first-child,
+    .certonaSliderWrap amp-carousel .i-amphtml-carousel-scroll {
+        scrollbar-width: none;
+        /* For Firefox */
+    }
+
+    .certonaSliderWrap amp-carousel>div:first-child::-webkit-scrollbar,
+    .certonaSliderWrap amp-carousel .i-amphtml-carousel-scroll::-webkit-scrollbar {
+        display: none;
+        /* For Chromium */
+    }
+
+    .sliderWrap .i-amphtml-carousel-scroll[hide-scrollbar="false"]::-webkit-scrollbar,
+    .tiles3.wrap::-webkit-scrollbar,
+    .scrollContainer::-webkit-scrollbar {
+        display: none;
+    }
+
+    .sliderWrap .variableAmpList .sliderControlsCont.sliderControlsCont {
+        width: 100%;
+        align-self: center;
+        position: absolute;
+        bottom: 45%;
+    }
+
+    .sliderControl {
+        position: absolute;
+        left: 0;
+        padding: 0;
+        border-radius: 50%;
+        color: #656476;
+        background: #e2e2e2;
+        border-color: #e7e7ea;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        opacity: 0.4;
+        top: 45%;
+    }
+
+    .sliderControl:hover {
+        background: #fff;
+    }
+
+    .sliderControl.active {
+        border: 2px solid #e7e7ea;
+        color: #000;
+        background: #fff;
+        pointer-events: initial;
+        cursor: pointer;
+        opacity: 1;
+    }
+
+    .sliderControl.active:hover {
+        color: var(--btnLinkColor);
+        border-color: var(--btnLinkColor);
+    }
+
+    .rightSliderControl {
+        right: 0;
+        left: initial;
+    }
+
+    .sliderWrap .amp-sacrifice,
+    .certonaSliderWrap .tealium-product-tile {
+        scroll-snap-align: start;
+    }
+
+    .sliderContainer.calculated .tealium-product-tile>div {
+        width: 100%;
+    }
+
+    /* four card carousel */
+    #productCarouselv5 .sliderControl {
+        top: calc(50% + 10px);
+    }
+
+    #productCarouselv5 .sliderContainer {
+        width: 97.5%;
+    }
+
+    /* JK 6.28.21 we can not add padding to the top level wrapper of the carousel card.
+    This is used for caluclating the cards widths for pagination. Padding and margins can be added to the inside element */
+    .sliderWrap .amp-scrollable-carousel-slide:first-child {
+        padding-left: initial;
+    }
+
+    .sliderWrap .amp-scrollable-carousel-slide:last-child {
+        padding-right: initial;
+    }
+
+    .sliderWrap .amp-scrollable-carousel-slide {
+        padding: initial;
+        margin: 0;
+    }
+
+    .sliderWrapSpacer {
+        padding-bottom: 3rem;
+    }
+
+    .epdpSpacer {
+        padding-bottom: 0.5rem;
+    }
+
+    .sliderWrap.overlap amp-carousel {
+        width: 100%;
+    }
+
+    .sliderWrap.overlap .sliderControl {
+        border: 4px solid #fff;
+        box-shadow: inset 0px 0px 0px 2px #e2e2e2;
+        color: #656476;
+        background: #e2e2e2;
+        opacity: 1;
+        width: 44px;
+        height: 44px;
+        opacity: 1;
+        top: 40%;
+        pointer-events: initial;
+        cursor: not-allowed;
+    }
+
+    .sliderWrap.overlap .sliderControl.active {
+        background: #fff;
+        cursor: pointer;
+    }
+
+    .sliderWrap.overlap .sliderControl.active:hover {
+        background: #fff;
+        box-shadow: inset 0px 0px 0px 2px var(--btnLinkColor);
+        color: var(--btnLinkColor);
+    }
+
+    .sliderWrap.overlap .sliderControl:hover {
+        background: #e2e2e2;
+    }
+
+    .sliderWrap.overlap .amp-scrollable-carousel-slide:first-child {
+        padding-left: 0.5rem;
+    }
+
+    .sliderWrap.overlap .amp-scrollable-carousel-slide:last-child {
+        padding-right: 0.5rem;
+    }
+
+    .sliderWrap.overlap .rightSliderControl {
+        right: -0.25rem;
+    }
+
+    .sliderWrap.overlap .leftSliderControl {
+        left: -0.25rem;
+    }
+}
+
+@media screen and (min-width: 1102px) {
+    #wm_content>.sliderWrap {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .sliderWrap #recommendationsListprodYouMightLike {
+        min-height: 384px;
+    }
+
+    .sliderWrap amp-carousel {
+        min-height: 326px;
+    }
+
+    .sliderWrap amp-carousel amp-img {
+        margin: 0 auto 8px;
+        max-height: 176px;
+        max-width: 176px;
+    }
+
+    /* homepage sliders */
+    .viewV3 .sliderWrap amp-carousel {
+        min-height: 350px;
+    }
+
+    .viewV3 .sliderWrap amp-carousel amp-img {
+        margin: 0 0 8px;
+        max-height: unset;
+        max-width: unset;
+    }
+
+    #wm_content .viewV3.sliderWrap {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* TEMP until we figure out why amp-carousel misbehaves in nested amp-lists */
+    #trendingProductsList {
+        min-height: 384px;
+    }
+
+    #trendingProductsList amp-carousel {
+        min-height: 336px;
+    }
+
+    #trendingProductsList .sliderCard {
+        height: calc(100% - 0.5rem);
+    }
+
+    .sliderCard {
+        width: 100%;
+        margin: 0;
+    }
+
+    .amp-carousel-slide.sliderCard.sliderCard {
+        margin: 0;
+        padding: 0 8px 0;
+        background: transparent;
+        border: none;
+    }
+}
+
+@media (min-width: 64rem) {
+    .container .sliderWrap {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .sliderSubV21 {
+        position: absolute;
+        right: 4rem;
+    }
+}
+
+@media (min-width: 80rem) {
+
+    /* homepage sliders */
+    .viewV3.sliderWrap amp-list {
+        min-height: 390px;
+    }
+
+    .viewV3 .sliderWrap amp-carousel {
+        min-height: 360px;
+    }
+
+    #wm_content .viewV3.sliderWrap {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (min-width: 84rem) {
+
+    /* this rules is for home and CLP where sliders are not within a container that has a max-width */
+    #wm_content>.sliderWrap {
+        margin: 2rem auto;
+    }
+}
+
+/*********************************************/
+/*Certona slider carousel -  */
+/*********************************************/
+@media screen and (min-width: 48rem) {
+    #productCarouselv5 .certonaSliderWrap .sliderContainer .tealium-product-tile {
+        width: auto;
+    }
+
+    .certonaSliderWrap .sliderContainer .tealium-product-tile {
+        width: 8.5rem;
+    }
+}
+
+@media screen and (min-width: 64rem) {
+    .certonaSliderWrap .sliderContainer .tealium-product-tile {
+        width: 10.5rem;
+    }
+
+    #siteRecentList {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1101px) {
+    .scrollContainer {
+        margin: 0;
+        width: 100%;
+        scroll-behavior: smooth;
+    }
+
+    .certonaSliderWrap,
+    .sliderContainer {
+        position: relative;
+    }
+
+    .certonaSliderWrap .sliderControl {
+        bottom: 45%;
+        z-index: 11;
+    }
+}
+
+.addToIdeaBrd:hover+span {
+    display: block;
+    right: -48px;
+}
+
+.certonaSliderWrap amp-carousel .tealium-product-tile:hover {
+    z-index: 10;
+}
+
+/* had to include this rule as we have a very generic rule
+    (#wm_content .hide) that is overriding the styles
+    Unable to find this rule in the builder */
+#wm_content .certonaSliderWrap span[role="tooltip"] {
+    height: auto;
+    width: 168px;
+    overflow: initial;
+    clip: initial;
+    position: absolute;
+}
+
+.addToIdeaBrd:hover,
+.addToIdeaBrd:focus {
+    color: #fff;
+    background: var(--btnLinkColor);
+    border-color: var(--btnLinkColor);
+}

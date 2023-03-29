@@ -1,0 +1,8 @@
+/***************************************************
+Desktop Layout classes for Banner Citrus Ads on PlP
+***************************************************/
+@media (min-width: 768px) {
+    .citrusAdWrap {
+        height: 112px;
+    }
+}

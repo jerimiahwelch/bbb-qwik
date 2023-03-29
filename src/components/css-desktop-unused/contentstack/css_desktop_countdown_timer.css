@@ -1,0 +1,56 @@
+/*********************************************/
+/*Coundtown Timer -  */
+/*********************************************/
+@media screen and (min-width: 64rem) {
+    .countdownTxt {
+        font-size: 22px;
+        margin-left: 1rem;
+    }
+
+    .numb {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .numbLabel {
+        font-size: 0.75rem;
+    }
+
+    .countdownCaret {
+        display: none;
+    }
+
+    .countdownBtn {
+        margin-right: 1rem;
+    }
+
+    .countContent amp-date-countdown,
+    .countdownTxt {
+        flex-basis: 33.3333%;
+    }
+
+    .timeCont {
+        margin: 0 4px 0 0;
+        padding: 0.5rem 0.7rem 0.3rem 0.7rem;
+    }
+
+    .modCntCountdownTxt {
+        font-size: 22px;
+        margin-left: 1rem;
+    }
+
+    .modCntNumb {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        padding-bottom: 0.25rem;
+    }
+
+    .modCntNumbLabel {
+        font-size: 0.75rem;
+    }
+
+    .modCntTimerCont {
+        min-height: 3.375rem;
+    }
+}
