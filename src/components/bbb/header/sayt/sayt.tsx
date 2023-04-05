@@ -2,7 +2,7 @@ import { component$, useStyles$ } from '@builder.io/qwik'
 import type { Signal } from '@builder.io/qwik'
 import { useNavigate } from '@builder.io/qwik-city'
 import { dashLowerCase } from '~/sitewide/utility'
-import { ModalsStore } from '../header'
+import type { ModalsStore } from '../header'
 
 import saytCss from './sayt.css?inline'
 

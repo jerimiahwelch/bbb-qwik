@@ -1,0 +1,262 @@
+/* JW - cssSidebarVariables moved to global_css to support using
+    the same css variables for concept themes in AMP and Appshell */
+
+/*** Sidebar Nav ***/
+
+.crossSiteWrap {
+  justify-content: space-around;
+}
+.bbbLogoSb {
+  color: #1a4e8a;
+}
+.babyLogoSb {
+  color: #068488;
+}
+
+/* nav-scoped reset */
+.navWrap button:focus {
+  box-shadow: none;
+  outline: 1px dashed #757575;
+}
+
+/* Nav containers Layout */
+.navWrap {
+  -webkit-overflow-scrolling: touch; /*this style is here for reference, but it is stripped out in the AmpFetchUtilities by the CSS cleaner and then re-apended based on the nav ID.*/
+  height: 100vh;
+  max-width: 300px;
+  top: 0;
+  width: 88vw;
+  z-index: 110;
+}
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  height: 100vh;
+  top: 0;
+  width: 100vw;
+  z-index: 101;
+}
+.overlay.active,
+.navWrap.active {
+  display: block;
+}
+.scrollable {
+  bottom: 0;
+  left: 0;
+  margin-bottom: 1px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  right: 0;
+  top: 0;
+}
+
+@media screen and (max-width: 48rem) {
+  .iOSaddressBar {
+    margin-bottom: 5rem;
+  }
+}
+
+/* Menu buttons and links */
+
+/* Override to make buttons and links behave consistently */
+
+/* This rule for nav sidebar item color is in this childReplacement so that it can be applied to all concepts */
+.navWrap .navItemBtn {
+  --btnLinkColor: var(--menuHeaderColor);
+}
+.navItem {
+  border: 0;
+  border-bottom: 1px solid #f2f2f2;
+  border-radius: 0;
+  color: black;
+  font: var(--navItemFont);
+  min-height: 48px;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+  word-wrap: break-word;
+}
+.navWrap .wiCaret {
+  font-size: 0.8rem;
+  margin-right: 5px;
+}
+.navWrap .navItem {
+  font-size: 14px;
+}
+/*
+Deals -> top deals ?
+.navItem.heading.noLink {
+  color: #595959;
+} */
+
+/* First Nav Column */
+.navItemBtn {
+  color: var(--btnLinkColor);
+  font: var(--menuHeader);
+  letter-spacing: -0.5px;
+  line-height: 19px;
+  min-height: 48px;
+  outline: 0;
+  padding: 0;
+}
+
+/** childReplacement sideNav **/
+.navItemBtn {
+  font-size: 12px;
+}
+/** end childReplacement sideNav **/
+/* 2nd Nav Column */
+/* .nav2Col {
+  height: calc(100vh - var(--headHeight));
+} */
+.nav2Col .wiCaret {
+  display: none;
+  opacity: 0.25;
+}
+.navBack {
+  border-bottom: 2px solid #e7e7e7;
+  margin: 0 -1rem;
+  min-height: 62px;
+  padding: 0 1rem;
+  width: calc(100% + 2rem);
+}
+.navBack .wiCaret {
+  display: block;
+  opacity: 1;
+}
+.navSetTitle {
+  color: var(--btnLinkColor);
+  font-weight: bold;
+}
+.navSetTitleHeader {
+  color: var(--cat-nav-heading-color);
+}
+
+/** childReplacement acctItemStyling **/
+
+/** end childReplacement acctItemStyling **/
+
+/* registry form */
+.registryCont .error {
+  font-size: 14px;
+}
+.registryCont .user-invalid.user-invalid:not(:focus) {
+  color: #000;
+}
+.registryCont .appended {
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: all 0.2s ease;
+  font: var(--priceCarouselFont);
+  left: 0;
+  min-width: auto;
+  opacity: 0;
+  padding: 8px 16px 24px;
+  pointer-events: none;
+  top: 0;
+  transition: all 0.2s ease;
+}
+.registryCont input:focus ~ .appended,
+.user-invalid .SignUpForOffersInputContainer .appended,
+.user-valid .SignUpForOffersInputContainer .appended {
+  color: #000;
+  display: inline-flex;
+  font: 300 11px var(--fontMain);
+  opacity: 1;
+  padding: 7px 18px 0;
+}
+.registryCont input[type='text']:focus {
+  padding-bottom: 5px;
+}
+
+/*** Body Nav ***/
+
+.catBarWrap {
+  -ms-overflow-style: none; /* pre-chromium edge */
+  overflow-x: auto;
+  scrollbar-width: none; /*Firefox*/
+}
+
+.catBarWrap::-webkit-scrollbar {
+  display: none;
+}
+
+/* Nav Category Pills */
+.navPillsBar {
+  border-bottom: 1px solid #e7e7e7;
+  border-top: 1px solid #e7e7e7;
+}
+/* .navPillsBar::-webkit-scrollbar {
+  display: none;
+} */
+.navPillsBar:after {
+  background: linear-gradient(to right, #ffffff00, #fff 90%);
+  content: '';
+  display: block;
+  height: calc(100% - 1px);
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 28px;
+}
+.navPill {
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  min-height: 32px;
+  padding: 0 12px;
+}
+.catBarWrap::after {
+  content: '';
+  display: block;
+  height: 2rem;
+  flex: 0 0 1rem;
+}
+.navPill.active {
+  background-color: var(--btnLinkColor);
+  border-radius: 15px;
+  color: #fff;
+}
+.navPill a {
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Category Navigation overrides */
+.navWrap.catNav,
+.overlay.catNav {
+  height: calc(100vh - (var(--headHeight) + var(--pencilBannerHeight)));
+  top: 100%;
+}
+.navWrap.catNav {
+  width: 270px;
+}
+/* .overlay.catNav {
+  top: calc(var(--headHeight) + var(--pencilBannerHeight));
+} */
+.catNav .navSetTitleBtn,
+.catNav .nav2Col .wiCaret {
+  display: flex;
+}
+/* Hide back Title & collapse subpanels */
+.catNav .navBack,
+.catNav .navSetTitleLink,
+.catNav .navSetTitleHeader,
+.catNav .navSubPanel {
+  display: none;
+}
+.catNav .navSetTitle {
+  border-top: 1px solid #f2f2f2;
+}
+/* div.menuCol:first-of-type .navSetTitle:first-child {
+  border-top: none;s
+} */
+.catNav .navSetTitle .wiArrow {
+  font-size: 24px;
+}
+.catNav .navItem {
+  border-bottom: none;
+}
+.catNav .navSubPanel .navItem {
+  min-height: 40px;
+  padding-left: 1rem;
+}

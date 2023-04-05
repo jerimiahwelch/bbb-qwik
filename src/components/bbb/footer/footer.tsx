@@ -8,7 +8,7 @@ import './footer-desktop.css'
  * Render footer
  */
 export default component$(() => {
-  console.log('Rendering <Footer />')
+  console.log('rendering <footer />')
 
   /**
    * Fetch Contentstack footer data
