@@ -2,80 +2,86 @@
 /*css variables*/
 /*********************************************/
 body {
-    --changeStoreTopOffset: 0.7rem;
-    --registryHeadWt: 600;
-    --cartQtyDisplay: none;
-    --navWrapCaret: #1377c9;
+  --changeStoreTopOffset: 0.7rem;
+  --registryHeadWt: 600;
+  --cartQtyDisplay: none;
+  --navWrapCaret: #1377c9;
+}
+
+.funTimes,
+* {
+  background-color: rgba(74, 79, 224, 0.1);
 }
 
 @media screen and (min-width: 48rem) {
-    body {
-        --hRow1: 68px;
-        --logoWidth: 76px;
-        --acctLinkColor: #fff;
-        --acctHeaderText: 600 14px/1.63 var(--fontDisplay);
-        --capitalizeHead: normal;
-        --headHeight: 152px;
-        --menuBurgerMargin: 0;
-        --logoPadLeft: 0;
-        --offersContainerHeadSize: 20px;
-        --offersInputWidth: 64%;
-        --mktgBannerBcg: #ebf0fd;
-        --txtMedWeight: 300;
-        --ideaBrdTTColor: #595959;
-        --priceFont: var(--fontDisplay);
-        --prodInfoHeadSize: 24px;
-        /*pdpv21 specific css */
-        --prodInfoHeadSizeV2: 22px;
-        --prodInfoHeadFont: var(--weightDisplay) var(--prodInfoHeadSizeV2) / 0.91 var(--fontDisplay);
-        --revHeadSize: 22px;
-        --ttBorderColor: #6ab8ff;
-        --changeStoreTopOffset: 15px;
-        --collectionSliderHt: 254px;
-        --nrCatPadding: 8px;
-        --narCatHeadSpacing: -0.5px;
-        --heroModCarouselBtn: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.01 6.15" width="18" height="16" fill="%231377c9"%3E%3Cpath d="M6 6.15a1.07 1.07 0 01-.6-.2l-5-4.2A1 1 0 01.25.35a1 1 0 011.4-.1L6 3.85l4.4-3.6a1 1 0 011.4.1 1 1 0 01-.1 1.4L6.65 6a1.85 1.85 0 01-.65.15z"/%3E%3C/svg%3E');
-        --mpcSavePercentFont: 12px;
-        --mpcPriceFont: 20px;
-        --mpcPriceLHeight: 20px;
-        --modContentHeadColor: #002855;
-    }
+  body {
+    --hRow1: 68px;
+    --logoWidth: 76px;
+    --acctLinkColor: #fff;
+    --acctHeaderText: 600 14px/1.63 var(--fontDisplay);
+    --capitalizeHead: normal;
+    --headHeight: 152px;
+    --menuBurgerMargin: 0;
+    --logoPadLeft: 0;
+    --offersContainerHeadSize: 20px;
+    --offersInputWidth: 64%;
+    --mktgBannerBcg: #ebf0fd;
+    --txtMedWeight: 300;
+    --ideaBrdTTColor: #595959;
+    --priceFont: var(--fontDisplay);
+    --prodInfoHeadSize: 24px;
+    /*pdpv21 specific css */
+    --prodInfoHeadSizeV2: 22px;
+    --prodInfoHeadFont: var(--weightDisplay) var(--prodInfoHeadSizeV2) / 0.91
+      var(--fontDisplay);
+    --revHeadSize: 22px;
+    --ttBorderColor: #6ab8ff;
+    --changeStoreTopOffset: 15px;
+    --collectionSliderHt: 254px;
+    --nrCatPadding: 8px;
+    --narCatHeadSpacing: -0.5px;
+    --heroModCarouselBtn: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.01 6.15" width="18" height="16" fill="%231377c9"%3E%3Cpath d="M6 6.15a1.07 1.07 0 01-.6-.2l-5-4.2A1 1 0 01.25.35a1 1 0 011.4-.1L6 3.85l4.4-3.6a1 1 0 011.4.1 1 1 0 01-.1 1.4L6.65 6a1.85 1.85 0 01-.65.15z"/%3E%3C/svg%3E');
+    --mpcSavePercentFont: 12px;
+    --mpcPriceFont: 20px;
+    --mpcPriceLHeight: 20px;
+    --modContentHeadColor: #002855;
+  }
 }
 
 @media screen and (min-width: 64rem) {
-    body {
-        --hRow1: 74px;
-        --logoWidth: 104px;
-        --headHeight: 157px;
-        --offersContainerHeadSize: 20px;
-        --signUpFormFlexDirection: row;
-        --offersInputWidth: 50%;
-        --plpCatTitle: 600 32px/0.84 var(--fontDisplay);
-        --nrHeadSize: 28px;
-        --pdpHeaderTransform: lowercase;
-        --fbtHeadFont: var(--weightDisplay) 22px/1.29 var(--fontMain);
-        --collectionSliderHt: 322px;
-        --premHt: 128px;
-    }
+  body {
+    --hRow1: 74px;
+    --logoWidth: 104px;
+    --headHeight: 157px;
+    --offersContainerHeadSize: 20px;
+    --signUpFormFlexDirection: row;
+    --offersInputWidth: 50%;
+    --plpCatTitle: 600 32px/0.84 var(--fontDisplay);
+    --nrHeadSize: 28px;
+    --pdpHeaderTransform: lowercase;
+    --fbtHeadFont: var(--weightDisplay) 22px/1.29 var(--fontMain);
+    --collectionSliderHt: 322px;
+    --premHt: 128px;
+  }
 }
 
 @media screen and (min-width: 80rem) {
-    body {
-        --hRow1: 78px;
-        --logoWidth: 104px;
-        --csBannerWidth: 60%;
-        --headHeight: 161px;
-        --changeStoreTopOffset: 15px;
-        --registryHeadTxtSize: 22px;
-        --navWrapTopOffset: 6px;
-        --menuMarginTop: 0.4rem;
-        --navWrapBoxShadow: -3px 0 6px rgba(50, 50, 50, 0.4);
-        --cartSubtotalWeight: 400;
-        --cartSubtotalSize: 1rem;
-        --priceDisclaimerSize: 0.85rem;
-        --miniCartWidth: 360px;
-        --shipThreshTxtWeight: 300;
-        --dskNavTextTransform: lowercase;
-        --pdpStickyHeight: 85px;
-    }
+  body {
+    --hRow1: 78px;
+    --logoWidth: 104px;
+    --csBannerWidth: 60%;
+    --headHeight: 161px;
+    --changeStoreTopOffset: 15px;
+    --registryHeadTxtSize: 22px;
+    --navWrapTopOffset: 6px;
+    --menuMarginTop: 0.4rem;
+    --navWrapBoxShadow: -3px 0 6px rgba(50, 50, 50, 0.4);
+    --cartSubtotalWeight: 400;
+    --cartSubtotalSize: 1rem;
+    --priceDisclaimerSize: 0.85rem;
+    --miniCartWidth: 360px;
+    --shipThreshTxtWeight: 300;
+    --dskNavTextTransform: lowercase;
+    --pdpStickyHeight: 85px;
+  }
 }
